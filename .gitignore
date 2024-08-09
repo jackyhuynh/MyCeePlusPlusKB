@@ -7,3 +7,4 @@ driver_*
 .vscode/
 a.out
 .idea/
+.DS_Store
