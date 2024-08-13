@@ -1,14 +1,13 @@
 # Syllabus for Programming Fundamental III: Data Structure C++
 
-Welcome to our course! I've included below all the essential information needed to navigate through the semester successfully. Please take a look at each section carefully and let me know if you have any questions.
+Welcome to our knowledge base! I've included below all the essential information needed to understand data structure utilizing. Please take a look at each section carefully and let me know if you have any questions.
 
 ## Instructor Information
 
 - **Name:** Truc L. Huynh
 - **Email:** [truc.huynh@austincc.edu](mailto:truc.huynh@austincc.edu)
 - **Class and Lab Hours**
-   - LEC MW 6:10 PM - 8:35 PM DIL DLS
-   - LAB MW 8:35 PM - 9:20 PM DIL DLS
+   - LEC + LAB MW 7:00 PM - 9:00 PM DIL DLS
 - **Office Hours:**
    - Fridays: 11:30 PM - 1:30 PM
    - Wednesdays: 5:00 PM - 6:00 PM
@@ -24,13 +23,19 @@ Check out my profile here [Truc LinkedIn profile](https://www.linkedin.com/in/tr
 Please review the sections below and complete the tasks at the bottom of this page for course orientation.
 
 ## To Do:
-- [Course Orientation]()
-- [Discord Channel - Must Join]()
+- [Course Orientation]() - **Will be updated on First day of class**
+- [Discord Channel - immediate support and announcement](https://discord.gg/vmKNyHEtcr)
 - [Respondus Lockdown Browser](https://instruction.austincc.edu/students/article/respondus-lockdown-browser/)
 
 ## Text and Teaching Materials
 
-- **Textbook:** 
+- **Textbook:** It is required by ACC. I don't require, but it is recommended. You can easily find a pdf version somewhere in the internet. 
+- Most of my teaching material will be in this repo
+
+## Quizzes and Lab
+- **Assignments and Quizzes:** These will be administered through GitHub Classroom.
+- **Attendance:** While highly recommended, attendance is not mandatory.
+- **Tests:** All tests will be conducted on Blackboard.
 
 ## Course Requirements
 
@@ -53,8 +58,15 @@ Please review the sections below and complete the tasks at the bottom of this pa
 ## C++ Development Environment Setup
 
 We'll use C++ for programming. Download the C++ Compiler to your computer for free.
-
 - C++ IDLE: any IDLE as your convenience, I am using Visual Studio Code but there is many out there.
+  - My setup is:
+    - Visual Studio Code
+    - Gcc/G++ for compiling C++ 
+    - GitHub for version control
+    - Mac OS X
+- CLion from JetBrain
+- Somebody just prefer Notepad ++ (Totally up to you)
+
 
 ## Technical Support
 
