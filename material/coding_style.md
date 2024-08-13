@@ -1,4 +1,4 @@
-# COSC 1336 Program Documentation and Style Requirements
+# COSC Program Documentation and Style Recommended
 
 Ensuring your code is professionally styled is crucial in this course. Here's a summary of the documentation and style requirements that will influence 20% of your grade for each programming assignment:
 

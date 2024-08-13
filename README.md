@@ -1,4 +1,4 @@
-# Syllabus for Programming Fundamental III: Data Structure C++
+# Applied Data Structure using C++
 
 Welcome to our knowledge base! I've included below all the essential information needed to understand data structure utilizing. Please take a look at each section carefully and let me know if you have any questions.
 

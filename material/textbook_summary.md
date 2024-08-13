@@ -12,7 +12,7 @@
 - Please use the command to run each file since they use newer version of C++ (eg: c++11, c++13, c++17)
 
 ```bash
-g++ -std=c++17 ch5_recursion_problem_solving.cpp -o driver
+g++ -std=c++17 some_source.cpp -o driver
 ```
 
 ## Exam1 review:
