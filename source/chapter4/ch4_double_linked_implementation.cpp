@@ -1,4 +1,7 @@
 #include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
 
 // Node class for double linked list
 class Node {
@@ -64,7 +67,7 @@ public:
             }
 
             if (temp == nullptr) {
-                std::cerr << "Invalid position\n";
+                cerr << "Invalid position\n";
                 return;
             }
 
@@ -87,7 +90,7 @@ public:
         if (temp != nullptr) {
             temp->data = newData;
         } else {
-            std::cerr << "Invalid position\n";
+            cerr << "Invalid position\n";
         }
     }
 
