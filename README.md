@@ -29,7 +29,7 @@ Please review the sections below and complete the tasks at the bottom of this pa
 
 ## Text and Teaching Materials
 
-- **Textbook:** It is required by ACC. I don't require, but it is recommended. You can easily find a pdf version somewhere in the internet. 
+- **Textbook:** It is required by ACC. I don't require, but it is recommended.
 - Most of my teaching material will be in this repo
 
 ## Quizzes and Lab
