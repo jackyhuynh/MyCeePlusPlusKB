@@ -1,6 +1,6 @@
 # Applied Data Structure using C++
 
-Welcome to our knowledge base! I've included below all the essential information needed to understand data structure utilizing. Please take a look at each section carefully and let me know if you have any questions.
+Welcome to our knowledge base! I've included all the essential information needed to understand data structure utilization. Please review each section and let me know if you have any questions.
 
 ## Instructor Information
 
@@ -17,6 +17,8 @@ Welcome to our knowledge base! I've included below all the essential information
 
 As a software developer, I bring real-world insights and practical teaching to prepare you for today's job market. Our focus will be on hands-on learning, modern methods, and ensuring your success post-graduation. I look forward to creating an engaging, collaborative, and supportive learning environment. I will commit to doing my part, but you also need to commit to doing your part for success.
 Check out my profile here [Truc LinkedIn profile](https://www.linkedin.com/in/trucdev/). Please don't hesitate to contact me even after this course if you have any questions. I am here to help and am dedicated to your success.
+## Fun fact:
+- [Some fun programming stuff](https://chatgpt.com/share/289d35cb-c901-4954-8a0e-594f05a38d48)
 
 ## Getting Started
 
