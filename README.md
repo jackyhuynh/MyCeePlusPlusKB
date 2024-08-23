@@ -1,13 +1,14 @@
 # Applied Data Structure using C++
 
-Welcome to our knowledge base! I've included all the essential information needed to understand data structure utilization. Please review each section and let me know if you have any questions.
+Welcome to our knowledge base! My goal is to spend less time and accomplish more. I've included all the essential information needed to understand data structure utilization. Please review each section and let me know if you have any questions.
+I will cover data structure (linked-list (single, double, bidirectional), Stack, Queue, Tree (normal, binary, Binary Search Tree, AVL,), Hashsing, Dictionary, Priority Queue, Heap, Recursion), some problem solving using data structure and recursion, searching methodologies, sorting methodologies, C++ syntax, Aigle, version control (Git, Github), Standard Template Libary (STL) 
 
 ## Instructor Information
 
 - **Name:** Truc L. Huynh
 - **Email:** [truc.huynh@austincc.edu](mailto:truc.huynh@austincc.edu)
 - **Class and Lab Hours**
-   - LEC + LAB MW 7:00 PM - 9:00 PM DIL DLS
+   - LEC + LAB MW 7:00 PM - 8:30 PM Online
 - **Office Hours:**
    - Fridays: 11:30 PM - 1:30 PM
    - Wednesdays: 5:00 PM - 6:00 PM
@@ -31,7 +32,7 @@ Please review the sections below and complete the tasks at the bottom of this pa
 
 ## Text and Teaching Materials
 
-- **Textbook:** It is required by ACC. I don't require, but it is recommended.
+- **Textbook:** It is required by ACC. I don't require it, but it is recommended.
 - Most of my teaching material will be in this repo
 
 ## Quizzes and Lab
