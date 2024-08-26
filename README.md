@@ -20,14 +20,14 @@ I will cover data structure (linked-list (single, double, bidirectional), Stack,
 As a software developer, I bring real-world insights and practical teaching to prepare you for today's job market. Our focus will be on hands-on learning, modern methods, and ensuring your success post-graduation. I look forward to creating an engaging, collaborative, and supportive learning environment. I will commit to doing my part, but you also need to commit to doing your part for success.
 Check out my profile here [Truc LinkedIn profile](https://www.linkedin.com/in/trucdev/). Please don't hesitate to contact me even after this course if you have any questions. I am here to help and am dedicated to your success.
 ## Fun fact:
-- [Some fun programming stuff](https://chatgpt.com/share/289d35cb-c901-4954-8a0e-594f05a38d48)
+- [Some fun programming facts](https://chatgpt.com/share/289d35cb-c901-4954-8a0e-594f05a38d48)
 
 ## Getting Started
 
 Please review the sections below and complete the tasks at the bottom of this page for course orientation.
 
 ## To Do:
-- [Course Orientation]() - **Will be updated on First day of class**
+- [Course Orientation](https://forms.gle/XQtAQpgqY6JTAgoT6)
 - [Discord Channel - immediate support and announcement](https://discord.gg/vmKNyHEtcr)
 - [Respondus Lockdown Browser](https://instruction.austincc.edu/students/article/respondus-lockdown-browser/)
 
