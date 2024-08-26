@@ -1,4 +1,25 @@
-# Diffrent kind of linked-list
+# Linked List
+
+## 
+```
+# Check current working directory
+pwd         
+# Output: /Users/truchuynh/Documents/Projects/cplus_sample_code
+
+# move to the actual source code
+cd source/2_LinkedList
+
+# Output: all the file in the current directory
+ls          
+ 
+# run this for the unit test (replace output_file_name with the name that you want your file)
+g++ DoubleLinkedListTests.cpp DoubleLinkedList.cpp -o output_file_name
+
+# run this for the main test
+g++ main.cpp DoubleLinkedList.cpp -o main
+
+```
+## Diffrent kind of linked-list
 
 A linked list is a data structure that consists of a sequence of elements, where each element points to the next element in the sequence. There are three main types of linked lists: single linked list, doubly linked list, and circular linked list.
 

@@ -62,11 +62,19 @@ Please review the sections below and complete the tasks at the bottom of this pa
 
 We'll use C++ for programming. Download the C++ Compiler to your computer for free.
 - C++ IDLE: any IDLE as your convenience, I am using Visual Studio Code but there is many out there.
-  - My setup is:
-    - Visual Studio Code
-    - Gcc/G++ for compiling C++ 
-    - GitHub for version control
-    - Mac OS X
+   - My setup is:
+      - Visual Studio Code
+      - Gcc/G++ for compiling C++ 
+      - GitHub for version control
+      - Mac OS X 16 GB, M3 Pro
+      - Oh My Zsh command line
+      - Basic Linux
+      - Markdown
+   - My practice:
+      - Agile
+      - Unit Test
+      - Automation
+
 - CLion from JetBrain
 - Somebody just prefer Notepad ++ (Totally up to you)
 
