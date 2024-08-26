@@ -7,6 +7,7 @@ I will cover data structure (linked-list (single, double, bidirectional), Stack,
 
 - **Name:** Truc L. Huynh
 - **Email:** [truc.huynh@austincc.edu](mailto:truc.huynh@austincc.edu)
+- **SI** Nathan Floss
 - **Class and Lab Hours**
    - LEC + LAB MW 7:00 PM - 8:30 PM Online
 - **Office Hours:**
@@ -33,7 +34,10 @@ Please review the sections below and complete the tasks at the bottom of this pa
 ## Text and Teaching Materials
 
 - **Textbook:** It is required by ACC. I don't require it, but it is recommended.
-- Most of my teaching material will be in this repo
+- Most of my teaching material will be in this repository.
+- I will do white board for concept explanation.
+- What it mean to be a software engineer? How to search for topic?
+- Why data structure is important in Software development?
 
 ## Quizzes and Lab
 - **Assignments and Quizzes:** These will be administered through GitHub Classroom.
@@ -74,8 +78,9 @@ We'll use C++ for programming. Download the C++ Compiler to your computer for fr
       - Agile
       - Unit Test
       - Automation
-
-- CLion from JetBrain
+- Visual Studio Community Version
+- CLion from JetBrain (first year free)
+- Any C++ IDE
 - Somebody just prefer Notepad ++ (Totally up to you)
 
 
