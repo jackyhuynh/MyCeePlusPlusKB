@@ -1,11 +1,7 @@
 #include <iostream>
-#include <cassert>
 #include "DoubleLinkedList.h"  // Include the header file for your DoubleLinkedList class
 
 int main() {
-
-    std::cout << "All tests passed!" << std::endl;
-
     // Example usage of the enhanced DoubleLinkedList class
     DoubleLinkedList dll;
 

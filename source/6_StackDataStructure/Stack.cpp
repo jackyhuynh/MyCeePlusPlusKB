@@ -1,75 +1,51 @@
-#include <iostream>
-#include <stdexcept> // Includes std::runtime_error
+#include "Stack.h"
 
-class Node {
-public:
-    int data;
-    Node* next;
+// Node constructor to initialize a node with data
+Node::Node(int data) {
+    this->data = data;
+    this->next = nullptr;
+}
 
-    // Constructor
-    // 
-    Node(int data) : data(data), next(nullptr) {}
-};
+// Stack constructor to initialize an empty stack
+Stack::Stack() {
+    top = nullptr;
+}
 
-class Stack {
-private:
-    Node* top;
+// Push an element onto the stack
+void Stack::push(int data) {
+    Node* newNode = new Node(data);
+    newNode->next = top; // Set the new node's next to the current top
+    top = newNode;       // Make the new node the top of the stack
+}
 
-public:
-    Stack() : top(nullptr) {}
-
-    // Add element to the top of the stack
-    void push(int data) {
-        Node* newNode = new Node(data);
-        newNode->next = top; // Point new node to the current top
-        top = newNode;       // Update top to the new node
+// Pop and return the top element of the stack
+int Stack::pop() {
+    if (isEmpty()) {
+        throw std::out_of_range("Stack underflow: cannot pop from an empty stack");
     }
+    Node* temp = top;    // Store the current top node
+    int poppedData = top->data; // Get the data from the top node
+    top = top->next;     // Move the top to the next node
+    delete temp;         // Free memory of the old top node
+    return poppedData;
+}
 
-    // Remove and return the top element of the stack
-    int pop() {
-        if (isEmpty()) {
-            throw std::out_of_range("Stack is empty. Cannot pop.");
-        }
-        Node* temp = top;
-        int data = top->data;
-        top = top->next; // Update top to the next element
-        delete temp;     // Free the old top
-        return data;
+// Check if the stack is empty
+bool Stack::isEmpty() const {
+    return top == nullptr;
+}
+
+// Peek the top element without removing it
+int Stack::peek() const {
+    if (isEmpty()) {
+        throw std::out_of_range("Stack is empty: cannot peek");
     }
+    return top->data; // Return the data of the top node
+}
 
-    // Check if the stack is empty
-    bool isEmpty() const {
-        return top == nullptr;
+// Stack destructor to clean up memory
+Stack::~Stack() {
+    while (!isEmpty()) {
+        pop(); // Continuously pop until the stack is empty
     }
-
-    // Return the top element of the stack without removing it
-    int peek() const {
-        if (isEmpty()) {
-            throw std::out_of_range("Stack is empty. Cannot peek.");
-        }
-        return top->data;
-    }
-
-    // Destructor to free the allocated memory
-    ~Stack() {
-        while (!isEmpty()) {
-            pop(); // Pop all elements to free memory
-        }
-    }
-};
-
-int main() {
-    Stack stack;
-
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-
-    std::cout << "Top element is: " << stack.peek() << std::endl; // Should print 3
-
-    while (!stack.isEmpty()) {
-        std::cout << "Popping: " << stack.pop() << std::endl;
-    }
-
-    return 0;
 }
