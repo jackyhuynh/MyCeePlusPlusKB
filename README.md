@@ -39,7 +39,7 @@ Please review the sections below and complete the tasks at the bottom of this pa
 - What it mean to be a software engineer? How to search for topic?
 - Why data structure is important in Software development?
 
-## Quizzes and Lab
+## Quizzes and Web Assignment
 - **Assignments and Quizzes:** These will be administered through GitHub Classroom.
 - **Attendance:** While highly recommended, attendance is not mandatory.
 - **Tests:** All tests will be conducted on Blackboard.
