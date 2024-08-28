@@ -73,6 +73,7 @@ We'll use C++ for programming. Download the C++ Compiler to your computer for fr
       - Mac OS X 16 GB, M3 Pro
       - Oh My Zsh command line
       - Basic Linux
+      - Homebrew
       - Markdown
    - My practice:
       - Agile
