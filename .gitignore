@@ -5,6 +5,7 @@ driver
 driver_*
 .DS_Store/
 .vscode/
+*.out
 a.out
 .idea/
 .DS_Store
