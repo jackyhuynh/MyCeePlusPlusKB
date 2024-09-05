@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace trunc;
 template<class T>
 class ArrayBag {
 private:
