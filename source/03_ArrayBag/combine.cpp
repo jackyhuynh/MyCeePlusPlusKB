@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+using namespace trunc;
 template<class T>
 class ArrayBag {
 private:
@@ -27,12 +28,13 @@ ArrayBag<T>::ArrayBag() : itemCount(0), maxItems(DEFAULT_CAPACITY) {}
 
 template<class T>
 int ArrayBag<T>::getCurrentSize() const {
+    // check if the array size is more than 0
     return itemCount;
 }
 
 template<class T>
 bool ArrayBag<T>::isEmpty() const {
-    return itemCount == 0;
+    return itemCount == 0; // && check Array size is equal to 0
 }
 
 template<class T>
@@ -66,6 +68,8 @@ bool ArrayBag<T>::remove(const T& anEntry) {
 template<class T>
 void ArrayBag<T>::clear() {
     itemCount = 0;
+    // Have to Delete the whole array
+    // Memory leak
 }
 
 template<class T>
@@ -116,5 +120,6 @@ int main() {
     
     std::cout << "Bag is empty? " << (myBag.isEmpty() ? "Yes" : "No") << std::endl;
     
+    std::cout << "Current size of the bag: " << myBag.getCurrentSize() << std::endl;
     return 0;
 }
