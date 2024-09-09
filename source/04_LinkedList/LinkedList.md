@@ -1,7 +1,8 @@
 # Linked List
 
-## 
+## Sample Code
 ```
+# Sample command to run these code in this directory
 # Check current working directory
 pwd         
 # Output: /Users/truchuynh/Documents/Projects/cplus_sample_code
