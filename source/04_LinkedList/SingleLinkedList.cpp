@@ -113,7 +113,6 @@ public:
     }
 };
 
-#include <iostream>
 
 // Place the SingleLinkedList class definition here
 

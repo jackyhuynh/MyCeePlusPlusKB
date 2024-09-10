@@ -16,7 +16,7 @@ public:
 
 class Derived : public Base {
 public:
-    void someFunction() override {
+    void someFunction() {
         // Derived class implementation
     }
 };
