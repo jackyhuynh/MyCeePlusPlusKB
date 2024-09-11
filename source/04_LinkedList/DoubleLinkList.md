@@ -229,7 +229,7 @@ void DoubleLinkedList::insertAtBeginning(int data) {
     head = newNode;
 }
 ```
-
+\
 - Inserts a new node with the specified `data` at the beginning of the list.
 - Steps:
     - Create a new node.
