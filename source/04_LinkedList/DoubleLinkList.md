@@ -3,7 +3,8 @@
 ## Resource
 
 - [Geek for Geek: double Linked List Insertion](https://www.geeksforgeeks.org/introduction-and-insertion-in-a-doubly-linked-list/)
-
+- What is the head pointer? Is it important?
+- What is the tail pointer?
 ---
 
 ## Code:
@@ -42,6 +43,7 @@ public:
     void clear();
     bool search(int value) const;
     void displayList();
+    bool insertAfterALocation(int data, int Location);
 };
 
 #endif
