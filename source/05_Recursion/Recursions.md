@@ -4,7 +4,7 @@
 This C++ code demonstrates a variety of recursive algorithms, such as calculating the factorial of a number, generating Fibonacci numbers, reversing a string, and solving the Tower of Hanoi puzzle. I'll break down each part of the code, explaining its functionality, and provide diagrams where relevant.
 
 ## Recursion vs. loop
-Certainly! Let's break down the concepts of recursion and loops to clarify their differences.
+Let's break down the concepts of recursion and loops to clarify their differences.
 
 ### What is Recursion?
 
