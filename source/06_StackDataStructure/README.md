@@ -3,7 +3,7 @@
 ### What is Stacks:
 A **stack** is a linear data structure that follows the **Last In, First Out (LIFO)** principle. This means that the last element added to the stack is the first one to be removed. You can think of it as a stack of plates—each new plate is placed on top of the others, and to remove a plate, you take the one from the top.
 
--[Stack](./images/stack.jpg)
+![Stack](./images/stack.jpg)
 
 ### Key Operations:
 1. **Push**: Add an element to the top of the stack.
