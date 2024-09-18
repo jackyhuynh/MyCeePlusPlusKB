@@ -8,7 +8,7 @@ public:
     // 1. Factorial of a Number
     // Calculate the factorial of a number n (n!), which is the product of all positive integers less than or equal to n.
     static int factorial(int n) {
-        cout << n << ", " ;
+        // cout << n << ", " ;
         if (n <= 1) return 1; // base case
         return n * factorial(n - 1); // recursive case
     }
@@ -110,7 +110,7 @@ int main() {
 
     // Demonstrating the sum of natural numbers
     cout << "Sum of first 5 natural numbers: " << endl;
-    cout << endl << RecursiveAlgorithms::sumOfNaturalNumbers(5) << endl;
+    cout << endl << RecursiveAlgorithms::sumOfNaturalNumbers(3) << endl;
 
     // Demonstrating power calculation
     cout << "2 raised to the power 3: " << endl;
