@@ -1,7 +1,7 @@
 # Pointer
 
 ### Resources:
-- [Template <typename T>?](./) (NO TEST)
+- [Template <typename T>?](./templateType.md) (NO TEST)
 - [Template <typename T> pointer](./templateTypePointer.md) (NO TEST)
 - [Template <typename T> pointer strategies](./templateTypePointerStrategies.md) (NO TEST)
 

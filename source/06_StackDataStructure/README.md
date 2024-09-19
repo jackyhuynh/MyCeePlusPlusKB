@@ -20,7 +20,7 @@ A **stack** is a linear data structure that follows the **Last In, First Out (LI
 - [Basic Stack Implementation C++](./StackImplementation.md)
 - [Stack Implementation using Vector<T> or Template<T>](./AdtStack.cpp)
 
-### Use Cases of Stack:
+### Use Cases of Stack: (NO TEST)
 
 1. **Function Call Management (Recursion)**
    - When a function calls another function, or calls itself recursively, the system uses a **call stack** to keep track of the return addresses and local variables. Each function call pushes a frame onto the stack, and when the function returns, its frame is popped off.
