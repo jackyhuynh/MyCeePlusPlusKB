@@ -1,7 +1,3 @@
-Here’s a summary of **Chapter 10: Algorithm Efficiency** from the provided slides, formatted in Markdown and including code samples and use cases:
-
----
-
 # Chapter 10: Algorithm Efficiency
 
 ---
