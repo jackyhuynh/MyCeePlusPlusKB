@@ -1,6 +1,13 @@
 # C++ Interlude 4: Safe Memory Management Using Smart Pointers
 
 ---
+## Resources: 
+If you run into some warning, run this. You will need C++ 14 and above to run this.
+```bash
+g++ -std=c++14 -o smart_pointers_example smart_pointers_example.cpp
+./smart_pointers_example
+```
+
 
 ## **1. Raw Pointers**
 
