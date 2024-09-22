@@ -1,12 +1,16 @@
-### Exception Handling Strategies
+## Exception Handling Strategies
 
-#### Table of Contents:
+### Table of Contents:
 1. **Introduction to Exception Handling**
 2. **Why Exception Handling is Important**
 3. **Exception Handling Use Cases**
 4. **Common Exception Handling Strategies**
 5. **Best Practices for Exception Handling**
 
+
+### Resources
+- [Exceptions and Use cases](./ExceptionUsecase.md)
+- [Other Languages](./Others.md)
 ---
 
 ### 1. Introduction to Exception Handling
