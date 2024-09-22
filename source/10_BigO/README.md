@@ -2,6 +2,13 @@
 
 ---
 
+## Resources:
+Here’s your content with the link added in Markdown and a reference to showing pictures:
+
+[![Algorithm Efficiency Explanation](https://img.youtube.com/vi/BgLTDT03QtU/0.jpg)](https://youtu.be/BgLTDT03QtU?si=61n6uFGMJZ8eFNYt)
+
+Click the image or [this link](https://youtu.be/BgLTDT03QtU?si=61n6uFGMJZ8eFNYt) to watch a detailed video explanation on **Big-O Notation Algorithm Efficiency**.
+
 ## **1. What Is a Good Solution?**
 
 A good solution is one that minimizes the total cost across all phases of the program's life, including:
