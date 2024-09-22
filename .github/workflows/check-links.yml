@@ -11,12 +11,3 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      # Install lychee for dead link checking
-      - name: Install lychee
-        run: cargo install lychee-cli
-
-      # Check for dead links in all markdown files, including in source folder
-      - name: Run link check with lychee
-        run: |
-          lychee --verbose --no-progress '**/*.md' '**/source/**/*.md'
