@@ -1,6 +1,8 @@
 # Chapter 9: List Implementations
 
 ---
+## Resources:
+- [Other Uses Case of List across Other Programing Languages](./Others.md)
 
 ## **1. Array-Based Implementation of the ADT List**
 
