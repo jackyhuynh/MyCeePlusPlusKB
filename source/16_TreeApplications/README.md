@@ -1,3 +1,4 @@
+# Tree and Traversal
 
 ## Introduction
 Tree data structures are fundamental in computer science, used for organizing data in a hierarchical manner. There are several types of tree data structures, each with its unique properties and use cases. Here are some of the most commonly used types:
