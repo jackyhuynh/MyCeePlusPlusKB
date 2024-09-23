@@ -2,7 +2,7 @@
 
 ---
 ## Resources:
-- [Other Uses Case of List across Other Programing Languages](./Others.md)
+- [Other Uses Case of List](./Others.md)
 
 ## **1. Array-Based Implementation of the ADT List**
 
