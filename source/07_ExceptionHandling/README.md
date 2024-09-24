@@ -10,7 +10,7 @@
 
 ### Resources
 - [Exceptions and Use cases](./ExceptionUsecase.md)
-- [Other Languages](./Others.md)
+- [Other Languages](./Others.md`)
 ---
 
 ### 1. Introduction to Exception Handling

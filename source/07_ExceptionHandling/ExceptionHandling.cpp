@@ -14,6 +14,7 @@ int main() {
     try {
         if (divisor == 0) {
             throw "Division by zero condition!"; // Throwing an exception, is is used to manually throw an exception
+            return 0;
         } else {
             quotient = dividend / divisor;
             cout << "The quotient is " << quotient << endl;
