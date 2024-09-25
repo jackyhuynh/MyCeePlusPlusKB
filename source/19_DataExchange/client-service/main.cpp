@@ -11,7 +11,7 @@ int main() {
     int sock = 0;
     struct sockaddr_in serv_addr;
     struct hostent* server;
-    const char* hello = "Hello from App2 (Client)";
+    const char* hello = "Hello from Client";
     char buffer[1024] = {0};
 
     // Creating socket file descriptor
@@ -44,7 +44,7 @@ int main() {
 
     // Receive response from server
     read(sock, buffer, 1024);
-    std::cout << "Client-service received: " << buffer << std::endl;
+    std::cout << "Client received: " << buffer << std::endl;
 
     close(sock);
     return 0;

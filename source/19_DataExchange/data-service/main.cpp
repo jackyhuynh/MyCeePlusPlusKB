@@ -11,7 +11,7 @@ int main() {
     struct sockaddr_in address;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
-    const char* hello = "Hello from App1 (Server)";
+    const char* hello = "Hello from Server";
 
     // Creating socket file descriptor
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
@@ -36,7 +36,7 @@ int main() {
         return -1;
     }
 
-    std::cout << "App1 (Server) listening on port " << PORT << std::endl;
+    std::cout << "Server listening on port: " << PORT << std::endl;
 
     // Accept the connection
     if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0) {
@@ -46,11 +46,11 @@ int main() {
 
     // Read message from client
     read(new_socket, buffer, 1024);
-    std::cout << "App1 received: " << buffer << std::endl;
+    std::cout << "Server received: " << buffer << std::endl;
 
     // Send response to the client
     send(new_socket, hello, strlen(hello), 0);
-    std::cout << "Hello message sent from App1" << std::endl;
+    std::cout << "Hello message sent from data-service" << std::endl;
 
     close(new_socket);
     close(server_fd);
