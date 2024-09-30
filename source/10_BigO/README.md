@@ -3,7 +3,9 @@
 ---
 
 ## Resources:
-Enhance your understanding of Big-O with this video:
+
+- [Most Common Time Complexities](./CommonComplexities.md)
+- Enhance your understanding of Big-O with this video:
 
 [![Algorithm Efficiency Explanation](https://img.youtube.com/vi/BgLTDT03QtU/0.jpg)](https://youtu.be/BgLTDT03QtU?si=61n6uFGMJZ8eFNYt)
 
