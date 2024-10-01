@@ -1,7 +1,16 @@
 # Applied Data Structure using C++
 
-Welcome to our knowledge base! My goal is to spend less time and accomplish more. I've included all the essential information needed to understand data structure utilization. Please review each section and let me know if you have any questions.
-I will cover data structure (linked-list (single, double, bidirectional), Stack, Queue, Tree (normal, binary, Binary Search Tree, AVL,), Hashsing, Dictionary, Priority Queue, Heap, Recursion), some problem solving using data structure and recursion, searching methodologies, sorting methodologies, C++ syntax, Aigle, version control (Git, Github), Standard Template Libary (STL) 
+Welcome to our knowledge base! My goal is to spend less time and accomplish more. I've included all the essential information needed to understand data structure utilization. 
+Here’s a refined version of your outline for clarity and structure:
+
++ **Part I: Data Structures**  
+  Focus on the most commonly used data structures and their applications, explore the Standard Template Library (STL), and reinforce foundational C++ syntax and best practices.
+  
++ **Part II: Design Patterns**  
+  Introduce and implement popular design patterns in C++ for solving common software design challenges, emphasizing best practices and use cases.
+
++ **Part III: Advanced C++ & Deployment**  
+  Apply advanced C++ features in real-world scenarios, combining data structures and design patterns. Discuss deployment strategies, including optimizing code for production environments and best practices for efficient deployment.
 
 ## Instructor Information
 
@@ -68,6 +77,8 @@ We'll use C++ for programming. Download the C++ Compiler to your computer for fr
 - C++ IDLE: any IDLE as your convenience, I am using Visual Studio Code but there is many out there.
    - My setup is:
       - Visual Studio Code
+      - Python3
+      - Jupiter Lab
       - Gcc/G++ for compiling C++ 
       - GitHub for version control
       - Mac OS X 16 GB, M3 Pro
