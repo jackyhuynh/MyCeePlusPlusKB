@@ -8,4 +8,4 @@
 ## Definition:
 ### **Journal.cpp**:
 - Seperation of concern principle (Journal.md): Make each class handle only onething. Journal responsible for journal and Persistence-Manager take care of saving
-- Open Close Principle:
+- Open Close Principle (FilterProduct.cpp):
