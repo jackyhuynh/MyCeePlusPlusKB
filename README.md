@@ -76,12 +76,12 @@ Please review the sections below and complete the tasks at the bottom of this pa
 We'll use C++ for programming. Download the C++ Compiler to your computer for free.
 - C++ IDLE: any IDLE as your convenience, I am using Visual Studio Code but there is many out there.
    - My setup is:
+      - Hardware: Mac OS X 16 GB, M3 Pro
       - Visual Studio Code
       - Python3
       - Jupiter Lab
       - Gcc/G++ for compiling C++ 
       - GitHub for version control
-      - Mac OS X 16 GB, M3 Pro
       - Oh My Zsh command line
       - Basic Linux
       - Homebrew
