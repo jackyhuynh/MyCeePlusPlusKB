@@ -152,3 +152,7 @@ C++ smart pointers (`shared_ptr`, `unique_ptr`, `weak_ptr`) offer a robust solut
 --- 
 
 This summary includes an overview of raw and smart pointers, code examples for each type of smart pointer, and practical use cases where smart pointers prevent common memory management issues.
+
+## More Usecase
+- [auto, reference, and constant usecase](./ConstAutoReference.md)
+- [auto, and reference usecase](./AutoRefrence.md)
