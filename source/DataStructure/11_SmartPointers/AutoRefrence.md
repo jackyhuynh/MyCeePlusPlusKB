@@ -100,3 +100,5 @@ Here, `auto&` allows you to work with the original references in the container.
 - **Avoid `auto&`** when you want to work on copies of elements or the container holds simple types where copying is inexpensive.
 
 Using `const auto& i` in a range-based for loop in C++ has its own specific use cases, providing additional flexibility and safety. Let's break down what `const auto& i` does and when it's most useful.
+
+[Previous](./README.md)
