@@ -1,0 +1,30 @@
+Robot Op Codes
+
+OpCodes
+	ZERO 	=	00000000
+	OFF		=	00000001
+	ON		=	00000010
+	LOW		=	00000100
+	HIGH		=	00001000
+	90			=	00010000
+	180		=	00100000
+	270		=	01000000
+	360		=	10000000
+	EXEC		=	11111111
+
+	
+Command Bit Fields
+	OffOn	=	00000011
+	LoHi		=	00001100
+	Degree	=	11110000
+	
+Robot Interface
+
+public:
+	Constructor
+		Robot								=	Default constructor with debug set to false 
+		Robot(true) 						=	Overrides debug value with true	
+	execute( Commands& )				=	Executes queue of opcodes
+private:
+	action( unsigned char )				=	Action to perform on the 3 opcodes
+	
