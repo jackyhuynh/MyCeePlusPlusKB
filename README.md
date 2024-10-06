@@ -35,11 +35,6 @@ Check out my profile here [Truc LinkedIn profile](https://www.linkedin.com/in/tr
 
 Please review the sections below and complete the tasks at the bottom of this page for course orientation.
 
-## To Do:
-- [Course Orientation](https://forms.gle/XQtAQpgqY6JTAgoT6)
-- [Discord Channel - immediate support and announcement](https://discord.gg/vmKNyHEtcr)
-- [Respondus Lockdown Browser](https://instruction.austincc.edu/students/article/respondus-lockdown-browser/)
-
 ## Text and Teaching Materials
 
 - **Textbook:** It is required by ACC. I don't require it, but it is recommended.
