@@ -1,0 +1,11 @@
+Adding a DLL to a VC++ Project
+
+1.	Create a VS2013 Win32 Console application.
+2.	Copy the Robot.cpp, RobotDLL.h, RobotDLL.lib to the directory where the Win32 .CPP file was created.
+3.	Delete the 'projectname'.cpp file and rename Robot.cpp 'projectname'.cpp.  For example, if your project name was 'ABC', delete the ABC.cpp file and rename TestDLL.cpp ABC.cpp.
+4.	Try to build the project.  You will get 2 linker errors involving unresolved external symbols.
+5.	Open the Project file Properties:  Configuration Properties > C/C++ > Linker > Input > Additional Dependencies.
+6.	Add:  RobotDLL.lib to the list (i.e. should already contain - %(AdditionalDependencies))
+7.	Click the 'Apply' button, then OK.
+8.	Rebuild the project, and you should get no errors.
+9.	Run the Robot!

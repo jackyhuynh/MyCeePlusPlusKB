@@ -1,0 +1,23 @@
+Lab0
+
+Overview:
+Write a C++ program that uses Object Oriented Design to control a Robot.
+
+Using your existing C++ skill set, write a program that uses a minimal number of conditional statements to control a primative robot.  The goal is to send and execute commands to rotate a robot from 0 to 360 degrees in 90 block increments.  
+
+The robot rotates by sending op-codes to the robot.  Write a controller to send the opcode commands to the robot.  The robot has two requirements:
+
+	1.	unsigned character for the op-codes.
+	2.	a "Container" to hold the commands.  See RobotDLL.h (or Robot.h) for full definition.
+
+Create a command by combining the appropriate op-codes, and then place the command into a the command queue.  This program is based on 'bit-manipulations'.  If you need a review of bit-manipulations, see the example C++ source include with the lab assignment.
+
+Use object-oriented design techniques for full credit.  Programs that don't use object oriented techniques will only get partial credit.
+
+There are three versions available:
+
+	VS2010:	Libraries for Visual Studio 10
+	VS2013:	Libraries for Visual Studio 13
+	NonWindows:	For non-window C++ compilers.  If the source doesn't compile, please fix it, as I only have Visual Studio.
+
+

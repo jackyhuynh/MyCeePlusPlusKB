@@ -1,0 +1,9 @@
+﻿  Cplus_For_Self_Driving_Car.cpp
+C:\Users\Valued Customer\source\repos\Cplus_For_Self_Driving_Car\Cplus_For_Self_Driving_Car.cpp(26,46): warning C4305: 'argument': truncation from 'double' to 'const _Ty'
+          with
+          [
+              _Ty=float
+          ]
+Cplus_For_Self_Driving_Car.obj : error LNK2019: unresolved external symbol "public: __thiscall Matrix::Matrix(class std::vector<class std::vector<float,class std::allocator<float> >,class std::allocator<class std::vector<float,class std::allocator<float> > > >)" (??0Matrix@@QAE@V?$vector@V?$vector@MV?$allocator@M@std@@@std@@V?$allocator@V?$vector@MV?$allocator@M@std@@@std@@@2@@std@@@Z) referenced in function _main
+Cplus_For_Self_Driving_Car.obj : error LNK2019: unresolved external symbol "public: void __thiscall Matrix::matrix_print(void)" (?matrix_print@Matrix@@QAEXXZ) referenced in function _main
+C:\Users\Valued Customer\source\repos\Cplus_For_Self_Driving_Car\Debug\Cplus_For_Self_Driving_Car.exe : fatal error LNK1120: 2 unresolved externals
