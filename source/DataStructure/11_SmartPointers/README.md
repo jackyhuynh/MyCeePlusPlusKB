@@ -59,7 +59,8 @@ int main() {
 ```
 
 ### **Use Case**:
-Shared pointers are ideal for managing objects that multiple parts of a program need to share, such as a game engine that needs shared access to game assets like textures or models.
+- Shared pointers are ideal for managing objects that multiple parts of a program need to share, such as a game engine that needs shared access to game assets like textures or models.
+- If either p1 or p2 is deleted, the managed object will not be deleted until all std::shared_ptr instances that share ownership of the resource are destroyed. This is a key feature of std::shared_ptr, which uses reference counting to manage the lifetime of the object.
 
 ---
 
