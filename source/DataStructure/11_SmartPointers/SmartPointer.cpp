@@ -14,7 +14,8 @@ void rawPointerExample() {
 void sharedPointerExample() {
     std::shared_ptr<int> p1 = std::make_shared<int>(10);  // Shared ownership
     std::shared_ptr<int> p2 = p1;  // Another shared pointer to the same object
-
+    std::shared_ptr<int> p3 = p1;  // Another shared pointer to the same object
+    
     std::cout << "Shared pointer value: " << *p1 << std::endl;
     std::cout << "Shared pointer reference count: " << p1.use_count() << std::endl;
 }
@@ -25,6 +26,7 @@ void uniquePointerExample() {
     std::unique_ptr<int> p2 = std::move(p1);  // Transfer ownership to p2
 
     if (!p1) {
+        std::cout<<p1<<std::endl;
         std::cout << "p1 is empty after transfer!" << std::endl;
     }
     std::cout << "Unique pointer value: " << *p2 << std::endl;

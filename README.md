@@ -1,4 +1,4 @@
-# Applied Data Structure using C++
+# My C++ Knowledge Base
 
 Welcome to our knowledge base! My goal is to spend less time and accomplish more. I've included all the essential information needed to understand data structure utilization. 
 Here’s a refined version of your outline for clarity and structure:
