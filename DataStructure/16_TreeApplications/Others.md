@@ -3,9 +3,12 @@
 ### **1. Python**
 
 #### **Use Case: File System Representation**
-Python is often used to build tools that interact with the file system. A **file system** can be represented as a tree, where directories are nodes, and subdirectories and files are children.
+
+Python is often used to build tools that interact with the file system. A **file system** can be represented as a tree,
+where directories are nodes, and subdirectories and files are children.
 
 #### **Example**:
+
 ```python
 import os
 
@@ -20,6 +23,7 @@ print_directory_tree("/path/to/directory")
 ```
 
 #### **Other Uses**:
+
 - **Abstract Syntax Trees (AST)** for parsing and compiling code.
 - **Binary Search Trees (BST)** for implementing data structures like sets and maps.
 - **Trie (Prefix Tree)** for autocomplete and spell-checking systems.
@@ -29,9 +33,12 @@ print_directory_tree("/path/to/directory")
 ### **2. Java**
 
 #### **Use Case: Binary Search Tree for Data Management**
-Java is commonly used for creating applications where efficient searching, insertion, and deletion are critical, such as managing user data in a web application.
+
+Java is commonly used for creating applications where efficient searching, insertion, and deletion are critical, such as
+managing user data in a web application.
 
 #### **Example (BST Insert)**:
+
 ```java
 class TreeNode {
     int value;
@@ -65,6 +72,7 @@ class BinarySearchTree {
 ```
 
 #### **Other Uses**:
+
 - **Expression Trees**: Used in compilers and interpreters to evaluate mathematical expressions.
 - **AVL and Red-Black Trees**: Used in Java's **TreeMap** and **TreeSet** for maintaining sorted data.
 
@@ -73,9 +81,12 @@ class BinarySearchTree {
 ### **3. C++**
 
 #### **Use Case: Priority Queue Using Binary Heap**
-In C++, **binary heaps** (a type of tree) are commonly used to implement priority queues. This structure is ideal for task scheduling and real-time systems, where retrieving the highest (or lowest) priority element is crucial.
+
+In C++, **binary heaps** (a type of tree) are commonly used to implement priority queues. This structure is ideal for
+task scheduling and real-time systems, where retrieving the highest (or lowest) priority element is crucial.
 
 #### **Example (Min-Heap)**:
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -133,17 +144,22 @@ int main() {
 ```
 
 #### **Other Uses**:
+
 - **B-trees** and **B+ trees**: Used in databases to store and retrieve data efficiently.
-- **Segment Trees**: For range queries like sum or minimum in a specific range, used in competitive programming and computational geometry.
+- **Segment Trees**: For range queries like sum or minimum in a specific range, used in competitive programming and
+  computational geometry.
 
 ---
 
 ### **4. JavaScript**
 
 #### **Use Case: DOM Tree in Web Development**
-In JavaScript, the **DOM (Document Object Model)** is a tree structure representing the hierarchical structure of an HTML document. Manipulating the DOM tree is a core concept in web development.
+
+In JavaScript, the **DOM (Document Object Model)** is a tree structure representing the hierarchical structure of an
+HTML document. Manipulating the DOM tree is a core concept in web development.
 
 #### **Example**:
+
 ```javascript
 // Access the DOM tree and manipulate it
 const root = document.getElementById("root");
@@ -159,6 +175,7 @@ traverseDOM(root);  // Start from the root element
 ```
 
 #### **Other Uses**:
+
 - **Trie Data Structures**: Often used in building search suggestions and autocomplete features.
 - **Tree Visualization**: Used to dynamically render tree structures (e.g., organizational charts, mind maps).
 
@@ -167,9 +184,12 @@ traverseDOM(root);  // Start from the root element
 ### **5. Go (Golang)**
 
 #### **Use Case: Trie for Fast Lookup**
-In Go, a **Trie** (prefix tree) is used to handle fast lookups for strings, often in applications like autocomplete or DNS lookup systems.
+
+In Go, a **Trie** (prefix tree) is used to handle fast lookups for strings, often in applications like autocomplete or
+DNS lookup systems.
 
 #### **Example (Trie)**:
+
 ```go
 package main
 import "fmt"
@@ -220,6 +240,7 @@ func main() {
 ```
 
 #### **Other Uses**:
+
 - **Binary Trees**: Used for efficient searching and sorting algorithms.
 - **AVL Trees**: Self-balancing trees used in systems that require frequent insertions and deletions, such as caches.
 
@@ -228,9 +249,12 @@ func main() {
 ### **6. Rust**
 
 #### **Use Case: Red-Black Tree for Balanced Searching**
-In Rust, the **Red-Black Tree** is used to implement balanced data structures like **BTreeMap** and **BTreeSet**, which are commonly used for ordered data structures.
+
+In Rust, the **Red-Black Tree** is used to implement balanced data structures like **BTreeMap** and **BTreeSet**, which
+are commonly used for ordered data structures.
 
 #### **Example (BTreeMap)**:
+
 ```rust
 use std::collections::BTreeMap;
 
@@ -255,6 +279,7 @@ fn main() {
 ```
 
 #### **Other Uses**:
+
 - **Suffix Trees**: Used in string matching algorithms.
 - **Interval Trees**: Used in geometric algorithms for finding overlapping intervals.
 
@@ -263,9 +288,12 @@ fn main() {
 ### **7. C#**
 
 #### **Use Case: Expression Trees in LINQ**
-In C#, **expression trees** are used to represent code in a tree-like data structure, making it possible to traverse and modify expressions at runtime, especially useful in **LINQ (Language Integrated Query)**.
+
+In C#, **expression trees** are used to represent code in a tree-like data structure, making it possible to traverse and
+modify expressions at runtime, especially useful in **LINQ (Language Integrated Query)**.
 
 #### **Example**:
+
 ```csharp
 using System;
 using System.Linq.Expressions;
@@ -279,6 +307,7 @@ class Program {
 ```
 
 #### **Other Uses**:
+
 - **Binary Search Trees**: Used for efficient lookups and sorting.
 - **Heaps**: Implemented in priority queues for task scheduling and resource management.
 
@@ -286,4 +315,7 @@ class Program {
 
 ### **Summary**
 
-Trees are fundamental data structures with various applications across different programming languages. From **Binary Search Trees** for efficient search operations to **Tries** for string processing and **Expression Trees** in compilers, trees are used extensively to handle hierarchical and dynamic data efficiently. Each language leverages tree structures based on its specific use cases, such as file systems in Python, DOM trees in JavaScript, and priority queues in C++.
+Trees are fundamental data structures with various applications across different programming languages. From **Binary
+Search Trees** for efficient search operations to **Tries** for string processing and **Expression Trees** in compilers,
+trees are used extensively to handle hierarchical and dynamic data efficiently. Each language leverages tree structures
+based on its specific use cases, such as file systems in Python, DOM trees in JavaScript, and priority queues in C++.

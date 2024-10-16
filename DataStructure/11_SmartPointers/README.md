@@ -1,26 +1,33 @@
 # C++ Interlude 4: Safe Memory Management Using Smart Pointers
 
 ---
-## Resources: 
+
+## Resources:
+
 If you run into some warning, run this. You will need C++ 14 and above to run this.
+
 ```bash
 g++ -std=c++14 -o smart_pointers_example smart_pointers_example.cpp
 ./smart_pointers_example
 ```
 
-
 ## **1. Raw Pointers**
 
 ### **Concept**:
-In C++, raw pointers are used to allocate memory dynamically using the `new` operator. These pointers store references to objects in memory. However, they come with several risks:
+
+In C++, raw pointers are used to allocate memory dynamically using the `new` operator. These pointers store references
+to objects in memory. However, they come with several risks:
+
 - **Memory leaks**: Forgetting to deallocate memory with `delete` leads to wasted memory.
 - **Dangling pointers**: Using pointers to deallocated memory can cause crashes.
 
 ### **Key Issues**:
+
 - The programmer must **manually track** how many pointers reference an object.
 - Failure to manage memory correctly can lead to **dangling pointers** and **memory leaks**.
 
 ### **Example**:
+
 ```cpp
 int* ptr = new int(10);  // Allocate memory
 delete ptr;              // Deallocate memory
@@ -31,9 +38,11 @@ ptr = nullptr;           // Avoid dangling pointer
 
 ## **2. Smart Pointers**
 
-C++ introduced **smart pointers** for automatic memory management. These are template classes that behave like raw pointers but also handle memory deallocation when the pointer goes out of scope.
+C++ introduced **smart pointers** for automatic memory management. These are template classes that behave like raw
+pointers but also handle memory deallocation when the pointer goes out of scope.
 
 ### **Types of Smart Pointers**:
+
 1. **`shared_ptr`**: Allows shared ownership of an object.
 2. **`unique_ptr`**: Exclusive ownership of an object; no other pointer can reference the same object.
 3. **`weak_ptr`**: Observes an object managed by a `shared_ptr` without owning it.
@@ -42,9 +51,11 @@ C++ introduced **smart pointers** for automatic memory management. These are tem
 
 ## **3. Using Shared Pointers**
 
-A **`shared_ptr`** automatically keeps track of the number of aliases (references) to an object. When the reference count drops to zero, it deallocates the memory.
+A **`shared_ptr`** automatically keeps track of the number of aliases (references) to an object. When the reference
+count drops to zero, it deallocates the memory.
 
 ### **Code Example**:
+
 ```cpp
 #include <memory>
 #include <iostream>
@@ -59,16 +70,22 @@ int main() {
 ```
 
 ### **Use Case**:
-- Shared pointers are ideal for managing objects that multiple parts of a program need to share, such as a game engine that needs shared access to game assets like textures or models.
-- If either p1 or p2 is deleted, the managed object will not be deleted until all std::shared_ptr instances that share ownership of the resource are destroyed. This is a key feature of std::shared_ptr, which uses reference counting to manage the lifetime of the object.
+
+- Shared pointers are ideal for managing objects that multiple parts of a program need to share, such as a game engine
+  that needs shared access to game assets like textures or models.
+- If either p1 or p2 is deleted, the managed object will not be deleted until all std::shared_ptr instances that share
+  ownership of the resource are destroyed. This is a key feature of std::shared_ptr, which uses reference counting to
+  manage the lifetime of the object.
 
 ---
 
 ## **4. Using Unique Pointers**
 
-A **`unique_ptr`** ensures that only one pointer can reference an object at a time. Ownership can be transferred using the `std::move` function, but a `unique_ptr` cannot be copied.
+A **`unique_ptr`** ensures that only one pointer can reference an object at a time. Ownership can be transferred using
+the `std::move` function, but a `unique_ptr` cannot be copied.
 
 ### **Code Example**:
+
 ```cpp
 #include <memory>
 #include <iostream>
@@ -85,15 +102,20 @@ int main() {
 ```
 
 ### **Use Case**:
-Unique pointers are best for managing resources where ownership must be clear, such as file handles or hardware resources in embedded systems.
+
+Unique pointers are best for managing resources where ownership must be clear, such as file handles or hardware
+resources in embedded systems.
 
 ---
 
 ## **5. Using Weak Pointers**
 
-A **`weak_ptr`** provides a way to reference an object managed by a `shared_ptr` without increasing its reference count. This is useful in preventing **circular references** (where two objects refer to each other, preventing memory deallocation).
+A **`weak_ptr`** provides a way to reference an object managed by a `shared_ptr` without increasing its reference count.
+This is useful in preventing **circular references** (where two objects refer to each other, preventing memory
+deallocation).
 
 ### **Code Example**:
+
 ```cpp
 #include <memory>
 #include <iostream>
@@ -109,7 +131,9 @@ int main() {
 ```
 
 ### **Use Case**:
-Weak pointers are commonly used in situations where you need to break reference cycles, such as in **graph structures** or **observer patterns**, to prevent memory leaks.
+
+Weak pointers are commonly used in situations where you need to break reference cycles, such as in **graph structures**
+or **observer patterns**, to prevent memory leaks.
 
 ---
 
@@ -118,6 +142,7 @@ Weak pointers are commonly used in situations where you need to break reference 
 Smart pointers can be used in **linked data structures** like linked lists to ensure memory is correctly managed.
 
 ### **Code Example (Revised Node with `shared_ptr`)**:
+
 ```cpp
 #include <memory>
 
@@ -130,10 +155,13 @@ public:
 };
 ```
 
-Using `shared_ptr` in the linked list ensures that nodes are correctly deallocated when no longer needed, without manual memory management.
+Using `shared_ptr` in the linked list ensures that nodes are correctly deallocated when no longer needed, without manual
+memory management.
 
 ### **Use Case**:
-Smart pointers prevent memory leaks in data structures like **linked lists** or **trees** where multiple nodes are dynamically allocated and deallocated.
+
+Smart pointers prevent memory leaks in data structures like **linked lists** or **trees** where multiple nodes are
+dynamically allocated and deallocated.
 
 ---
 
@@ -148,12 +176,16 @@ Smart pointers prevent memory leaks in data structures like **linked lists** or 
 
 ## **Conclusion**
 
-C++ smart pointers (`shared_ptr`, `unique_ptr`, `weak_ptr`) offer a robust solution for safe memory management, reducing risks of memory leaks and dangling pointers. They should be used in modern C++ development to ensure that memory is automatically deallocated when it is no longer needed.
+C++ smart pointers (`shared_ptr`, `unique_ptr`, `weak_ptr`) offer a robust solution for safe memory management, reducing
+risks of memory leaks and dangling pointers. They should be used in modern C++ development to ensure that memory is
+automatically deallocated when it is no longer needed.
 
 --- 
 
-This summary includes an overview of raw and smart pointers, code examples for each type of smart pointer, and practical use cases where smart pointers prevent common memory management issues.
+This summary includes an overview of raw and smart pointers, code examples for each type of smart pointer, and practical
+use cases where smart pointers prevent common memory management issues.
 
 ## More Usecase
+
 - [auto, reference, and constant usecase](./ConstAutoReference.md)
 - [auto, and reference usecase](./AutoRefrence.md)

@@ -2,11 +2,14 @@
 
 ## Introduction
 
-Arithmetic operations in C++ are similar to those in other programming languages. These operations form the foundation of most programs, and understanding them is crucial for solving mathematical and real-world problems. In this lesson, we’ll quickly review basic arithmetic operators (`+`, `-`, `*`, `/`, `%`), followed by a practical programming example.
+Arithmetic operations in C++ are similar to those in other programming languages. These operations form the foundation
+of most programs, and understanding them is crucial for solving mathematical and real-world problems. In this lesson,
+we’ll quickly review basic arithmetic operators (`+`, `-`, `*`, `/`, `%`), followed by a practical programming example.
 
 ## Example: Calculating Volumes of Shapes
 
-Let's create a program that calculates the volumes of three different shapes: a cube, a sphere, and a cone. These calculations will help reinforce your understanding of arithmetic operations in C++.
+Let's create a program that calculates the volumes of three different shapes: a cube, a sphere, and a cone. These
+calculations will help reinforce your understanding of arithmetic operations in C++.
 
 The formulas for calculating the volumes are:
 
@@ -51,30 +54,38 @@ int main()
 ```
 
 ### Explanation:
+
 - We use `std::pow()` from the `cmath` library to perform exponentiation.
 - `M_PI` is a constant in `cmath` that represents the value of π.
 - The `std::cout` statements display the calculated volumes.
 
 ## Implicit Conversions in C++
 
-C++ requires variable types to be explicitly declared at compile time. However, C++ supports **implicit conversions**, meaning the compiler automatically converts one data type to another when necessary. For example, an integer can be implicitly converted to a float, and vice versa. 
+C++ requires variable types to be explicitly declared at compile time. However, C++ supports **implicit conversions**,
+meaning the compiler automatically converts one data type to another when necessary. For example, an integer can be
+implicitly converted to a float, and vice versa.
 
 ### Example of Implicit Conversion:
+
 ```cpp
 int integerVal = 5;
 float floatVal = integerVal; // Implicit conversion from int to float
 ```
 
-Be mindful when performing operations involving multiple types, as implicit conversions can sometimes lead to unintended behavior.
+Be mindful when performing operations involving multiple types, as implicit conversions can sometimes lead to unintended
+behavior.
 
 ## Prefix vs. Postfix Operators
 
 In C++, there are two types of increment (`++`) and decrement (`--`) operators: **prefix** and **postfix**.
 
-- **Prefix** (`++a` or `--a`): The value of the variable is incremented or decremented before it is used in an expression.
-- **Postfix** (`a++` or `a--`): The current value of the variable is used in the expression before it is incremented or decremented.
+- **Prefix** (`++a` or `--a`): The value of the variable is incremented or decremented before it is used in an
+  expression.
+- **Postfix** (`a++` or `a--`): The current value of the variable is used in the expression before it is incremented or
+  decremented.
 
 ### Example:
+
 ```cpp
 int a = 5;
 std::cout << ++a; // Outputs 6 (prefix: increment first, then use)
@@ -87,14 +98,14 @@ Understanding this subtle difference is essential when working with loops or com
 
 Like other programming languages, C++ provides various assignment operators. Here are the most common ones:
 
-| Operator  | Example   | Meaning                     |
-|-----------|-----------|-----------------------------|
-| `=`       | `a = b`   | Assigns `b` to `a`          |
-| `+=`      | `a += b`  | `a = a + b`                 |
-| `-=`      | `a -= b`  | `a = a - b`                 |
-| `*=`      | `a *= b`  | `a = a * b`                 |
-| `/=`      | `a /= b`  | `a = a / b`                 |
-| `%=`      | `a %= b`  | `a = a % b` (modulus)       |
+| Operator | Example  | Meaning               |
+|----------|----------|-----------------------|
+| `=`      | `a = b`  | Assigns `b` to `a`    |
+| `+=`     | `a += b` | `a = a + b`           |
+| `-=`     | `a -= b` | `a = a - b`           |
+| `*=`     | `a *= b` | `a = a * b`           |
+| `/=`     | `a /= b` | `a = a / b`           |
+| `%=`     | `a %= b` | `a = a % b` (modulus) |
 
 ## Control Flow in C++
 

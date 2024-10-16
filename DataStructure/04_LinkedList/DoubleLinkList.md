@@ -5,11 +5,13 @@
 - [Geek for Geek: double Linked List Insertion](https://www.geeksforgeeks.org/introduction-and-insertion-in-a-doubly-linked-list/)
 - What is the head pointer? Is it important?
 - What is the tail pointer?
+
 ---
 
 ## Code:
 
 ### Headers:
+
 ```cpp
 #ifndef DOUBLELINKEDLIST_H
 #define DOUBLELINKEDLIST_H
@@ -48,6 +50,7 @@ public:
 
 #endif
 ```
+
 --- 
 
 ## Double Linked List Implementation:
@@ -200,27 +203,29 @@ void DoubleLinkedList::displayList() {
 
 
 ```
+
 ### **Key Classes**
 
 1. **Node Class**:
-   - Represents a single node in the doubly linked list.
-   - Contains:
-     - `int data`: stores the value of the node.
-     - `Node* next`: pointer to the next node in the list.
-     - `Node* prev`: pointer to the previous node in the list.
-   - **Constructor**: Initializes a node with a given value and sets the `next` and `prev` pointers to `nullptr`.
+    - Represents a single node in the doubly linked list.
+    - Contains:
+        - `int data`: stores the value of the node.
+        - `Node* next`: pointer to the next node in the list.
+        - `Node* prev`: pointer to the previous node in the list.
+    - **Constructor**: Initializes a node with a given value and sets the `next` and `prev` pointers to `nullptr`.
 
 2. **DoubleLinkedList Class**:
-   - Represents the doubly linked list and contains various methods to manipulate the list.
-   - Contains:
-     - `Node* head`: pointer to the head (start) of the list.
-   - **Constructor**: Initializes an empty list by setting `head` to `nullptr`.
+    - Represents the doubly linked list and contains various methods to manipulate the list.
+    - Contains:
+        - `Node* head`: pointer to the head (start) of the list.
+    - **Constructor**: Initializes an empty list by setting `head` to `nullptr`.
 
 ---
 
 ### 1. **`insertAtBeginning(int data)`**
 
 ![Doubly Linked List Insertion At Begining](images/insertAtBeginning.png)
+
 ```cpp
 void DoubleLinkedList::insertAtBeginning(int data) {
     Node* newNode = new Node(data);
@@ -231,7 +236,9 @@ void DoubleLinkedList::insertAtBeginning(int data) {
     head = newNode;
 }
 ```
+
 \
+
 - Inserts a new node with the specified `data` at the beginning of the list.
 - Steps:
     - Create a new node.
@@ -242,7 +249,9 @@ void DoubleLinkedList::insertAtBeginning(int data) {
 ---
 
 #### 2. **`insertAtEnd(int data)`**
+
 ![insertAtEnd](images/insertAtEnd.png)
+
 ```cpp
 void DoubleLinkedList::insertAtEnd(int data) {
     Node* newNode = new Node(data);
@@ -258,15 +267,19 @@ void DoubleLinkedList::insertAtEnd(int data) {
     }
 }
 ```
+
 - Inserts a new node with the specified `data` at the end of the list.
 - Steps:
     - If the list is empty (`head == nullptr`), set the new node as the head.
-    - Otherwise, traverse the list to the last node and link the new node to the end by updating the `next` and `prev` pointers accordingly.
+    - Otherwise, traverse the list to the last node and link the new node to the end by updating the `next` and `prev`
+      pointers accordingly.
 
 ---
 
 #### 3. **`insertAtLocation(int data, int position)`**
+
 ![inserAtGiven](images/InsertAtGiven.png)
+
 ```cpp
 void DoubleLinkedList::insertAtLocation(int data, int position) {
     if (position <= 0) {
@@ -301,43 +314,52 @@ void DoubleLinkedList::insertAtLocation(int data, int position) {
     }
 }
 ```
+
 - Inserts a new node with the specified `data` at a given `position` in the list.
 - Steps:
     - If the position is invalid (i.e., less than or equal to zero), it prints an error message.
     - If the position is 1, it inserts the new node at the beginning.
-    - Otherwise, it traverses the list to find the node at the given position and adjusts the pointers to insert the new node.
+    - Otherwise, it traverses the list to find the node at the given position and adjusts the pointers to insert the new
+      node.
 
 ---
 
 #### 4. **`update(int position, int newData)`**
-   - Updates the node at the specified `position` with a new `data` value.
-   - Steps:
-     - Traverse the list to find the node at the specified position.
-     - If found, update the node’s data with the new value; otherwise, print an error message if the position is invalid.
+
+- Updates the node at the specified `position` with a new `data` value.
+- Steps:
+    - Traverse the list to find the node at the specified position.
+    - If found, update the node’s data with the new value; otherwise, print an error message if the position is invalid.
 
 #### 5. **`deleteByPosition(int position)`**
-   - Deletes the node at the specified `position`.
-   - Steps:
-     - If the list is empty, return.
-     - If deleting the first node, update the `head` pointer and adjust the `prev` pointer of the new head (if it exists).
-     - Otherwise, traverse the list to the node at the given position, then adjust the surrounding pointers to remove the node from the list.
-     - Finally, free the memory allocated for the deleted node.
+
+- Deletes the node at the specified `position`.
+- Steps:
+    - If the list is empty, return.
+    - If deleting the first node, update the `head` pointer and adjust the `prev` pointer of the new head (if it
+      exists).
+    - Otherwise, traverse the list to the node at the given position, then adjust the surrounding pointers to remove the
+      node from the list.
+    - Finally, free the memory allocated for the deleted node.
 
 #### 6. **`isEmpty() const`**
-   - Checks whether the list is empty by returning `true` if `head == nullptr`.
+
+- Checks whether the list is empty by returning `true` if `head == nullptr`.
 
 #### 7. **`clear()`**
-   - Clears the entire list by traversing it and deleting all nodes.
-   - Sets the `head` to `nullptr` after clearing.
+
+- Clears the entire list by traversing it and deleting all nodes.
+- Sets the `head` to `nullptr` after clearing.
 
 #### 8. **`search(int value) const`**
-   - Searches for a node with the specified `value` in the list.
-   - Returns `true` if the value is found, otherwise returns `false`.
+
+- Searches for a node with the specified `value` in the list.
+- Returns `true` if the value is found, otherwise returns `false`.
 
 #### 9. **`displayList()`**
-   - Traverses the list and prints the `data` of each node in order.
-   - Outputs the values to the console followed by a newline.
 
+- Traverses the list and prints the `data` of each node in order.
+- Outputs the values to the console followed by a newline.
 
 ```cpp
 

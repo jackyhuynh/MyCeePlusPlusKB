@@ -4,9 +4,11 @@
 
 ## **1. Specifying the ADT Sorted List**
 
-An **ADT Sorted List** is a container that automatically maintains the order of its entries based on their values. Duplicate items are allowed in this list.
+An **ADT Sorted List** is a container that automatically maintains the order of its entries based on their values.
+Duplicate items are allowed in this list.
 
 ### **Operations Supported**:
+
 - Adding items
 - Removing items
 - Locating items based on their values
@@ -16,7 +18,8 @@ An **ADT Sorted List** is a container that automatically maintains the order of 
 
 ## **2. Interface Template for the ADT Sorted List**
 
-The ADT sorted list defines an interface that specifies these operations without allowing entries to be added or replaced at specific positions (i.e., the positions are determined by the sorting order).
+The ADT sorted list defines an interface that specifies these operations without allowing entries to be added or
+replaced at specific positions (i.e., the positions are determined by the sorting order).
 
 ### **Example Interface (C++):**
 
@@ -38,7 +41,9 @@ public:
 
 ## **3. Link-Based Implementation of a Sorted List**
 
-A common implementation of the sorted list is through a **linked chain of nodes**. This approach avoids the need to shift elements like in arrays. However, inserting elements in the correct position requires traversing the chain, which has a time complexity of **O(n)**.
+A common implementation of the sorted list is through a **linked chain of nodes**. This approach avoids the need to
+shift elements like in arrays. However, inserting elements in the correct position requires traversing the chain, which
+has a time complexity of **O(n)**.
 
 ### **Linked List Implementation Example:**
 
@@ -71,13 +76,17 @@ public:
 ```
 
 ### **Use Case**:
-This linked list-based implementation of the sorted list is ideal for situations where insertions and deletions are frequent, but direct access by index is not required. An example could be a priority queue where items need to stay sorted based on their priority.
+
+This linked list-based implementation of the sorted list is ideal for situations where insertions and deletions are
+frequent, but direct access by index is not required. An example could be a priority queue where items need to stay
+sorted based on their priority.
 
 ---
 
 ## **4. Containment: Reusing ADT List Implementations**
 
-Another approach to implementing the sorted list is **containment**, where the sorted list contains an instance of another list (like a linked list). This helps avoid duplicating the functionality provided by the ADT List.
+Another approach to implementing the sorted list is **containment**, where the sorted list contains an instance of
+another list (like a linked list). This helps avoid duplicating the functionality provided by the ADT List.
 
 ### **Containment Example:**
 
@@ -98,13 +107,17 @@ public:
 ```
 
 ### **Use Case**:
-Containment is useful when you already have an existing linked list or vector implementation and want to reuse it to build more complex structures like a sorted list. For instance, a database might use this approach to maintain a sorted list of records without duplicating effort.
+
+Containment is useful when you already have an existing linked list or vector implementation and want to reuse it to
+build more complex structures like a sorted list. For instance, a database might use this approach to maintain a sorted
+list of records without duplicating effort.
 
 ---
 
 ## **5. Public Inheritance**
 
-Public inheritance can be used when there is an **is-a relationship** between the ADT Sorted List and an existing list class. For example, a **SortedListIsA** class can inherit from a `LinkedList` class and override methods as needed.
+Public inheritance can be used when there is an **is-a relationship** between the ADT Sorted List and an existing list
+class. For example, a **SortedListIsA** class can inherit from a `LinkedList` class and override methods as needed.
 
 ### **Public Inheritance Example:**
 
@@ -122,22 +135,25 @@ public:
 ```
 
 ### **Use Case**:
-Inheritance is ideal for extending the functionality of a base list class, such as when creating a specialized list like a sorted or filtered list from a generic list implementation.
+
+Inheritance is ideal for extending the functionality of a base list class, such as when creating a specialized list like
+a sorted or filtered list from a generic list implementation.
 
 ---
 
 ## **6. Efficiency Considerations**
 
 - **Link-based implementation**: Insertion requires traversing the list to find the correct position, which is **O(n)**.
-- **Containment** and **inheritance** implementations** leverage existing list structures, and their efficiency is based on the underlying list's operations.
+- **Containment** and **inheritance** implementations** leverage existing list structures, and their efficiency is based
+  on the underlying list's operations.
 
 ### **Efficiency Example**:
 
-| Operation         | Array-Based Implementation | Link-Based Implementation |
-|-------------------|----------------------------|---------------------------|
-| Insert            | O(n)                        | O(n)                       |
-| Remove            | O(n)                        | O(n)                       |
-| Access by Position| O(1)                        | O(n)                       |
+| Operation          | Array-Based Implementation | Link-Based Implementation |
+|--------------------|----------------------------|---------------------------|
+| Insert             | O(n)                       | O(n)                      |
+| Remove             | O(n)                       | O(n)                      |
+| Access by Position | O(1)                       | O(n)                      |
 
 ---
 
@@ -145,8 +161,10 @@ Inheritance is ideal for extending the functionality of a base list class, such 
 
 - The ADT Sorted List ensures entries are maintained in order based on their values.
 - Various implementations are possible, including link-based structures, containment, and inheritance.
-- The choice of implementation should depend on the specific use case, such as whether insertions, deletions, or access by position is more frequent.
+- The choice of implementation should depend on the specific use case, such as whether insertions, deletions, or access
+  by position is more frequent.
 
 ---
 
-This summary provides an overview of the different implementations of the ADT Sorted List, including code samples and practical use cases for each approach.
+This summary provides an overview of the different implementations of the ADT Sorted List, including code samples and
+practical use cases for each approach.

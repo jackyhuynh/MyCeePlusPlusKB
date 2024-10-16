@@ -2,26 +2,34 @@
 using namespace std;
 
 // Node class remains the same
-class Node {
+class Node
+{
 public:
     int data; // In a real priority queue, you might have a separate 'priority' field.
     Node* next;
 
     // Constructor
-    Node(int data) : data(data), next(nullptr) {}
+    Node(int data) : data(data), next(nullptr)
+    {
+    }
 };
 
 // Priority Queue class
-class PriorityQueue {
+class PriorityQueue
+{
 private:
     Node* front; // front of the queue
 public:
     // Constructor
-    PriorityQueue() : front(nullptr) {}
+    PriorityQueue() : front(nullptr)
+    {
+    }
 
     // Destructor
-    ~PriorityQueue() {
-        while (front != nullptr) {
+    ~PriorityQueue()
+    {
+        while (front != nullptr)
+        {
             Node* temp = front;
             front = front->next;
             delete temp;
@@ -29,17 +37,22 @@ public:
     }
 
     // Enqueue function modified for priority insertion
-    void enqueue(int data) {
+    void enqueue(int data)
+    {
         Node* newNode = new Node(data);
         // If the queue is empty or the new node's data is less than the front node's data,
         // insert the new node at the front
-        if (front == nullptr || newNode->data < front->data) {
+        if (front == nullptr || newNode->data < front->data)
+        {
             newNode->next = front;
             front = newNode;
-        } else {
+        }
+        else
+        {
             Node* temp = front;
             // Find the insertion point
-            while (temp->next != nullptr && temp->next->data <= newNode->data) {
+            while (temp->next != nullptr && temp->next->data <= newNode->data)
+            {
                 temp = temp->next;
             }
             newNode->next = temp->next;
@@ -48,8 +61,10 @@ public:
     }
 
     // Dequeue function remains the same (removes the front element)
-    int dequeue() {
-        if (isEmpty()) {
+    int dequeue()
+    {
+        if (isEmpty())
+        {
             cout << "Queue is empty" << endl;
             return -1;
         }
@@ -62,13 +77,16 @@ public:
     }
 
     // Check if the queue is empty
-    bool isEmpty() {
+    bool isEmpty()
+    {
         return front == nullptr;
     }
 
     // Peek at the front of the queue
-    int peekFront() {
-        if (isEmpty()) {
+    int peekFront()
+    {
+        if (isEmpty())
+        {
             cout << "Queue is empty" << endl;
             return -1;
         }
@@ -76,7 +94,8 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     PriorityQueue pq;
     pq.enqueue(30);
     pq.enqueue(10);

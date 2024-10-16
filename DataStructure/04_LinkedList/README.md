@@ -1,53 +1,63 @@
 ## Lesson: Doubly Linked List in C++ (Raw Pointers)
 
 ### **Introduction to Doubly Linked List**
+
 A **doubly linked list** is a type of data structure that consists of nodes where each node contains:
+
 1. **Data**: The value to be stored.
 2. **Next Pointer**: A pointer to the next node in the list.
 3. **Previous Pointer**: A pointer to the previous node in the list.
 
-Unlike a **singly linked list**, where each node points to only the next node, the doubly linked list allows traversal in both directions, making certain operations more efficient.
+Unlike a **singly linked list**, where each node points to only the next node, the doubly linked list allows traversal
+in both directions, making certain operations more efficient.
 
 ### **Basic Operations:
+
 - Thinks about a LinkedList as a Lego Blocks and we link them together
 - Insert a Node at the beginning of the list.
-![insert at beginning](./images/insertAtBeginning.png)
+  ![insert at beginning](./images/insertAtBeginning.png)
 
 - Insert a Node at the end of the list
-![insert at the end](./images/insertAtEnd.png)
+  ![insert at the end](./images/insertAtEnd.png)
 
 - Insert a Node at the specifix index
-![insert at specific index](./images/InsertAtGiven.png)
+  ![insert at specific index](./images/InsertAtGiven.png)
 
 ### **Doubly Linked List API (Public Interface)**
 
 Here's the public interface (API) for the doubly linked list:
+
 1. **Add Operations**:
-   - `void push_front(T data)`: Insert a node at the front of the list.
-   - `void push_back(T data)`: Insert a node at the back of the list.
-   - `void insert_at(T data, int position)`: Insert a node at a specific position.
-  
+    - `void push_front(T data)`: Insert a node at the front of the list.
+    - `void push_back(T data)`: Insert a node at the back of the list.
+    - `void insert_at(T data, int position)`: Insert a node at a specific position.
+
 2. **Remove Operations**:
-   - `void pop_front()`: Remove the node from the front of the list.
-   - `void pop_back()`: Remove the node from the back of the list.
-   - `void remove_at(int position)`: Remove the node at a specific position.
+    - `void pop_front()`: Remove the node from the front of the list.
+    - `void pop_back()`: Remove the node from the back of the list.
+    - `void remove_at(int position)`: Remove the node at a specific position.
 
 3. **Traversal and Access**:
-   - `T front()`: Return the data of the front node.
-   - `T back()`: Return the data of the back node.
-   - `void display_forward()`: Display all the nodes starting from the head.
-   - `void display_backward()`: Display all the nodes starting from the tail.
+    - `T front()`: Return the data of the front node.
+    - `T back()`: Return the data of the back node.
+    - `void display_forward()`: Display all the nodes starting from the head.
+    - `void display_backward()`: Display all the nodes starting from the tail.
 
 4. **Utility Functions**:
-   - `bool empty()`: Check if the list is empty.
-   - `int size()`: Return the number of nodes in the list.
+    - `bool empty()`: Check if the list is empty.
+    - `int size()`: Return the number of nodes in the list.
 
 #### **Use Cases of Doubly Linked Lists**
+
 Doubly linked lists are suitable for use cases where:
-1. **Bidirectional Traversal**: If you need to navigate in both directions, e.g., navigating through browser history or in multimedia applications (forward/backward).
-2. **Efficient Insertion/Deletion**: If your application requires frequent insertions or deletions in the middle of a list, doubly linked lists are more efficient than arrays because they do not require shifting elements.
+
+1. **Bidirectional Traversal**: If you need to navigate in both directions, e.g., navigating through browser history or
+   in multimedia applications (forward/backward).
+2. **Efficient Insertion/Deletion**: If your application requires frequent insertions or deletions in the middle of a
+   list, doubly linked lists are more efficient than arrays because they do not require shifting elements.
 
 Some real-world use cases:
+
 - Implementing undo-redo functionality.
 - Navigating through pages in a web browser’s history.
 - Data manipulation where frequent modification of internal nodes is required.
@@ -261,13 +271,19 @@ int main() {
 ```
 
 ### **Key Points**
-1. **Memory Management**: Since this implementation uses raw pointers, manual memory management is required. Remember to handle `new` and `delete` carefully to avoid memory leaks.
-2. **Traversal**: The doubly linked list allows bidirectional traversal using the `prev` and `next` pointers, which makes certain operations faster than with a singly linked list.
-3. **Flexibility**: Operations such as insertion and deletion are O(1) when inserting/removing at the head or tail, and O(n) when accessing or modifying nodes in the middle.
+
+1. **Memory Management**: Since this implementation uses raw pointers, manual memory management is required. Remember to
+   handle `new` and `delete` carefully to avoid memory leaks.
+2. **Traversal**: The doubly linked list allows bidirectional traversal using the `prev` and `next` pointers, which
+   makes certain operations faster than with a singly linked list.
+3. **Flexibility**: Operations such as insertion and deletion are O(1) when inserting/removing at the head or tail, and
+   O(n) when accessing or modifying nodes in the middle.
 
 ### **Summary**
+
 - **Doubly Linked List** allows both forward and backward traversal.
 - This implementation uses raw pointers, requiring manual memory management.
-- It provides various operations like insertion, deletion, and traversal that are efficient in certain scenarios, making it useful in various applications such as undo-redo systems and browsing history tracking.
+- It provides various operations like insertion, deletion, and traversal that are efficient in certain scenarios, making
+  it useful in various applications such as undo-redo systems and browsing history tracking.
 
 This concludes the lesson on doubly linked lists using C++ raw pointers.

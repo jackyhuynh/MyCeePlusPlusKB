@@ -1,8 +1,12 @@
 # Template <typename T> Pointer Strategies
 
-developers can directly define a template pointer in C++, but you must always specify the **template argument** when creating the pointer or using the template class or function. You cannot define a pointer to a template without specifying the type `T`, because templates are essentially "blueprints" and must be instantiated with a specific type before they can be used.
+developers can directly define a template pointer in C++, but you must always specify the **template argument** when
+creating the pointer or using the template class or function. You cannot define a pointer to a template without
+specifying the type `T`, because templates are essentially "blueprints" and must be instantiated with a specific type
+before they can be used.
 
 ### Key Points:
+
 1. **Templates** are not concrete types until you provide a specific type for the template parameter.
 2. **Template pointers** must have the type `T` specified at the time of pointer definition.
 
@@ -10,9 +14,11 @@ Let’s go over what you can and cannot do, with examples.
 
 ### 1. **Direct Template Pointer Definition (with Type Specified)**
 
-You **can** directly define a pointer to a template class or function **once the type is specified** for the template parameter.
+You **can** directly define a pointer to a template class or function **once the type is specified** for the template
+parameter.
 
 #### Example: Template Class Pointer
+
 ```cpp
 template <typename T>
 class MyClass {
@@ -41,9 +47,11 @@ int main() {
 }
 ```
 
-Here, `MyClass<int>* ptr` is a valid pointer because we have specified `int` as the template argument. You can then assign the pointer to an object of type `MyClass<int>`.
+Here, `MyClass<int>* ptr` is a valid pointer because we have specified `int` as the template argument. You can then
+assign the pointer to an object of type `MyClass<int>`.
 
 #### Example: Template Function Pointer
+
 You can also define a pointer to a **template function**, but again, you must specify the template type.
 
 ```cpp
@@ -70,6 +78,7 @@ In this case, `funcPtr` is a pointer to the `display<int>` function.
 Templates are like **blueprints** in C++, and they are not actual "types" until the template parameter is specified.
 
 For example, this is **not allowed**:
+
 ```cpp
 template <typename T>
 class MyClass;
@@ -78,11 +87,13 @@ class MyClass;
 MyClass<T>* ptr;  // ERROR: T is not defined!
 ```
 
-The compiler doesn’t know what `T` is, so it cannot define a pointer to `MyClass<T>`. To make this work, you must instantiate the template with a specific type, like `MyClass<int>` or `MyClass<double>`.
+The compiler doesn’t know what `T` is, so it cannot define a pointer to `MyClass<T>`. To make this work, you must
+instantiate the template with a specific type, like `MyClass<int>` or `MyClass<double>`.
 
 ### 3. **Using Typedef or Aliases with Templates**
 
-You can use `typedef` or `using` to simplify template pointer definitions. For instance, if you frequently use the template class with the same type, you can create an alias:
+You can use `typedef` or `using` to simplify template pointer definitions. For instance, if you frequently use the
+template class with the same type, you can create an alias:
 
 ```cpp
 template <typename T>
@@ -111,6 +122,9 @@ int main() {
 ```
 
 ### Conclusion:
-You cannot directly define a template pointer without specifying the template type (e.g., `T`), as the template needs to be instantiated with a specific type like `int`, `double`, etc. Once the type is specified, you can define the pointer just like you would with any regular class or function.
+
+You cannot directly define a template pointer without specifying the template type (e.g., `T`), as the template needs to
+be instantiated with a specific type like `int`, `double`, etc. Once the type is specified, you can define the pointer
+just like you would with any regular class or function.
 
 [Prev](./README.md)

@@ -2,9 +2,12 @@
 
 ## Object Files
 
-When you compile a source code file (such as a `.cpp` file), it produces an **object file**. An object file contains machine code but is not yet executable. It also includes important information like public APIs (symbols) and unresolved references that need to be linked to other object files or libraries. 
+When you compile a source code file (such as a `.cpp` file), it produces an **object file**. An object file contains
+machine code but is not yet executable. It also includes important information like public APIs (symbols) and unresolved
+references that need to be linked to other object files or libraries.
 
 Object files can come from:
+
 - Other source files within the same project.
 - External or system libraries.
 
@@ -12,30 +15,43 @@ To make the object file executable, it needs to be linked with other object file
 
 ## Linking
 
-**Linking** is the process of combining object files to create a fully functional executable. During linking, symbolic references between object files are resolved, and the result is a self-contained binary that includes all the machine code needed to run the program.
+**Linking** is the process of combining object files to create a fully functional executable. During linking, symbolic
+references between object files are resolved, and the result is a self-contained binary that includes all the machine
+code needed to run the program.
 
 ### Dynamic Linking
 
-In some cases, the executable does not include all the code. Instead, **dynamic linking** is used, where references to libraries are resolved at runtime. This reduces file size but can introduce complications if the linked libraries change unexpectedly, potentially causing bugs.
+In some cases, the executable does not include all the code. Instead, **dynamic linking** is used, where references to
+libraries are resolved at runtime. This reduces file size but can introduce complications if the linked libraries change
+unexpectedly, potentially causing bugs.
 
 ### Advantages of Dynamic Linking:
+
 - Reduces the size of the executable.
 - Libraries can be updated without recompiling the program.
 
 ### Disadvantages of Dynamic Linking:
+
 - Changes in libraries can lead to unexpected behavior if a new version has breaking changes.
 
 ![Linking Process](./images/Linking.PNG)
+
 ## Compiling with a Compiler
 
-To convert C++ source code into an executable, you need a **compiler**. The compiler generates machine code specific to your system's architecture. The **GNU Compiler Collection (GCC)**, commonly known as `g++` for C++, is a widely used open-source compiler.
+To convert C++ source code into an executable, you need a **compiler**. The compiler generates machine code specific to
+your system's architecture. The **GNU Compiler Collection (GCC)**, commonly known as `g++` for C++, is a widely used
+open-source compiler.
 
 However, using `g++` directly can be cumbersome, especially for large projects. Here are two common challenges:
 
-1. **Long command lines**: You need to provide paths for all source files, header files, and any necessary compiler flags, which can result in long and error-prone commands.
-2. **Recompiling everything**: In large projects, if you modify just one source file, you typically only need to recompile that file. But using `g++` alone doesn’t track which files have changed, leading to unnecessary recompilation.
+1. **Long command lines**: You need to provide paths for all source files, header files, and any necessary compiler
+   flags, which can result in long and error-prone commands.
+2. **Recompiling everything**: In large projects, if you modify just one source file, you typically only need to
+   recompile that file. But using `g++` alone doesn’t track which files have changed, leading to unnecessary
+   recompilation.
 
-To address these challenges, tools like **Make** are often used to manage compilation efficiently by only recompiling files that have changed.
+To address these challenges, tools like **Make** are often used to manage compilation efficiently by only recompiling
+files that have changed.
 
 ---
 
@@ -46,9 +62,11 @@ The easiest and most direct method of compiling C++ programs is through the term
 ### Step 1: Open a Terminal Window
 
 On Mac:
+
 - Open the **Terminal** application from your applications folder.
 
 On Windows:
+
 - Open the **Command Prompt**.
 
 Here's a screenshot of the terminal icon on macOS:
@@ -63,7 +81,8 @@ To check if `g++` is installed on your system, type:
 g++ --help
 ```
 
-If you see a list of options, `g++` is installed correctly. If not, you may need to install it or fix your system’s path configuration.
+If you see a list of options, `g++` is installed correctly. If not, you may need to install it or fix your system’s path
+configuration.
 
 ### Step 3: Navigate to Your Project Directory
 
@@ -75,6 +94,7 @@ Use the following Unix or Windows commands to navigate to your project directory
 - `dir`: List the contents of the directory (Windows).
 
 Example:
+
 ```bash
 cd path/to/your/program
 ```
@@ -90,6 +110,7 @@ g++ filename.cpp -o executableName
 ```
 
 For example:
+
 ```bash
 g++ assignment2.cpp -o assignment2
 ```
@@ -107,6 +128,7 @@ To run the compiled program, type:
 ```
 
 For example:
+
 ```bash
 ./assignment2
 ```
@@ -116,5 +138,7 @@ For example:
 ### Common Mistakes When Compiling:
 
 1. **Spaces in filenames**: Avoid using spaces in filenames or directory names.
-2. **File not found**: Ensure all required files (such as header files) are in the working directory. Use `ls` or `dir` to check.
-3. **Missing C++ libraries**: If `g++` is not installed, you may need to install it via your system’s package manager (e.g., `brew` on macOS, `apt` on Ubuntu).
+2. **File not found**: Ensure all required files (such as header files) are in the working directory. Use `ls` or `dir`
+   to check.
+3. **Missing C++ libraries**: If `g++` is not installed, you may need to install it via your system’s package manager (
+   e.g., `brew` on macOS, `apt` on Ubuntu).

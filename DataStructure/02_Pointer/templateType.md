@@ -1,13 +1,19 @@
 # Template <typename T>
 
-A `template <typename T>` in C++ is a feature that allows you to write generic and reusable code that works with different data types. It enables you to create classes, functions, or even variables where the type (`T`) is a placeholder for an actual data type (such as `int`, `float`, `string`, etc.) that will be specified later when the template is instantiated. This promotes code reusability and flexibility, as the same piece of code can work with various types without needing to rewrite it for each type.
+A `template <typename T>` in C++ is a feature that allows you to write generic and reusable code that works with
+different data types. It enables you to create classes, functions, or even variables where the type (`T`) is a
+placeholder for an actual data type (such as `int`, `float`, `string`, etc.) that will be specified later when the
+template is instantiated. This promotes code reusability and flexibility, as the same piece of code can work with
+various types without needing to rewrite it for each type.
 
 ### Key Concepts:
 
-- **`typename T`**: `T` is a placeholder for a type. The keyword `typename` tells the compiler that `T` will be a type, and it could be replaced with any valid data type when the template is used.
+- **`typename T`**: `T` is a placeholder for a type. The keyword `typename` tells the compiler that `T` will be a type,
+  and it could be replaced with any valid data type when the template is used.
 - Templates allow you to write code **once** and use it for **multiple data types**, reducing redundancy.
 
 ### Types of Templates:
+
 1. **Function Templates**: Functions that can operate on any data type.
 2. **Class Templates**: Classes that can store or operate on any data type.
 
@@ -18,6 +24,7 @@ A `template <typename T>` in C++ is a feature that allows you to write generic a
 A **function template** is used when you want the same function to work with multiple data types.
 
 #### Example: Template Function for Swapping Two Values
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -50,9 +57,11 @@ int main() {
 ```
 
 **Explanation**:
+
 - The function `swapValues` can work with any data type, such as `int` or `double`.
 - `template <typename T>` defines the function as a template.
-- When you call `swapValues(x, y)`, `T` is automatically deduced as `int`. Similarly, `T` is deduced as `double` when calling `swapValues(d1, d2)`.
+- When you call `swapValues(x, y)`, `T` is automatically deduced as `int`. Similarly, `T` is deduced as `double` when
+  calling `swapValues(d1, d2)`.
 
 ---
 
@@ -61,6 +70,7 @@ int main() {
 A **class template** is used when you want a class to operate on different data types.
 
 #### Example: Template Class for a Simple Generic Container
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -92,6 +102,7 @@ int main() {
 ```
 
 **Explanation**:
+
 - `template <typename T>` defines a generic class `Box` that can hold any type `T`.
 - When creating an instance of `Box<int>`, `T` is replaced with `int`.
 - Similarly, `Box<string>` replaces `T` with `string`.
@@ -100,19 +111,27 @@ int main() {
 
 ### Why Use `template <typename T>`?
 
-1. **Code Reusability**: Instead of writing separate functions or classes for each data type, you write it once and reuse it for multiple types.
+1. **Code Reusability**: Instead of writing separate functions or classes for each data type, you write it once and
+   reuse it for multiple types.
 2. **Type Flexibility**: You can use the same logic for different data types, making your code more adaptable.
-3. **Reduce Code Duplication**: Templates reduce the need for writing the same code for different types (e.g., separate `swap` functions for `int`, `float`, `double`, etc.).
+3. **Reduce Code Duplication**: Templates reduce the need for writing the same code for different types (e.g., separate
+   `swap` functions for `int`, `float`, `double`, etc.).
 
 ### How Templates Work:
-When you use a template with a specific type (e.g., `Box<int>` or `swapValues(5, 10)`), the compiler **instantiates** the template by generating a concrete version of the class or function, replacing `T` with the specified type. This happens at compile time, so there is no runtime overhead associated with templates.
+
+When you use a template with a specific type (e.g., `Box<int>` or `swapValues(5, 10)`), the compiler **instantiates**
+the template by generating a concrete version of the class or function, replacing `T` with the specified type. This
+happens at compile time, so there is no runtime overhead associated with templates.
 
 ---
 
 ### Template Specialization:
-Sometimes you may want to write a specific version of the template for a certain type. This is called **template specialization**.
+
+Sometimes you may want to write a specific version of the template for a certain type. This is called **template
+specialization**.
 
 #### Example: Specialized Version for `char*` (C-Strings)
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -137,7 +156,8 @@ int main() {
 }
 ```
 
-In this example, we have specialized the `printValue` function for `char*` to handle strings differently from other types.
+In this example, we have specialized the `printValue` function for `char*` to handle strings differently from other
+types.
 
 ---
 

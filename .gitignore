@@ -9,3 +9,5 @@ driver_*
 a.out
 .idea/
 .DS_Store
+DataStructure/answer/
+cmake-build-debug/

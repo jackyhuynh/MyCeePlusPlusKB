@@ -1,11 +1,12 @@
-
 # Data Types in C++
 
-*Material retrieved from [Udacity](https://classroom.udacity.com/courses/ud210/lessons/1343a461-102f-41e1-b505-bf9ec62f427b/concepts/b1e0db7a-619e-4f23-a30d-b505d84ae3bc)*
+*Material retrieved
+from [Udacity](https://classroom.udacity.com/courses/ud210/lessons/1343a461-102f-41e1-b505-bf9ec62f427b/concepts/b1e0db7a-619e-4f23-a30d-b505d84ae3bc)*
 
 ## C++ Preprocessor Directives and the `main` Function
 
 Each C++ program typically has two key parts:
+
 1. **Preprocessor Directives**
 2. **The `main` Function**
 
@@ -23,15 +24,18 @@ int main()
 
 ### Preprocessor Directives
 
-Any line starting with a `#` is a preprocessor directive. The most common one is `#include`, which tells the compiler to include the contents of a file.
+Any line starting with a `#` is a preprocessor directive. The most common one is `#include`, which tells the compiler to
+include the contents of a file.
 
 ```cpp
 #include <iostream>
 ```
 
-This statement adds the declarations from the `iostream` library, which is required for input and output operations in C++. The `<>` brackets instruct the compiler to look for the file in the system’s standard library directory.
+This statement adds the declarations from the `iostream` library, which is required for input and output operations in
+C++. The `<>` brackets instruct the compiler to look for the file in the system’s standard library directory.
 
-When using quotes (`" "`), C++ will search in the current directory first, and then in the standard library directories if the file is not found.
+When using quotes (`" "`), C++ will search in the current directory first, and then in the standard library directories
+if the file is not found.
 
 ```cpp
 #include "main.hpp"
@@ -53,10 +57,11 @@ int main()
 
 ## Comments in C++
 
-Comments help explain how the code works but should not describe **why** it works a certain way. They can be written in two ways:
+Comments help explain how the code works but should not describe **why** it works a certain way. They can be written in
+two ways:
 
 1. **Block Comments**: Enclosed within `/*` and `*/`.
-   
+
    Example:
    ```cpp
    /* This is a block comment.
@@ -72,7 +77,8 @@ Comments help explain how the code works but should not describe **why** it work
 
 ## C++ Programming Style Guide
 
-There are many style guides available for C++ development, and while we don’t enforce a strict style in this course, consistency is key for readability. The following are useful style guides:
+There are many style guides available for C++ development, and while we don’t enforce a strict style in this course,
+consistency is key for readability. The following are useful style guides:
 
 - [Modern C++ Coding Guidelines](https://github.com/Microsoft/AirSim/blob/master/docs/coding_guidelines.md)
 - [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
@@ -97,7 +103,8 @@ To run the compiled program, execute the following:
 
 ## `namespace std`
 
-Including `using namespace std;` allows you to avoid prefixing standard library functions (like `std::cout`) with `std::`. Here’s an example:
+Including `using namespace std;` allows you to avoid prefixing standard library functions (like `std::cout`) with
+`std::`. Here’s an example:
 
 ```cpp
 using namespace std;
@@ -112,6 +119,7 @@ int main()
 The `sizeof` operator helps determine the memory size (in bytes) of a data type.
 
 Example:
+
 ```cpp
 cout << "Size of int: " << sizeof(int) << " bytes\n";
 ```
@@ -119,6 +127,7 @@ cout << "Size of int: " << sizeof(int) << " bytes\n";
 ### Printing with Newline or `endl`
 
 You can print newlines in two ways:
+
 1. Using `\n`:
    ```cpp
    cout << "Hello\n";
@@ -129,13 +138,16 @@ You can print newlines in two ways:
    cout << "Hello" << endl;
    ```
 
-While both work similarly, `endl` flushes the output buffer, which can affect performance in some scenarios. Learn more about the differences between `\n` and `endl` [here](#).
+While both work similarly, `endl` flushes the output buffer, which can affect performance in some scenarios. Learn more
+about the differences between `\n` and `endl` [here](#).
 
 ## Defining Constants with `const`
 
-In C++, you can define a constant using the `const` keyword. The value of a constant cannot change during the program’s execution.
+In C++, you can define a constant using the `const` keyword. The value of a constant cannot change during the program’s
+execution.
 
 Example:
+
 ```cpp
 const int MAX_SIZE = 100;
 ```
@@ -145,6 +157,7 @@ const int MAX_SIZE = 100;
 C++ also supports **enumerated constants** that allow you to define a type with a fixed set of values.
 
 Example:
+
 ```cpp
 enum MONTH { Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec };
 ```
@@ -153,9 +166,11 @@ Here, each month is assigned an integer starting from 0 (e.g., `Jan = 0`, `Feb =
 
 ## Formatting Output with `iomanip`
 
-You can format your program’s output using the `iomanip` library, which provides features like setting field width with `setw`.
+You can format your program’s output using the `iomanip` library, which provides features like setting field width with
+`setw`.
 
 Example:
+
 ```cpp
 #include <iomanip>
 cout << "Ints" << setw(15) << "Floats" << setw(15) << "Doubles" << "\n";
@@ -169,7 +184,8 @@ Ints         Floats        Doubles
 
 ## Input and Output Streams (`fstream`)
 
-C++ provides functionality to read from and write to files via the `<fstream>` library. There are three types of file streams:
+C++ provides functionality to read from and write to files via the `<fstream>` library. There are three types of file
+streams:
 
 - `ofstream`: For writing to files.
 - `ifstream`: For reading from files.
@@ -187,9 +203,11 @@ outfile.close();
 
 ## Header Files
 
-Header files (`.hpp` or `.h` extensions) contain declarations that can be included in other files using `#include`. They help organize the code by separating declarations (how to do something) from the implementation (what to do).
+Header files (`.hpp` or `.h` extensions) contain declarations that can be included in other files using `#include`. They
+help organize the code by separating declarations (how to do something) from the implementation (what to do).
 
 Example:
+
 ```cpp
 #include "main.hpp"
 ```
@@ -199,9 +217,11 @@ Example:
 The `cin` function stops reading a string when it encounters a space. To read an entire line, use `getline`.
 
 Example:
+
 ```cpp
 string name;
 getline(cin, name);
 ```
 
-`getline` reads the entire line until a newline (`\n`) is encountered, storing it in the `name` variable. You can also specify a different delimiter if necessary.
+`getline` reads the entire line until a newline (`\n`) is encountered, storing it in the `name` variable. You can also
+specify a different delimiter if necessary.

@@ -3,7 +3,9 @@
 ## **1. Python**
 
 ### **Use Case:**
-Python’s list is a dynamic array that can hold elements of different types and is commonly used to store and manipulate ordered data. For example, lists can be used to track tasks in a to-do application.
+
+Python’s list is a dynamic array that can hold elements of different types and is commonly used to store and manipulate
+ordered data. For example, lists can be used to track tasks in a to-do application.
 
 ### **Sample Code:**
 
@@ -26,14 +28,18 @@ for fruit in fruits:
 ```
 
 ### **Use Case:**
-Used for dynamic data storage where items need to be inserted, removed, or accessed by index, such as in task management apps.
+
+Used for dynamic data storage where items need to be inserted, removed, or accessed by index, such as in task management
+apps.
 
 ---
 
 ## **2. Java**
 
 ### **Use Case:**
-Java provides an `ArrayList` as part of the Java Collections Framework. It is a resizable array implementation that can be used in applications where a dynamic array is needed, such as maintaining a list of student records.
+
+Java provides an `ArrayList` as part of the Java Collections Framework. It is a resizable array implementation that can
+be used in applications where a dynamic array is needed, such as maintaining a list of student records.
 
 ### **Sample Code:**
 
@@ -65,14 +71,18 @@ public class Main {
 ```
 
 ### **Use Case:**
-`ArrayList` is frequently used in applications where data size is dynamic, such as storing user input, search results, or game scores.
+
+`ArrayList` is frequently used in applications where data size is dynamic, such as storing user input, search results,
+or game scores.
 
 ---
 
 ## **3. C++**
 
 ### **Use Case:**
-In C++, the `std::vector` is the most commonly used dynamic array-like structure that supports random access and is used in scenarios like processing a dynamic number of events in a simulation system.
+
+In C++, the `std::vector` is the most commonly used dynamic array-like structure that supports random access and is used
+in scenarios like processing a dynamic number of events in a simulation system.
 
 ### **Sample Code:**
 
@@ -103,14 +113,18 @@ int main() {
 ```
 
 ### **Use Case:**
-`std::vector` is ideal for situations where elements are frequently added and removed, like managing participants in an online multiplayer game.
+
+`std::vector` is ideal for situations where elements are frequently added and removed, like managing participants in an
+online multiplayer game.
 
 ---
 
 ## **4. Go**
 
 ### **Use Case:**
-Go does not have a traditional list, but it uses **slices**, which are dynamic arrays. These are frequently used for handling variable-length data, such as storing API responses.
+
+Go does not have a traditional list, but it uses **slices**, which are dynamic arrays. These are frequently used for
+handling variable-length data, such as storing API responses.
 
 ### **Sample Code:**
 
@@ -139,14 +153,18 @@ func main() {
 ```
 
 ### **Use Case:**
-Slices are great for processing data streams where data arrives in bursts, such as processing logs from multiple servers in real-time.
+
+Slices are great for processing data streams where data arrives in bursts, such as processing logs from multiple servers
+in real-time.
 
 ---
 
 ## **5. JavaScript**
 
 ### **Use Case:**
-JavaScript's `Array` is a flexible list structure that is used extensively for handling data in web applications, such as managing items in a shopping cart.
+
+JavaScript's `Array` is a flexible list structure that is used extensively for handling data in web applications, such
+as managing items in a shopping cart.
 
 ### **Sample Code:**
 
@@ -168,14 +186,18 @@ fruits.forEach(fruit => console.log(fruit));
 ```
 
 ### **Use Case:**
-JavaScript arrays are commonly used in client-side web development to store and manipulate DOM elements, user input, and JSON data from APIs.
+
+JavaScript arrays are commonly used in client-side web development to store and manipulate DOM elements, user input, and
+JSON data from APIs.
 
 ---
 
 ## **6. Rust**
 
 ### **Use Case:**
-Rust’s `Vec` is a growable array type that supports similar operations to arrays in other languages but emphasizes memory safety, making it ideal for storing collections of tasks in concurrent programs.
+
+Rust’s `Vec` is a growable array type that supports similar operations to arrays in other languages but emphasizes
+memory safety, making it ideal for storing collections of tasks in concurrent programs.
 
 ### **Sample Code:**
 
@@ -201,14 +223,18 @@ fn main() {
 ```
 
 ### **Use Case:**
-`Vec` is commonly used for handling collections of items in systems where memory safety is critical, such as in financial transaction processing.
+
+`Vec` is commonly used for handling collections of items in systems where memory safety is critical, such as in
+financial transaction processing.
 
 ---
 
 ## **7. TypeScript**
 
 ### **Use Case:**
-TypeScript uses arrays similar to JavaScript but with added type safety, making them suitable for handling collections of data with strict typing, like a list of user roles in a web application.
+
+TypeScript uses arrays similar to JavaScript but with added type safety, making them suitable for handling collections
+of data with strict typing, like a list of user roles in a web application.
 
 ### **Sample Code:**
 
@@ -230,14 +256,18 @@ numbers.forEach(num => console.log(num));
 ```
 
 ### **Use Case:**
-TypeScript arrays are heavily used in front-end applications where strict typing helps prevent errors when manipulating large datasets, like a list of orders in an e-commerce platform.
+
+TypeScript arrays are heavily used in front-end applications where strict typing helps prevent errors when manipulating
+large datasets, like a list of orders in an e-commerce platform.
 
 ---
 
 ## **8. R**
 
 ### **Use Case:**
-In R, lists are flexible data structures that can store elements of varying types, making them ideal for statistical models, where you need to store different types of outputs like vectors, matrices, or even functions.
+
+In R, lists are flexible data structures that can store elements of varying types, making them ideal for statistical
+models, where you need to store different types of outputs like vectors, matrices, or even functions.
 
 ### **Sample Code:**
 
@@ -261,10 +291,15 @@ for (element in my_list) {
 ```
 
 ### **Use Case:**
-Lists in R are perfect for handling heterogeneous data types, especially in complex statistical models where different types of results need to be grouped together.
+
+Lists in R are perfect for handling heterogeneous data types, especially in complex statistical models where different
+types of results need to be grouped together.
 
 ---
 
 ### **Conclusion**
 
-Lists or their equivalents (arrays, vectors, slices) are fundamental in almost every programming language. They are used in a variety of applications, from dynamic collections of data in web applications to complex data processing in scientific computing. Each language offers its own version of the list structure, providing varying levels of flexibility, performance, and safety.
+Lists or their equivalents (arrays, vectors, slices) are fundamental in almost every programming language. They are used
+in a variety of applications, from dynamic collections of data in web applications to complex data processing in
+scientific computing. Each language offers its own version of the list structure, providing varying levels of
+flexibility, performance, and safety.

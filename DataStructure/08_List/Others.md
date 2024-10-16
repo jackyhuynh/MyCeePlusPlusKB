@@ -1,12 +1,14 @@
 # Comparison of **Lists** in different Programming Languages
 
-Here is a comparison of **Lists** in different programming languages, including Python, Go, Rust, TypeScript, R, and Java (Spring Boot):
+Here is a comparison of **Lists** in different programming languages, including Python, Go, Rust, TypeScript, R, and
+Java (Spring Boot):
 
 ---
 
 ### **1. Python**
 
-In Python, the list is a built-in mutable sequence type. It can hold items of any type and is commonly used for ordered collections.
+In Python, the list is a built-in mutable sequence type. It can hold items of any type and is commonly used for ordered
+collections.
 
 #### **Code Example:**
 
@@ -25,13 +27,15 @@ fruits.remove('apple')
 ```
 
 #### **Use Case:**
+
 Python lists are perfect for dynamic arrays where elements may be frequently added, removed, or modified.
 
 ---
 
 ### **2. Go**
 
-Go does not have a list type like Python. Instead, Go uses **slices**, which are more flexible and efficient than arrays.
+Go does not have a list type like Python. Instead, Go uses **slices**, which are more flexible and efficient than
+arrays.
 
 #### **Code Example:**
 
@@ -57,13 +61,16 @@ func main() {
 ```
 
 #### **Use Case:**
-Slices are widely used in Go for handling dynamic data structures like lists, arrays, and stacks, with efficient memory usage.
+
+Slices are widely used in Go for handling dynamic data structures like lists, arrays, and stacks, with efficient memory
+usage.
 
 ---
 
 ### **3. Rust**
 
-Rust uses the **`Vec<T>`** (vector) data structure, which is similar to lists in other languages. It is growable and used for collections of items of the same type.
+Rust uses the **`Vec<T>`** (vector) data structure, which is similar to lists in other languages. It is growable and
+used for collections of items of the same type.
 
 #### **Code Example:**
 
@@ -85,13 +92,16 @@ fn main() {
 ```
 
 #### **Use Case:**
-Vectors in Rust are used for dynamically sized arrays with strict memory safety guarantees. They are used when you need a growable list of elements.
+
+Vectors in Rust are used for dynamically sized arrays with strict memory safety guarantees. They are used when you need
+a growable list of elements.
 
 ---
 
 ### **4. TypeScript**
 
-TypeScript, being a superset of JavaScript, uses arrays as its list-like data structure. Arrays can be strongly typed in TypeScript.
+TypeScript, being a superset of JavaScript, uses arrays as its list-like data structure. Arrays can be strongly typed in
+TypeScript.
 
 #### **Code Example:**
 
@@ -110,13 +120,16 @@ console.log(numbers);  // Output: [2, 3, 4]
 ```
 
 #### **Use Case:**
-TypeScript arrays are used for storing and manipulating ordered collections of data, providing type safety over JavaScript arrays.
+
+TypeScript arrays are used for storing and manipulating ordered collections of data, providing type safety over
+JavaScript arrays.
 
 ---
 
 ### **5. R**
 
-In R, **lists** are a flexible data structure that can hold elements of different types, including vectors, other lists, and even functions.
+In R, **lists** are a flexible data structure that can hold elements of different types, including vectors, other lists,
+and even functions.
 
 #### **Code Example:**
 
@@ -135,13 +148,16 @@ my_list$name <- NULL
 ```
 
 #### **Use Case:**
-R lists are powerful for handling heterogeneous data, making them suitable for statistical computations and complex datasets.
+
+R lists are powerful for handling heterogeneous data, making them suitable for statistical computations and complex
+datasets.
 
 ---
 
 ### **6. Java (Spring Boot)**
 
-Java does not have a direct list in the language itself but uses the `List` interface from the Java Collections Framework (JCF). Lists can be implemented using classes like `ArrayList` or `LinkedList`.
+Java does not have a direct list in the language itself but uses the `List` interface from the Java Collections
+Framework (JCF). Lists can be implemented using classes like `ArrayList` or `LinkedList`.
 
 #### **Code Example:**
 
@@ -166,21 +182,24 @@ public class Main {
 ```
 
 #### **Use Case:**
-Java lists are used for dynamic collections of data, and in Spring Boot, lists can be utilized in REST APIs to handle collections of resources or entities.
+
+Java lists are used for dynamic collections of data, and in Spring Boot, lists can be utilized in REST APIs to handle
+collections of resources or entities.
 
 ---
 
 ### **Comparison Table**
 
-| Language    | Data Structure     | Key Features                          |
-|-------------|--------------------|---------------------------------------|
-| **Python**  | `list`              | Dynamic size, supports any type       |
-| **Go**      | `slice`             | Efficient, growable arrays            |
-| **Rust**    | `Vec<T>`            | Growable array with strict memory safety |
-| **TypeScript** | `Array<T>`       | Type-safe, JavaScript-like flexibility |
-| **R**       | `list`              | Supports heterogeneous types          |
-| **Java (Spring Boot)** | `List`   | Interfaces like `ArrayList`, `LinkedList` |
+| Language               | Data Structure | Key Features                              |
+|------------------------|----------------|-------------------------------------------|
+| **Python**             | `list`         | Dynamic size, supports any type           |
+| **Go**                 | `slice`        | Efficient, growable arrays                |
+| **Rust**               | `Vec<T>`       | Growable array with strict memory safety  |
+| **TypeScript**         | `Array<T>`     | Type-safe, JavaScript-like flexibility    |
+| **R**                  | `list`         | Supports heterogeneous types              |
+| **Java (Spring Boot)** | `List`         | Interfaces like `ArrayList`, `LinkedList` |
 
 ---
 
-Each language offers different implementations of lists, tailored to its specific memory model, type system, and performance needs.
+Each language offers different implementations of lists, tailored to its specific memory model, type system, and
+performance needs.

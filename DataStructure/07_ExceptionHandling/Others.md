@@ -1,13 +1,16 @@
 ## Exception Handling
 
-overview of how exception handling is implemented in **Java**, **Go**, **Rust**, **TypeScript**, and **Python**, with code samples for each:
+overview of how exception handling is implemented in **Java**, **Go**, **Rust**, **TypeScript**, and **Python**, with
+code samples for each:
 
 ---
 
 ## **1. Java**
 
 ### **Syntax:**
-Java uses the `try-catch-finally` structure for exception handling, and exceptions are thrown using the `throw` keyword. Java has both checked and unchecked exceptions.
+
+Java uses the `try-catch-finally` structure for exception handling, and exceptions are thrown using the `throw` keyword.
+Java has both checked and unchecked exceptions.
 
 ### **Example:**
 
@@ -34,6 +37,7 @@ public class Main {
 ```
 
 ### **Key Concepts:**
+
 - **Checked exceptions** must be either handled or declared in the method signature (`throws`).
 - **Unchecked exceptions** (like `ArithmeticException`) do not need to be explicitly handled.
 
@@ -42,7 +46,9 @@ public class Main {
 ## **2. Go**
 
 ### **Syntax:**
-Go does not have a built-in exception handling mechanism like try-catch. Instead, it uses multiple return values to return errors and has the `defer`, `panic`, and `recover` functions for handling unexpected conditions.
+
+Go does not have a built-in exception handling mechanism like try-catch. Instead, it uses multiple return values to
+return errors and has the `defer`, `panic`, and `recover` functions for handling unexpected conditions.
 
 ### **Example:**
 
@@ -68,6 +74,7 @@ func main() {
 ```
 
 ### **Key Concepts:**
+
 - Go uses error handling via **multiple return values**.
 - For more serious errors, Go uses **panic** (for unrecoverable errors) and **recover** (to catch panics).
 
@@ -76,7 +83,9 @@ func main() {
 ## **3. Rust**
 
 ### **Syntax:**
-Rust uses the `Result` and `Option` enums for error handling instead of exceptions. For unrecoverable errors, Rust uses `panic!`.
+
+Rust uses the `Result` and `Option` enums for error handling instead of exceptions. For unrecoverable errors, Rust uses
+`panic!`.
 
 ### **Example:**
 
@@ -97,6 +106,7 @@ fn main() {
 ```
 
 ### **Key Concepts:**
+
 - Rust uses **`Result<T, E>`** for functions that can succeed or fail.
 - **`Option<T>`** is used when a value might be `None`.
 - Unrecoverable errors are handled by **`panic!`**.
@@ -106,7 +116,9 @@ fn main() {
 ## **4. TypeScript**
 
 ### **Syntax:**
-TypeScript, like JavaScript, uses the `try-catch-finally` mechanism for exception handling. Errors are thrown using the `throw` keyword.
+
+TypeScript, like JavaScript, uses the `try-catch-finally` mechanism for exception handling. Errors are thrown using the
+`throw` keyword.
 
 ### **Example:**
 
@@ -129,6 +141,7 @@ try {
 ```
 
 ### **Key Concepts:**
+
 - **Exceptions** are thrown and caught using `throw` and `try-catch`.
 - TypeScript's type system allows for better type-safety when catching and handling errors.
 
@@ -137,6 +150,7 @@ try {
 ## **5. Python**
 
 ### **Syntax:**
+
 Python uses the `try-except-finally` structure for exception handling. Exceptions are thrown using the `raise` keyword.
 
 ### **Example:**
@@ -157,6 +171,7 @@ finally:
 ```
 
 ### **Key Concepts:**
+
 - Python uses **`try-except-finally`** for exception handling.
 - You can define custom exceptions by subclassing `Exception`.
 - **`raise`** is used to trigger exceptions manually.
@@ -165,14 +180,15 @@ finally:
 
 ## **Comparison Overview**
 
-| Language    | Mechanism                  | Key Features                                                       |
-|-------------|----------------------------|--------------------------------------------------------------------|
-| **Java**    | `try-catch-finally`, `throw`| Checked and unchecked exceptions, finally block                    |
-| **Go**      | Return errors, `panic`      | Error values instead of exceptions, `defer`, `panic`, `recover`    |
-| **Rust**    | `Result`, `Option`, `panic!`| Result and Option types for handling errors, `panic!` for crashes   |
-| **TypeScript**| `try-catch-finally`, `throw`| JavaScript-style exception handling with static types               |
-| **Python**  | `try-except-finally`, `raise`| Dynamically typed exceptions, customizable exceptions via classes   |
+| Language       | Mechanism                     | Key Features                                                      |
+|----------------|-------------------------------|-------------------------------------------------------------------|
+| **Java**       | `try-catch-finally`, `throw`  | Checked and unchecked exceptions, finally block                   |
+| **Go**         | Return errors, `panic`        | Error values instead of exceptions, `defer`, `panic`, `recover`   |
+| **Rust**       | `Result`, `Option`, `panic!`  | Result and Option types for handling errors, `panic!` for crashes |
+| **TypeScript** | `try-catch-finally`, `throw`  | JavaScript-style exception handling with static types             |
+| **Python**     | `try-except-finally`, `raise` | Dynamically typed exceptions, customizable exceptions via classes |
 
 ---
 
-Each language offers different paradigms for error handling, from traditional exception handling in Java, TypeScript, and Python, to result-based approaches in Go and Rust.
+Each language offers different paradigms for error handling, from traditional exception handling in Java, TypeScript,
+and Python, to result-based approaches in Go and Rust.

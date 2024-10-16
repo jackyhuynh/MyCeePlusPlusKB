@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  data-service:  # Meaningful name for app1
+  data-service: # Meaningful name for app1
     build:
       context: ./data-service  # Updated to reflect new name
     container_name: data-service-container
@@ -10,7 +10,7 @@ services:
     ports:
       - "8080:8080"  # Expose port 8080 for the server
 
-  client-service:  # Meaningful name for app2
+  client-service: # Meaningful name for app2
     build:
       context: ./client-service  # Updated to reflect new name
     container_name: client-service-container

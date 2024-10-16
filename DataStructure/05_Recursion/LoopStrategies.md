@@ -1,13 +1,16 @@
 # Looping Strategies (NO TEST)
 
-There are several types of looping strategies in programming. These loops allow for repetitive execution of code until a certain condition is met. Here are the main types of loops and looping strategies used in various programming languages:
+There are several types of looping strategies in programming. These loops allow for repetitive execution of code until a
+certain condition is met. Here are the main types of loops and looping strategies used in various programming languages:
 
 ## 1. **For Loop**
+
 - **Description**: Used when you know the exact number of iterations in advance.
 - **Structure**: Typically involves initialization, a condition, and an update step.
 - **Use Case**: Iterating over arrays, collections, or executing code a fixed number of times.
 
 **Example (C++):**
+
 ```cpp
 for (int i = 0; i < 5; i++) {
     cout << i << endl;
@@ -15,11 +18,14 @@ for (int i = 0; i < 5; i++) {
 ```
 
 ## 2. **While Loop**
-- **Description**: Used when you don't know in advance how many times the loop will execute, but you know a condition that needs to be satisfied for it to continue.
+
+- **Description**: Used when you don't know in advance how many times the loop will execute, but you know a condition
+  that needs to be satisfied for it to continue.
 - **Structure**: Executes as long as a specified condition is true.
 - **Use Case**: Waiting for user input or running code until a certain condition is met.
 
 **Example (C++):**
+
 ```cpp
 int i = 0;
 while (i < 5) {
@@ -29,11 +35,15 @@ while (i < 5) {
 ```
 
 ## 3. **Do-While Loop**
-- **Description**: Similar to the `while loop`, but it guarantees at least one execution because the condition is checked after the code block is executed.
+
+- **Description**: Similar to the `while loop`, but it guarantees at least one execution because the condition is
+  checked after the code block is executed.
 - **Structure**: The loop runs once before checking the condition.
-- **Use Case**: When the code needs to be executed at least once before checking the condition (e.g., validating user input).
+- **Use Case**: When the code needs to be executed at least once before checking the condition (e.g., validating user
+  input).
 
 **Example (C++):**
+
 ```cpp
 int i = 0;
 do {
@@ -43,11 +53,14 @@ do {
 ```
 
 ## 4. **Enhanced For Loop (For-Each Loop)**
-- **Description**: Used to iterate over elements in a collection or array without needing to manage the index explicitly.
+
+- **Description**: Used to iterate over elements in a collection or array without needing to manage the index
+  explicitly.
 - **Structure**: Simplified syntax for iterating over collections or arrays.
 - **Use Case**: Traversing elements in an array or a list where you don't need to modify the loop variable.
 
 **Example (C++ - Range-based for loop):**
+
 ```cpp
 vector<int> numbers = {1, 2, 3, 4, 5};
 for (int num : numbers) {
@@ -56,11 +69,14 @@ for (int num : numbers) {
 ```
 
 ## 5. **Infinite Loop**
-- **Description**: A loop that runs indefinitely unless manually interrupted, typically using a break statement or external conditions.
+
+- **Description**: A loop that runs indefinitely unless manually interrupted, typically using a break statement or
+  external conditions.
 - **Structure**: Created when no termination condition is given or the condition is always true.
 - **Use Case**: Used in event-driven systems or servers that wait for external input.
 
 **Example (C++):**
+
 ```cpp
 while (true) {
     cout << "This will print forever until you break." << endl;
@@ -69,11 +85,15 @@ while (true) {
 ```
 
 ## 6. **Recursion (Indirect Looping)**
-- **Description**: Recursion is not a loop in the traditional sense but a looping mechanism where a function calls itself to solve smaller subproblems.
+
+- **Description**: Recursion is not a loop in the traditional sense but a looping mechanism where a function calls
+  itself to solve smaller subproblems.
 - **Structure**: Involves a base case and a recursive call.
-- **Use Case**: When a problem can be broken down into smaller subproblems (e.g., factorial, Fibonacci sequence, tree traversal).
+- **Use Case**: When a problem can be broken down into smaller subproblems (e.g., factorial, Fibonacci sequence, tree
+  traversal).
 
 **Example (C++):**
+
 ```cpp
 int factorial(int n) {
     if (n == 0) return 1; // Base case
@@ -82,11 +102,13 @@ int factorial(int n) {
 ```
 
 ## 7. **Nested Loops**
+
 - **Description**: A loop inside another loop. The inner loop runs fully for each iteration of the outer loop.
 - **Structure**: You can nest any type of loop inside another (e.g., `for` inside `while`, `for` inside `for`, etc.).
 - **Use Case**: Commonly used in matrix operations, 2D arrays, or solving problems involving multiple dimensions.
 
 **Example (C++):**
+
 ```cpp
 for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
@@ -96,10 +118,12 @@ for (int i = 0; i < 3; i++) {
 ```
 
 ## 8. **Break and Continue in Loops**
+
 - **Break**: Used to terminate the loop before its natural end.
 - **Continue**: Skips the current iteration and moves on to the next one.
 
 **Break Example (C++):**
+
 ```cpp
 for (int i = 0; i < 5; i++) {
     if (i == 3) break; // Exit loop when i is 3
@@ -108,6 +132,7 @@ for (int i = 0; i < 5; i++) {
 ```
 
 **Continue Example (C++):**
+
 ```cpp
 for (int i = 0; i < 5; i++) {
     if (i == 3) continue; // Skip iteration when i is 3

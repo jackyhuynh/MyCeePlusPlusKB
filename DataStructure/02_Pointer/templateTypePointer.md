@@ -1,5 +1,7 @@
 # Template <Typename T> Pointer
-In C++, creating a pointer to a template class or function follows the same general principles as creating a pointer to any other class or function, but with the addition of specifying the template argument. 
+
+In C++, creating a pointer to a template class or function follows the same general principles as creating a pointer to
+any other class or function, but with the addition of specifying the template argument.
 
 Here's a simple step-by-step guide on how to create a pointer for a template class in C++:
 
@@ -18,7 +20,8 @@ Here's a simple step-by-step guide on how to create a pointer for a template cla
    };
    ```
 
-   In this example, `MyClass` is a generic class that stores a value of type `T` (which could be `int`, `double`, `string`, etc.).
+   In this example, `MyClass` is a generic class that stores a value of type `T` (which could be `int`, `double`,
+   `string`, etc.).
 
 2. **Create a pointer to the template class**:
    To create a pointer of this template class, you must specify the template argument (the type that will replace `T`).
@@ -38,9 +41,10 @@ Here's a simple step-by-step guide on how to create a pointer for a template cla
    }
    ```
 
-   - Here, `MyClass<int>* ptr` declares a pointer to a `MyClass` object, where `T` is replaced with `int`.
-   - `new MyClass<int>(10)` creates an instance of `MyClass<int>` with the value `10` and assigns it to the pointer `ptr`.
-   - The `->` operator is used to access the member function `printValue()` via the pointer.
+    - Here, `MyClass<int>* ptr` declares a pointer to a `MyClass` object, where `T` is replaced with `int`.
+    - `new MyClass<int>(10)` creates an instance of `MyClass<int>` with the value `10` and assigns it to the pointer
+      `ptr`.
+    - The `->` operator is used to access the member function `printValue()` via the pointer.
 
 ### Example 2: Template Function Pointer
 
@@ -72,10 +76,10 @@ If you want to create a pointer to a **template function**, the process is simil
 ### Explanation:
 
 - **For a class**:
-  - You specify the template type (e.g., `int`, `double`) when creating the pointer: `MyClass<int>*`.
-  - Use `new` to dynamically allocate an instance and assign it to the pointer.
-  
+    - You specify the template type (e.g., `int`, `double`) when creating the pointer: `MyClass<int>*`.
+    - Use `new` to dynamically allocate an instance and assign it to the pointer.
+
 - **For a function**:
-  - You specify the template type when assigning the function to a pointer, like `&display<int>`.
+    - You specify the template type when assigning the function to a pointer, like `&display<int>`.
 
 [Prev](./README.md)
