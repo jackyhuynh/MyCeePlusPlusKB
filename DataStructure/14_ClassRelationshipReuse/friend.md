@@ -9,7 +9,7 @@ information, but you don't want to expose internal details to other parts of the
 ## Resources:
 
 - [Wrongful use](./FriendBadUse.cpp)
-- [Best Practice](./FriendBestPractice.cpp)
+- [Best Practice](./FriendGoodUse.cpp)
 
 ## **Key Points**:
 

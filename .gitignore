@@ -1,13 +1,20 @@
+# executable file
 driver
-*.exe
-*.py
-*.html
 driver_*
-.DS_Store/
-.vscode/
+*.exe
 *.out
 a.out
+
+*.html
+
+# VS Code
+.DS_Store/
+.vscode/
+
+# Jet Brains
 .idea/
+cmake-build-debug/
+
 .DS_Store
 DataStructure/answer/
-cmake-build-debug/
+

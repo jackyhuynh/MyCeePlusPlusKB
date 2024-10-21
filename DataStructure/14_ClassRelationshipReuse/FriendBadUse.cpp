@@ -8,6 +8,8 @@
     Overuse of friend can make the codebase more difficult to refactor and understand because it creates tight 
     coupling between classes or functions and the classes that declare them as friends.
 */
+#include <iostream>
+#include <string>
 
 class UserDetails {
 private:
@@ -16,19 +18,18 @@ private:
 
 public:
     UserDetails(std::string name, int age) : name(name), age(age) {}
-
     // Granting friend access to unrelated functions or classes.
     friend void sendEmail(UserDetails& user);
     friend class MarketingCampaign;
 };
 
+// This function could have used public getters instead of accessing private members directly.
 void sendEmail(UserDetails& user) {
-    // This function could have used public getters instead of accessing private members directly.
     std::cout << "Sending email to " << user.name << std::endl;
 }
 
+// This class does not need to access UserDetails directly if proper public interfaces were provided.
 class MarketingCampaign {
-    // This class does not need to access UserDetails directly if proper public interfaces were provided.
 public:
     void launchCampaign(UserDetails& user) {
         std::cout << "Launching a campaign targeting " << user.age << " year olds." << std::endl;
