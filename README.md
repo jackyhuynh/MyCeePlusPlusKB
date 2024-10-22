@@ -16,6 +16,12 @@ Here’s a refined version of your outline for clarity and structure:
   Apply advanced C++ features in real-world scenarios, combining data structures and design patterns. Discuss deployment
   strategies, including optimizing code for production environments and best practices for efficient deployment.
 
++ **Part IV: Robotic**
+  Robotic Design and Development.
+  
++ **Part V: Use Case**
+  C++ applications.
+
 ## Instructor Information
 
 - **Name:** Truc L. Huynh
