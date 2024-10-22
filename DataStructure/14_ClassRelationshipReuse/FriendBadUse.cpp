@@ -35,3 +35,10 @@ public:
         std::cout << "Launching a campaign targeting " << user.age << " year olds." << std::endl;
     }
 };
+
+int main(){
+    UserDetails user("truc",10);
+    MarketingCampaign marketingCampaign;
+    marketingCampaign.launchCampaign(user);
+    return 0;
+}
