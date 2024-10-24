@@ -27,11 +27,13 @@ int main() {
     GraphNode* node1 = new GraphNode(1);
     GraphNode* node2 = new GraphNode(2);
     GraphNode* node3 = new GraphNode(3);
-    
+    GraphNode* node4 = new GraphNode(4);
+
     node1->addNeighbor(node2);
     node2->addNeighbor(node3);
     node3->addNeighbor(node1); // Creates a cycle
-    
+    node4->addNeighbor(node1);
+
     std::unordered_map<GraphNode*, bool> visited;
     printGraph(node1, visited);
     
@@ -39,4 +41,5 @@ int main() {
     delete node1;
     delete node2;
     delete node3;
+    delete node4;
 }

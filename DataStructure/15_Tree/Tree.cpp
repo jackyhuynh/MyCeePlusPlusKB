@@ -22,15 +22,21 @@ void printTree(TreeNode* root, int level = 0) {
 }
 
 int main() {
-    TreeNode* root = new TreeNode(1);
-    TreeNode* child1 = new TreeNode(2);
-    TreeNode* child2 = new TreeNode(3);
+    TreeNode* root = new TreeNode(0);
+    TreeNode* child1 = new TreeNode(1);
+    TreeNode* child2 = new TreeNode(2);
     TreeNode* child6 = new TreeNode(6);
+    TreeNode* child4 = new TreeNode(4);
+    TreeNode* child5 = new TreeNode(5);
+    TreeNode* child3 = new TreeNode(3);
 
     root->addChild(child1);
     root->addChild(child2);
+
+    child1->addChild(child4);
+    child1->addChild(child5);
+    child1->addChild(child3);
+
     child2->addChild(child6);
     printTree(root);
-    
-    // Clean up (not shown for brevity)
 }

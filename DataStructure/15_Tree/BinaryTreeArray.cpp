@@ -16,6 +16,8 @@ public:
             std::cout << "Root node doesn't have a parent." << std::endl;
             return -1;
         }
+        //Floor division, round 0.5 -> 0
+
         return (index - 1) / 2;
     }
 
@@ -69,8 +71,7 @@ int main() {
     std::cout << "Binary Tree (Array Representation): ";
     tree.printTree();
 
-    // Example operations
-    int index = 2; // Example index
+    int index = 2;
     std::cout << "Parent of index " << index << ": " << tree.parent(index) << std::endl;
     std::cout << "Left child of index " << index << ": " << tree.leftChild(index) << std::endl;
     std::cout << "Right child of index " << index << ": " << tree.rightChild(index) << std::endl;
