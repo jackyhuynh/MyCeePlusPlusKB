@@ -130,6 +130,11 @@ The **Abstract Data Type (ADT) Binary Tree** supports the following operations:
 - **Inorder traversal**
 - **Postorder traversal**
 
+- Criteria:
+    - at most 2 children
+    - Exactly 1 Root
+    - Exactly 1 path between the Root and any Node     
+
 ---
 
 ## **7. The ADT Binary Search Tree**
@@ -158,7 +163,7 @@ TreeNode* insert(TreeNode* root, int value) {
 
 ### **Use Case**:
 
-BSTs are used to implement sets and maps efficiently, providing average time complexity of **O(log n)** for search,
+BSTs are used to implement sets and maps efficiently, providing an average time complexity of **O(log n)** for search,
 insert, and delete operations.
 
 ---
@@ -183,6 +188,7 @@ systems.
 - Binary Search Trees (BSTs) are widely used for efficient searching and sorting.
 - Traversal methods (inorder, preorder, postorder) are critical in tree-based algorithms.
 - Keeping trees balanced is key to maintaining efficient operations.
+- **Learn**: Search for the technical Interview 
 
 --- 
 
