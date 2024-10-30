@@ -201,7 +201,7 @@ To apply this formula, you first need a way to calculate the height of a subtree
 of the longest path from the root of the subtree to a leaf node. A leaf node (a node with no children) has a height of
 0, and a null pointer (indicating no subtree) has a height of -1 by convention to simplify calculations.
 
-![AVL Trees Simply Rotation](https://www.youtube.com/watch?v=zP2xbKerIds&list=PLhXWHUoid1m3zVo6FxctHykQr81reE9hX)
+[AVL Trees Simply Rotation](https://www.youtube.com/watch?v=zP2xbKerIds&list=PLhXWHUoid1m3zVo6FxctHykQr81reE9hX)
 
 ### Structure of Graph & Tree family
 
