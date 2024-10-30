@@ -1,3 +1,5 @@
+# Graph Traversal
+
 ## **Breadth-First Search (BFS) in Graphs**
 
 ### Concept
