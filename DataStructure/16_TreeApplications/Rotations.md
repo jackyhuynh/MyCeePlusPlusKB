@@ -2,6 +2,7 @@
 
 In an **AVL Tree**, rotations are necessary to maintain the height balance after insertion or deletion. The balance factor of a node is calculated as:
 
+## Balance Factor
 ```
 Balance Factor = height(left subtree) - height(right subtree)
 ```
@@ -21,7 +22,7 @@ Below is a guide on when to use each case based on the **balance factor** and th
 
 ---
 
-#### **1. Right Rotation (LL Rotation)**
+### **1. Right Rotation (LL Rotation)**
 
 **Use When:**  
 - The imbalance occurs in the **left subtree** of the **left child** (left-heavy tree).
@@ -45,7 +46,7 @@ Inserting 10, then 5, then 2 causes an LL imbalance.
 
 ---
 
-#### **2. Left Rotation (RR Rotation)**
+### **2. Left Rotation (RR Rotation)**
 
 **Use When:**  
 - The imbalance occurs in the **right subtree** of the **right child** (right-heavy tree).
@@ -69,7 +70,7 @@ Inserting 10, then 15, then 20 causes an RR imbalance.
 
 ---
 
-#### **3. Left-Right Rotation (LR Rotation)**
+### **3. Left-Right Rotation (LR Rotation)**
 
 **Use When:**  
 - The imbalance occurs in the **left subtree** of the **right child** (mixed imbalance).
@@ -96,7 +97,7 @@ Inserting 10, then 5, then 8 causes an LR imbalance.
 
 ---
 
-#### **4. Right-Left Rotation (RL Rotation)**
+### **4. Right-Left Rotation (RL Rotation)**
 
 **Use When:**  
 - The imbalance occurs in the **right subtree** of the **left child** (mixed imbalance).
@@ -150,10 +151,6 @@ Inserting 10, then 15, then 13 causes an RL imbalance.
 4. **RL Case:**  
    - Path: Insertions go **right → left**.
    - Fix: **Right Rotation on right child**, followed by **Left Rotation on parent**.
-
----
-
-By understanding the nature of the imbalance (which subtree the new node is added to), you can decide which rotation or combination of rotations is needed to restore the AVL tree's balance.
 
 ---
 
