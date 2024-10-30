@@ -1,3 +1,10 @@
+# Lesson Review
+
+- Sketch Data
+- Diagram
+- Improvement?
+- Coding with diagram
+
 # Exam Review
 
 ## **Exam 1 Review**
