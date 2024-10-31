@@ -1,4 +1,5 @@
-# COSC Meeting Rules
+# Template for
+ Meeting Rules
 
 ## Sharing
 

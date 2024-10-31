@@ -42,8 +42,10 @@ I'm a confirmed extrovert!
 
 ## Background:
 
-- Military: US Army Vet
-- 2 years of teaching college level, and training junior engineer
-- Master, Bachelor in Computer Science
-- Currently working as a lead software engineer for the Army
+- Humble and always want to learn
+- Advocate for Humanity
+- US Army Vet
+- Teaching college university level and training junior engineer on Software Development
+- Master Degree in Computer Science
+- Many roles and career
 - Immigrant from Vietnam
