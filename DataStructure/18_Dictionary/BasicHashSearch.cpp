@@ -4,51 +4,52 @@
 
 using namespace std;
 
+// Hash function that maps a string to an index (modulus 10 for simplicity)
 unsigned long simpleHash(const string& input) {
     unsigned long hash = 0;
-    for(char c : input) {
+    for (char c : input) {
         hash = hash * 31 + c;
     }
-    return hash%10;
+    return hash % 10; // Returns index in the range [0, 9]
 }
 
-bool isContained (const vector<string>& dataArr, string data){
-    if (dataArr[simpleHash(data)]==data){
-        return true;
-    }
-    return false;
+// Function to check if a given data is present in the vector at the hashed index
+bool isContained(const vector<string>& dataArr, const string& data) {
+    return dataArr[simpleHash(data)] == data;
 }
 
 int main() {
-    vector<string> dataArr(10);
-    for (int i = 0; i < 10; ++i) {
-        dataArr[i] = " string ";
-    }
-    for (int i = 0; i < 10; ++i){
-        cout << dataArr[i] << ", ";
+    // Initialize a vector of size 10 with placeholder strings
+    vector<string> dataArr(10, "empty");
+
+    // Print initial dataArr state
+    cout << "Initial data array: ";
+    for (const auto& entry : dataArr) {
+        cout << entry << ", ";
     }
     cout << endl;
 
+    // Data to insert and search
     string data = "Hello, world!";
     unsigned long hashValue = simpleHash(data);
     cout << "Hash Value: " << hashValue << endl;
 
+    // Insert data at the computed hash index
     dataArr[hashValue] = data;
 
-    for (int i = 0; i < 10; ++i){
-        cout << dataArr[i] << ", ";
+    // Print updated dataArr state
+    cout << "Updated data array: ";
+    for (const auto& entry : dataArr) {
+        cout << entry << ", ";
     }
     cout << endl;
 
-    bool option = isContained(dataArr,data);
-
-    if (option){
-        cout << "data is contained";
+    // Search for data in the array and print result
+    if (isContained(dataArr, data)) {
+        cout << "Data is contained" << endl;
     } else {
-        cout << "not found";
+        cout << "Not found" << endl;
     }
 
     return 0;
 }
-
-// Use case is Search for "Hello World" in side the data set
