@@ -13,7 +13,7 @@ class MyDictionary {
         };
         Node* table[TABLE_SIZE];
 
-        // Hash function (simple example)
+        // Hash function (SUPER COMPLICATED HASHING FUNCTIONS)
         int hash(const std::string& key) {
             int hashValue = 0;
             for (char c : key) {

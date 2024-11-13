@@ -183,6 +183,14 @@ public:
 
 Quadratic probing reduces clustering by using a quadratic function to calculate the probe sequence.
 
+Ex let hash(x) be the slot index computed using hash function.  
+
+- If slot hash(x) % S is full, then we try (hash(x) + 1*1) % S
+- If (hash(x) + 1*1) % S is also full, then we try (hash(x) + 2*2) % S
+- If (hash(x) + 2*2) % S is also full, then we try (hash(x) + 3*3) % S
+
+
+
 ```cpp
 #include <vector>
 #include <optional>
