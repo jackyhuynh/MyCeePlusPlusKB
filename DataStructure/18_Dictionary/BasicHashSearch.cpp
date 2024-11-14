@@ -30,7 +30,7 @@ int main() {
     cout << endl;
 
     // Data to insert and search
-    string data = "Hello, world!";
+    string data = "Hello world!";
     unsigned long hashValue = simpleHash(data);
     cout << "Hash Value: " << hashValue << endl;
 

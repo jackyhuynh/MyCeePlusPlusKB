@@ -74,9 +74,9 @@ class MyDictionary {
 // Example usage
 int main() {
     MyDictionary dict;
-    dict.insert("apple", "fruit");
-    dict.insert("banana", "fruit");
-    std::cout << dict.search("banana") << std::endl; // Output: "fruit"
+    dict.insert("apple", "fruit apple");
+    dict.insert("apple", "fruit banana");
+    std::cout << dict.search("apple") << std::endl; // Output: "fruit"
     dict.remove("apple");
     std::cout << dict.search("apple") << std::endl; // Output: "Not found"
     return 0;
