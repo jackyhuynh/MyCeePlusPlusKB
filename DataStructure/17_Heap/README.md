@@ -2,6 +2,8 @@
 
 The `heapify` function is used to maintain the heap property in a binary tree. It plays a crucial role in building max-heaps and min-heaps, which are fundamental structures for algorithms like heap sort.
 
+- [Heap Sort Algorithm](https://algostructure.com/sorting/heapsort.php)
+
 ### `heapify` Function
 `heapify` ensures that a subtree with a given node as the root satisfies the heap property. If the subtree violates the heap property, the function rearranges the nodes so that the subtree becomes a valid max-heap or min-heap.
 
@@ -56,6 +58,8 @@ For a min-heap, `heapify` ensures that each node is less than or equal to its ch
 2. For each node, compare its value with its children.
 3. If the heap property is violated, swap the node with the largest (max-heap) or smallest (min-heap) of its children.
 4. Recursively apply `heapify` to the affected subtree.
+
+![heapify](./images/heapify.png)
 
 ### Visualizing the Max-Heap
 Initial tree before heapifying:
