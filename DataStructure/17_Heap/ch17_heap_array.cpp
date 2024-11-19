@@ -2,10 +2,11 @@
 using namespace std;
 /*
 * - Heap? 
-* - Max Heap, Min Heap
+* - Max Heap, Min Heap?
 * - Heap Sort?
-* - Reference Only: https://www.codingdrills.com/tutorial/heap-data-structure/introduction-to-heap-data-structure
-* - https://www.youtube.com/watch?v=Dvq-YKeuO9Y 
+* - Reference Only: 
+*   https://www.codingdrills.com/tutorial/heap-data-structure/introduction-to-heap-data-structure
+*   https://www.youtube.com/watch?v=Dvq-YKeuO9Y 
 */
 // Function to swap two elements
 void swap(int &first, int &second) {
