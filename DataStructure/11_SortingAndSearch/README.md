@@ -2,6 +2,10 @@
 
 ---
 
+## Resources:
+
+- [W3 School Search and Sort Algorithm](https://www.w3schools.com/dsa/index.php)
+
 ## **1. Basic Sorting Algorithms**
 
 Sorting refers to organizing a collection of data into either ascending or descending order. There are two types of
@@ -223,10 +227,4 @@ void radixSort(int arr[], int n) {
   datasets.
 - **Faster sorting algorithms** (merge sort, quick sort, radix sort) offer significantly better performance for large
   datasets but come with additional complexity.
-- Choosing the right sorting algorithm depends on the size of the dataset and specific needs, such as memory usage or
-  whether the dataset is nearly sorted.
-
----
-
-This summary outlines the sorting algorithms covered in Chapter 11, providing code examples and a comparison of their
-time complexities to help you choose the most efficient algorithm for your use case.
+- Choosing the right sorting algorithm depends on the size of the dataset and specific needs, such as memory usage or whether the dataset is nearly sorted.
