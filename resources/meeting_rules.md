@@ -1,5 +1,4 @@
-# Template for
- Meeting Rules
+# Meeting Rules
 
 ## Sharing
 
