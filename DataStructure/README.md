@@ -140,3 +140,10 @@ OOP is a paradigm based on "objects," encapsulating data (fields) and behaviors 
   - **Precondition**: Array must be sorted.
   - **Algorithm**: Divide and conquer for quick value lookup.
 - **Linear Search**: Sequential search with `O(n)` complexity.
+
+
+### Implementation
+- Apache Spark
+- Hadoop Cluster
+- MongoDB
+- Amazon Neptune
