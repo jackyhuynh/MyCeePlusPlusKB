@@ -2,8 +2,8 @@
 
 #### **Introduction (10 minutes)**
 1. **(0:00 - 0:02)** Welcome and personal introduction:
-   - Briefly introduce yourself (name, background, hobbies, passion for tech).
-   - Share your teaching style and what students can expect from this course.
+   - Briefly introduce myself (name, background, hobbies, passion for tech).
+   - Share my teaching style and what students can expect from this course.
    
 2. **(0:02 - 0:05)** Course overview:
    - Highlight key outcomes: what students will learn, tools used, and the importance of data structures in the tech industry.
@@ -11,12 +11,13 @@
 3. **(0:05 - 0:10)** Success tips and teaching transparency:
    - How to succeed in this course and beyond.
    - Explain your teaching methodology (videos, quizzes, exercises).
+   - Go over the previous Blackboard Course
    - Share student feedback or success stories for motivation.
 
 ---
 
 #### **Student Introductions (50 minutes)**  
-- **(0:10 - 1:00)** 2 minutes per student (25 students):  
+- **(0:10 - 1:00)** max 2 minutes per student (25 students):  
   - Each student introduces themselves:
     - Name, hobbies, and their perspective on technology or aspirations.
     - Share one interesting fact or question about data structures.
