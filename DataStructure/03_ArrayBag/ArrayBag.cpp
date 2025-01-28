@@ -70,3 +70,5 @@ std::vector<T> ArrayBag<T>::toVector() const {
     }
     return bagContents;
 }
+
+// This isn't possible for templates because the implementation must remain visible in the header file. 
