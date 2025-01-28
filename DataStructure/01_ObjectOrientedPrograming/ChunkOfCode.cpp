@@ -28,12 +28,9 @@ int getUserinput(){
 
 int main()
 {
-    int sum = 0;
+    int sum_main = 0;
+    sum_main = sum(3);
 
-    for (int i=0; i<3; i++ ){
-        sum += getUserinput();
-    }
-
-    cout << "sum is: " <<sum;
+    cout << "sum is: " << sum_main << endl;
     return 0;
 }

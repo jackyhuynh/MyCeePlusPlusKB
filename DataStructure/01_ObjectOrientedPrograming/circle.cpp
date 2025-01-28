@@ -62,6 +62,42 @@ double Circle::getArea() const
 }
 
 
+class SuperCircle : public CircleInterface
+{
+  public:
+	SuperCircle();
+	void setRadius(double newRadius);
+	double getRadius() const;
+	double getArea() const;
+  private:
+	double radius;
+};
+
+SuperCircle::SuperCircle()
+{
+	radius = 10.0;
+}
+
+void SuperCircle::setRadius(double newRadius)
+{
+	if (newRadius > 0.0)
+	{
+		radius = newRadius;
+	}
+	// else leave this circle unchanged
+}
+
+double SuperCircle::getRadius() const
+{
+	return radius;
+}
+
+double SuperCircle::getArea() const
+{
+	return 9.14 * radius * radius;
+}
+
+
 int main()
 {
 	Circle theCircle;
@@ -74,6 +110,18 @@ int main()
 	cout << "Current state of the circle" << endl;
 	cout << "    radius = " << theCircle.getRadius() << endl;
 	cout << "    area   = " << theCircle.getArea() << endl << endl;
+
+
+	SuperCircle theSuperCircle;
+	
+	cout << "Intital state of the super circle" << endl;
+	cout << "    super radius = " << theSuperCircle.getRadius() << endl;
+	cout << "    super area   = " << theSuperCircle.getArea() << endl << endl;
+	
+	theSuperCircle.setRadius(2.0);
+	cout << "Current state of the circle" << endl;
+	cout << "    super radius = " << theSuperCircle.getRadius() << endl;
+	cout << "    super area   = " << theSuperCircle.getArea() << endl << endl;
 	
 	return 0;
 }
