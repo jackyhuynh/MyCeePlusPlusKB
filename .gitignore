@@ -4,6 +4,7 @@ driver_*
 *.exe
 *.out
 a.out
+*.hpp.gch
 
 *.html
 
