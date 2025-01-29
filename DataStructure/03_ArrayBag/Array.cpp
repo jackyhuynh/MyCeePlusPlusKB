@@ -1,6 +1,9 @@
 #include <iostream>
 
 using namespace std;
+/**
+ * Regular Array with string and Java
+ */
 
 int main()
 {
