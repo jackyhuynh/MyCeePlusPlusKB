@@ -10,7 +10,7 @@
 - Runtime Complexity
 - Space Complexity
 
-## **Characteristics of C++ Arrays**
+## **Characteristics of C++ Arrays** (OPTION)
 A **C++ array** is a fixed-size, contiguous block of memory that stores elements of the same data type. Below are its key characteristics:
 
 1. **Fixed Size**:  
@@ -45,7 +45,7 @@ A **C++ array** is a fixed-size, contiguous block of memory that stores elements
      int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
      ```
 
-8. **Array Decays into Pointer**:  
+8. **Array Decays into Pointer**:  (OPTION)
    - Passing an array to a function usually results in it being treated as a pointer.
    - Example:
      ```cpp
@@ -57,7 +57,7 @@ A **C++ array** is a fixed-size, contiguous block of memory that stores elements
 
 ---
 
-## **Comparison of Arrays and Lists in Different Programming Languages**
+## **Comparison of Arrays and Lists in Different Programming Languages** (OPTION)
 
 | Feature          | **C++ Array**  | **C++ std::vector** | **Python List** | **Java Array**  | **JavaScript Array** | **C Array** |
 |-----------------|---------------|---------------------|----------------|---------------|-------------------|------------|

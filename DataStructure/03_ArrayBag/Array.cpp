@@ -2,7 +2,7 @@
 
 using namespace std;
 /**
- * Regular Array with string and Java
+ * Regular String Array C++
  */
 
 int main()

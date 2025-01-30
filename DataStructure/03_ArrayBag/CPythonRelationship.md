@@ -1,6 +1,4 @@
-The relationship between C and Python is multi-faceted, grounded in the implementation of Python, its extensibility, and its interoperability with C libraries. Below is a detailed exploration of this relationship:
-
----
+## CPython (OPTION)
 
 ### **1. Python Implementations and C**
 - **CPython**: 
