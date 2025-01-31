@@ -6,8 +6,7 @@
 
 ### **Overview of ADT List**
 
-A list is an Abstract Data Type (ADT) that allows us to manage a collection of items of the same type. Common real-life
-examples include:
+A list is an Abstract Data Type (ADT) that allows us to manage a collection of items of the same type. Common real-life examples include:
 
 - Grocery lists
 - To-do lists
@@ -40,12 +39,19 @@ groceryList.push_back("Eggs");
 groceryList.push_back("Bread");
 ```
 
+#### **Expected Output:**
+```
+Initial Grocery List:
+Milk
+Eggs
+Bread
+```
+
 ---
 
 ### **UML Diagram of ADT List**
 
-The UML diagram for the ADT list illustrates the structure and operations supported by the list. It provides a visual
-representation of the relationship between the list and the operations that can be performed.
+The UML diagram for the ADT list illustrates the structure and operations supported by the list. It provides a visual representation of the relationship between the list and the operations that can be performed.
 
 ---
 
@@ -61,7 +67,7 @@ Axioms define the basic properties that any list implementation must satisfy:
 
 ### **Using List Operations**
 
-#### Displaying Items in a List:
+#### **Displaying Items in a List:**
 
 ```cpp
 for (const auto& item : groceryList) {
@@ -69,13 +75,21 @@ for (const auto& item : groceryList) {
 }
 ```
 
-#### Replacing an Item in a List:
+#### **Replacing an Item in a List:**
 
 ```cpp
 auto it = std::find(groceryList.begin(), groceryList.end(), "Milk");
 if (it != groceryList.end()) {
     *it = "Almond Milk";  // Replacing "Milk" with "Almond Milk"
 }
+```
+
+#### **Expected Output After Replacement:**
+```
+Updated Grocery List:
+Almond Milk
+Eggs
+Bread
 ```
 
 ---
@@ -97,10 +111,9 @@ public:
 };
 ```
 
-This interface defines basic operations like checking if the list is empty, getting the length, inserting, removing, and
-retrieving items.
+This interface defines basic operations like checking if the list is empty, getting the length, inserting, removing, and retrieving items.
 
-#### Use Case: To-Do List Application
+#### **Use Case: To-Do List Application**
 
 In a task management app, you could implement this interface to handle tasks as list items. The interface would allow:
 
@@ -112,6 +125,8 @@ In a task management app, you could implement this interface to handle tasks as 
 
 ### **Conclusion**
 
-In this chapter, we learned about the ADT list, its structure, and its basic operations. Lists provide a versatile way
-to manage collections of items where order is important, and items are accessed by their position in the collection.
+In this chapter, we learned about the ADT list, its structure, and its basic operations. Lists provide a versatile way to manage collections of items where order is important, and items are accessed by their position in the collection.
 
+---
+
+This update includes the expected output from the C++ code execution. Let me know if you need any further modifications! 🚀

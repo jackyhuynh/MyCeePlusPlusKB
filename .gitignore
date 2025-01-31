@@ -19,3 +19,6 @@ cmake-build-debug/
 .DS_Store
 DataStructure/answer/
 
+
+# C++
+test.cpp
