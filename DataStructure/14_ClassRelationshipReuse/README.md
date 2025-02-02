@@ -4,8 +4,8 @@
 
 ## Resources:
 
-- [Friend in C++](./friend.md)
-- [Overload Operator in C++](./overloadOperator.md)
+- [Friend in C++](Friend/README)
+- [Overload Operator in C++](OverloadOperator/README)
 
 ## **1. Inheritance Revisited**
 

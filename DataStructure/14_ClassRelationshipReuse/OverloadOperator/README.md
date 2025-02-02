@@ -7,8 +7,8 @@ This makes it possible to use operators on objects just as you would with built-
 
 ## Resource:
 
-- [Overload Operator](./OverloadOperator.cpp)
-- [Array Overload Operator](./ArrayOverloadOperator.cpp)
+- [Overload Operator](OverloadOperator.cpp)
+- [Array Overload Operator](ArrayOverloadOperator.cpp)
 
 ## **Key Points**:
 

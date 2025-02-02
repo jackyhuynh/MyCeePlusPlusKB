@@ -6,7 +6,7 @@
 
 🔹 Static Algorithms
 
-1. Round robin
+1. Round Robin
    The client requests are sent to different service instances in sequential order. The services are usually required to
    be stateless.
 

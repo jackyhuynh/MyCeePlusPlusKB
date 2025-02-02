@@ -1,4 +1,4 @@
-# Inner and Outer Classes
+# INNER CLASS
 
 ## Member Access:
 
