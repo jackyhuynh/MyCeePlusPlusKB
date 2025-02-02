@@ -161,6 +161,7 @@ def divide(a, b):
         raise ValueError("Cannot divide by zero")
     return a / b
 
+
 try:
     result = divide(10, 0)
     print(result)

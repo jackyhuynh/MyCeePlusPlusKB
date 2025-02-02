@@ -61,7 +61,6 @@ There are two main types of polymorphism:
 
 **Polymorphism** allows for flexibility and reusability of code, making it easier to manage and scale.
 
-
 ## Virtual Class
 
 In C++ and computer science, the concept of a **virtual class** is closely related to **virtual functions** and *

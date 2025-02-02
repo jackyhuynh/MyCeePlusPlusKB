@@ -50,8 +50,12 @@ int main() {
 ---
 
 ## **Singly Linked List Exercises**
+
 ### **Exercise 3: Implement a Singly Linked List**
-Create a `Node` struct with an `int` value and a pointer to the next node. Implement a class `LinkedList` with the following functions:
+
+Create a `Node` struct with an `int` value and a pointer to the next node. Implement a class `LinkedList` with the
+following functions:
+
 1. `insertAtEnd(int)`: Adds a new node at the end.
 2. `display()`: Prints all elements in the list.
 
@@ -111,21 +115,28 @@ int main() {
 ```
 
 ### **Exercise 4: Insert a Node at the Beginning**
+
 Modify the previous linked list to add:
+
 1. `insertAtBeginning(int)`: Inserts a node at the start.
 
 ---
 
 ### **Exercise 5: Delete a Node by Value**
+
 Write a function `deleteNode(int value)` in `LinkedList` class that:
+
 1. Removes the first occurrence of the given value.
 2. Handles cases like deleting the head or deleting a non-existing node.
 
 ---
 
 ## **Doubly Linked List Exercises**
+
 ### **Exercise 6: Implement a Doubly Linked List**
+
 Create a `DoublyLinkedList` class with:
+
 1. `insertAtEnd(int)`: Inserts at the end.
 2. `insertAtBeginning(int)`: Inserts at the beginning.
 3. `displayForward()`: Prints list from head to tail.
@@ -205,12 +216,15 @@ int main() {
 ---
 
 ### **Exercise 7: Delete a Node in Doubly Linked List**
+
 Implement a `deleteNode(int value)` function in the `DoublyLinkedList` class.
 
 ---
 
 ## **Challenge Exercise: Detect and Remove Loop in Linked List**
-1. Create a function `detectLoop()` that detects if a cycle exists in a linked list using Floyd’s Cycle Detection Algorithm.
+
+1. Create a function `detectLoop()` that detects if a cycle exists in a linked list using Floyd’s Cycle Detection
+   Algorithm.
 2. If a loop is found, write a function `removeLoop()` to remove it.
 
 ---

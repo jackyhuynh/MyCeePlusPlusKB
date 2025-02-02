@@ -1,8 +1,10 @@
 # Rotations
 
-In an **AVL Tree**, rotations are necessary to maintain the height balance after insertion or deletion. The balance factor of a node is calculated as:
+In an **AVL Tree**, rotations are necessary to maintain the height balance after insertion or deletion. The balance
+factor of a node is calculated as:
 
 ## Balance Factor
+
 ```
 Balance Factor = height(left subtree) - height(right subtree)
 ```
@@ -13,6 +15,7 @@ If the balance factor is:
 - **< -1 or > 1**: The node is unbalanced, and we need rotations.
 
 ### **Types of Rotations:**
+
 1. **Right Rotation (Single Rotation):** Occurs in a **left-heavy** situation.
 2. **Left Rotation (Single Rotation):** Occurs in a **right-heavy** situation.
 3. **Left-Right Rotation (Double Rotation):** Occurs in a **left-right-heavy** situation.
@@ -24,7 +27,8 @@ Below is a guide on when to use each case based on the **balance factor** and th
 
 ### **1. Right Rotation (LL Rotation)**
 
-**Use When:**  
+**Use When:**
+
 - The imbalance occurs in the **left subtree** of the **left child** (left-heavy tree).
 - The insertion was made in the **left subtree** of the left child.
 
@@ -39,7 +43,8 @@ Inserting 10, then 5, then 2 causes an LL imbalance.
   2
 ```
 
-**Trigger:**  
+**Trigger:**
+
 - Balance factor of the parent node becomes **> 1**.
 - Example: `balance = 2, key < parent->left->key`.
 - The balance of each level: 2, 1, 0 (Left Heavy & Right Rotation)
@@ -48,7 +53,8 @@ Inserting 10, then 5, then 2 causes an LL imbalance.
 
 ### **2. Left Rotation (RR Rotation)**
 
-**Use When:**  
+**Use When:**
+
 - The imbalance occurs in the **right subtree** of the **right child** (right-heavy tree).
 - The insertion was made in the **right subtree** of the right child.
 
@@ -63,7 +69,8 @@ Inserting 10, then 15, then 20 causes an RR imbalance.
            20
 ```
 
-**Trigger:**  
+**Trigger:**
+
 - Balance factor of the parent node becomes **< -1**.
 - Example: `balance = -2, key > parent->right->key`.
 - The balance of each level: -2, -1, 0 (Right heavy & Left Rotation)
@@ -72,7 +79,8 @@ Inserting 10, then 15, then 20 causes an RR imbalance.
 
 ### **3. Left-Right Rotation (LR Rotation)**
 
-**Use When:**  
+**Use When:**
+
 - The imbalance occurs in the **left subtree** of the **right child** (mixed imbalance).
 - The insertion was made in the **right subtree** of the left child.
 
@@ -87,19 +95,23 @@ Inserting 10, then 5, then 8 causes an LR imbalance.
        8            5
 ```
 
-**Trigger:**  
-- Balance factor of the parent node becomes **> 1**, but the new key was inserted into the **right subtree** of the left child.
-- Example: `balance = 2, key > parent->left->key`.
-- The balance of each level: 0, -1, 2 (Left Heavy, Left-Right Rotation) 
+**Trigger:**
 
-**Fix:**  
+- Balance factor of the parent node becomes **> 1**, but the new key was inserted into the **right subtree** of the left
+  child.
+- Example: `balance = 2, key > parent->left->key`.
+- The balance of each level: 0, -1, 2 (Left Heavy, Left-Right Rotation)
+
+**Fix:**
+
 - Perform a **left rotation** on the left child, followed by a **right rotation** on the parent.
 
 ---
 
 ### **4. Right-Left Rotation (RL Rotation)**
 
-**Use When:**  
+**Use When:**
+
 - The imbalance occurs in the **right subtree** of the **left child** (mixed imbalance).
 - The insertion was made in the **left subtree** of the right child.
 
@@ -114,50 +126,54 @@ Inserting 10, then 15, then 13 causes an RL imbalance.
       13                     15
 ```
 
-**Trigger:**  
-- Balance factor of the parent node becomes **< -1**, but the new key was inserted into the **left subtree** of the right child.
+**Trigger:**
+
+- Balance factor of the parent node becomes **< -1**, but the new key was inserted into the **left subtree** of the
+  right child.
 - Example: `balance = -2, key < parent->right->key`.
-- The balance of each level: 0, 1, -2 (Left Heavy, Right-Left Rotation) 
-**Fix:**  
+- The balance of each level: 0, 1, -2 (Left Heavy, Right-Left Rotation)
+  **Fix:**
 - Perform a **right rotation** on the right child, followed by a **left rotation** on the parent.
 
 ---
 
 ## **Summary of When to Use Each Rotation**
 
-| **Case**            | **Condition**                                               | **Rotation(s) Required** |
-|---------------------|--------------------------------------------------------------|--------------------------|
-| **LL Rotation**     | Imbalance in the left child’s left subtree (left-heavy)      | Right Rotation           |
-| **RR Rotation**     | Imbalance in the right child’s right subtree (right-heavy)   | Left Rotation            |
-| **LR Rotation**     | Imbalance in the left child’s right subtree (mixed)          | Left Rotation + Right Rotation |
-| **RL Rotation**     | Imbalance in the right child’s left subtree (mixed)          | Right Rotation + Left Rotation |
+| **Case**        | **Condition**                                              | **Rotation(s) Required**       |
+|-----------------|------------------------------------------------------------|--------------------------------|
+| **LL Rotation** | Imbalance in the left child’s left subtree (left-heavy)    | Right Rotation                 |
+| **RR Rotation** | Imbalance in the right child’s right subtree (right-heavy) | Left Rotation                  |
+| **LR Rotation** | Imbalance in the left child’s right subtree (mixed)        | Left Rotation + Right Rotation |
+| **RL Rotation** | Imbalance in the right child’s left subtree (mixed)        | Right Rotation + Left Rotation |
 
 ---
 
 ## **Visualization of Imbalances and Fixes**
 
-1. **LL Case:**  
-   - Path: Insertions go **left → left**.
-   - Fix: **Right Rotation**.
+1. **LL Case:**
+    - Path: Insertions go **left → left**.
+    - Fix: **Right Rotation**.
 
-2. **RR Case:**  
-   - Path: Insertions go **right → right**.
-   - Fix: **Left Rotation**.
+2. **RR Case:**
+    - Path: Insertions go **right → right**.
+    - Fix: **Left Rotation**.
 
-3. **LR Case:**  
-   - Path: Insertions go **left → right**.
-   - Fix: **Left Rotation on left child**, followed by **Right Rotation on parent**.
+3. **LR Case:**
+    - Path: Insertions go **left → right**.
+    - Fix: **Left Rotation on left child**, followed by **Right Rotation on parent**.
 
-4. **RL Case:**  
-   - Path: Insertions go **right → left**.
-   - Fix: **Right Rotation on right child**, followed by **Left Rotation on parent**.
+4. **RL Case:**
+    - Path: Insertions go **right → left**.
+    - Fix: **Right Rotation on right child**, followed by **Left Rotation on parent**.
 
 ---
 
 ## **1. Right Rotation (LL Rotation)**
+
 Occurs when there is a left-heavy imbalance.
 
 ### **C++ Code for Right Rotation**
+
 ```cpp
 struct Node {
     int key;
@@ -192,9 +208,11 @@ Node* rightRotate(Node* y) {
 ---
 
 ## **2. Left Rotation (RR Rotation)**
+
 Occurs when there is a right-heavy imbalance.
 
 ### **C++ Code for Left Rotation**
+
 ```cpp
 Node* leftRotate(Node* x) {
     Node* y = x->right;
@@ -216,9 +234,11 @@ Node* leftRotate(Node* x) {
 ---
 
 ## **3. Left-Right Rotation (LR Rotation)**
+
 Occurs when there is a **left-right-heavy** imbalance.
 
 ### **C++ Code for Left-Right Rotation**
+
 First, perform a **left rotation** on the left child, then a **right rotation** on the node.
 
 ```cpp
@@ -231,9 +251,11 @@ Node* leftRightRotate(Node* node) {
 ---
 
 ## **4. Right-Left Rotation (RL Rotation)**
+
 Occurs when there is a **right-left-heavy** imbalance.
 
 ### **C++ Code for Right-Left Rotation**
+
 First, perform a **right rotation** on the right child, then a **left rotation** on the node.
 
 ```cpp
@@ -246,9 +268,11 @@ Node* rightLeftRotate(Node* node) {
 ---
 
 ## **Balance Factor Calculation**
+
 To maintain the AVL property, calculate the balance factor and apply rotations as needed.
 
 ### **C++ Code to Calculate Balance Factor**
+
 ```cpp
 int getBalance(Node* node) {
     if (node == nullptr) return 0;
@@ -259,6 +283,7 @@ int getBalance(Node* node) {
 ---
 
 ## **Complete Insertion Function with Rotations**
+
 ```cpp
 Node* insert(Node* node, int key) {
     if (node == nullptr) {
@@ -308,6 +333,7 @@ Node* insert(Node* node, int key) {
 ---
 
 ## **Usage Example**
+
 ```cpp
 int main() {
     Node* root = nullptr;

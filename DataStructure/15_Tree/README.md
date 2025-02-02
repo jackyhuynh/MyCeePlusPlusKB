@@ -133,7 +133,7 @@ The **Abstract Data Type (ADT) Binary Tree** supports the following operations:
 - Criteria:
     - at most 2 children
     - Exactly 1 Root
-    - Exactly 1 path between the Root and any Node     
+    - Exactly 1 path between the Root and any Node
 
 ---
 
@@ -188,7 +188,7 @@ systems.
 - Binary Search Trees (BSTs) are widely used for efficient searching and sorting.
 - Traversal methods (inorder, preorder, postorder) are critical in tree-based algorithms.
 - Keeping trees balanced is key to maintaining efficient operations.
-- **Learn**: Search for the technical Interview 
+- **Learn**: Search for the technical Interview
 
 --- 
 

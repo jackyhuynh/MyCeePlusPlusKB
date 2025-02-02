@@ -1,13 +1,17 @@
 # Programming Concepts: Chunk of Code, Procedural Programming, Abstract Data Types, and Object-Oriented Programming
 
-This document explains key programming concepts using **C++**. Each section includes sample code to illustrate the principles.
+This document explains key programming concepts using **C++**. Each section includes sample code to illustrate the
+principles.
 
 ---
 
 ## Chunk of Code
-A "chunk of code" refers to a self-contained block that performs a specific task. It may include loops, conditionals, and statements.
+
+A "chunk of code" refers to a self-contained block that performs a specific task. It may include loops, conditionals,
+and statements.
 
 ### Example: Printing Prime Numbers
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -36,16 +40,21 @@ int main() {
     return 0;
 }
 ```
+
 ### Explanation
+
 - This chunk of code uses nested loops to determine and print prime numbers up to a given limit.
 - Functions allow modularity and reuse.
 
 ---
 
 ## Procedural Programming
-Procedural programming is a paradigm that organizes code into procedures or functions. It focuses on breaking tasks into subroutines.
+
+Procedural programming is a paradigm that organizes code into procedures or functions. It focuses on breaking tasks into
+subroutines.
 
 ### Example: Simple Calculator
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -97,16 +106,20 @@ int main() {
     return 0;
 }
 ```
+
 ### Explanation
+
 - The program separates operations into functions (`add`, `subtract`, etc.).
 - Main function acts as a controller, invoking specific procedures based on user input.
 
 ---
 
 ## Abstract Data Types (ADT)
+
 An Abstract Data Type defines a data structure and its operations independently of implementation details.
 
 ### Example: Stack Implementation
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -172,16 +185,21 @@ int main() {
     return 0;
 }
 ```
+
 ### Explanation
+
 - The `Stack` class provides operations (`push`, `pop`, `peek`) while encapsulating implementation details.
 - Encapsulation ensures data integrity and abstraction.
 
 ---
 
 ## Object-Oriented Programming (OOP)
-OOP organizes code into objects that combine state (attributes) and behavior (methods). Core principles are encapsulation, inheritance, and polymorphism.
+
+OOP organizes code into objects that combine state (attributes) and behavior (methods). Core principles are
+encapsulation, inheritance, and polymorphism.
 
 ### Example: Inheritance and Polymorphism
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -221,7 +239,9 @@ int main() {
     return 0;
 }
 ```
+
 ### Explanation
+
 - **Encapsulation**: Each class defines its behavior independently.
 - **Inheritance**: `Dog` and `Cat` inherit from `Animal`.
 - **Polymorphism**: The `sound` method behaves differently depending on the object.
@@ -229,7 +249,9 @@ int main() {
 ---
 
 ## Summary
+
 - **Chunk of Code**: A standalone block for a specific task.
 - **Procedural Programming**: Organizes code into procedures/functions.
 - **Abstract Data Types**: Defines a data structure and its operations, hiding implementation details.
-- **Object-Oriented Programming**: Combines data and behavior into objects, emphasizing principles like encapsulation, inheritance, and polymorphism.
+- **Object-Oriented Programming**: Combines data and behavior into objects, emphasizing principles like encapsulation,
+  inheritance, and polymorphism.

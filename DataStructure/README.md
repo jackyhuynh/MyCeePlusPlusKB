@@ -11,7 +11,9 @@ I use this Data Structure material to teach students at College and University L
 
 ## Common Errors with `g++`
 
-To avoid errors related to C++ version compatibility, use the following command to compile with the correct standard (e.g., `C++11`, `C++17`):
+To avoid errors related to C++ version compatibility, use the following command to compile with the correct standard (
+e.g., `C++11`, `C++17`):
+
 ```bash
 g++ -std=c++17 some_source.cpp -o driver
 ```
@@ -23,6 +25,7 @@ g++ -std=c++17 some_source.cpp -o driver
 ### 1. Object-Oriented Programming (OOP) - Concepts
 
 OOP is a paradigm based on "objects," encapsulating data (fields) and behaviors (methods). Core concepts:
+
 - **Encapsulation**: Bundles data and behavior into one unit.
 - **Inheritance**: Allows one class to inherit from another.
 - **Polymorphism**: Methods adapt based on the object they're acting upon.
@@ -37,18 +40,19 @@ OOP is a paradigm based on "objects," encapsulating data (fields) and behaviors 
 
 - **Concept**: A method that calls itself, often breaking down problems into smaller parts.
 - **Key Components**:
-  - **Base Case**: Stops the recursion.
-  - **Recursive Case**: Calls the function within itself, reducing the problem scope each time.
+    - **Base Case**: Stops the recursion.
+    - **Recursive Case**: Calls the function within itself, reducing the problem scope each time.
 
 ### 4. OOP Fundamentals
 
 - **Polymorphism**:
-  - **Compile-Time (Method Overloading)**: Different methods with the same name but different parameters.
-  - **Runtime (Method Overriding)**: Base class methods overridden in derived classes.
+    - **Compile-Time (Method Overloading)**: Different methods with the same name but different parameters.
+    - **Runtime (Method Overriding)**: Base class methods overridden in derived classes.
 - **Classes and Access Modifiers**: `getter`, `setter`, `public`, `private`, `protected`
 - **Virtual Methods**: Functions that can be overridden in derived classes.
 - **Abstract Classes**: Define methods that must be implemented in subclasses.
-- **Inheritance**: Types include single, multiple, multilevel, hierarchical, and hybrid inheritance. Code examples provided.
+- **Inheritance**: Types include single, multiple, multilevel, hierarchical, and hybrid inheritance. Code examples
+  provided.
 
 ### 5. Exception Handling
 
@@ -86,20 +90,22 @@ OOP is a paradigm based on "objects," encapsulating data (fields) and behaviors 
 ### 12. Trees
 
 - **Tree Concepts**:
-  - **Binary Tree**: Each node has up to two children.
-  - **Binary Search Tree (BST)**: Nodes are organized based on value order.
-  - **AVL Tree**: Balanced BST with height differences of 1 or less.
-  - **Tree Elements**: Node, Root, Leaf, Edge.
-  - **Applications**: File systems, decision trees, DOM (Document Object Model).
+    - **Binary Tree**: Each node has up to two children.
+    - **Binary Search Tree (BST)**: Nodes are organized based on value order.
+    - **AVL Tree**: Balanced BST with height differences of 1 or less.
+    - **Tree Elements**: Node, Root, Leaf, Edge.
+    - **Applications**: File systems, decision trees, DOM (Document Object Model).
 
 #### Tree Traversal Types
+
 - **Breadth-First Traversal**: Level-order.
 - **Depth-First Traversal**:
-  - **In-order**: Left, root, right.
-  - **Pre-order**: Root, left, right.
-  - **Post-order**: Left, right, root.
+    - **In-order**: Left, root, right.
+    - **Pre-order**: Root, left, right.
+    - **Post-order**: Left, right, root.
 
 #### AVL Tree Balance Factor
+
 - Balance Factor (BF) formula:
   ```
   BF(node) = Height(LeftSubtree) - Height(RightSubtree)
@@ -126,8 +132,8 @@ OOP is a paradigm based on "objects," encapsulating data (fields) and behaviors 
 - **Concept**: Maps keys to values for efficient data retrieval.
 - **Collision Handling**: Techniques include double hashing, quadratic probing, and linear probing.
 - **Difference**:
-  - **Map vs. Unordered Map**: `std::map` is ordered, `std::unordered_map` uses a hash table.
-  - **Hash Table vs Dictionary**: Both offer key-value storage, but implementation may vary.
+    - **Map vs. Unordered Map**: `std::map` is ordered, `std::unordered_map` uses a hash table.
+    - **Hash Table vs Dictionary**: Both offer key-value storage, but implementation may vary.
 
 ### 16. Sorting Algorithms
 
@@ -137,12 +143,12 @@ OOP is a paradigm based on "objects," encapsulating data (fields) and behaviors 
 ### 17. Search Algorithms
 
 - **Binary Search**:
-  - **Precondition**: Array must be sorted.
-  - **Algorithm**: Divide and conquer for quick value lookup.
+    - **Precondition**: Array must be sorted.
+    - **Algorithm**: Divide and conquer for quick value lookup.
 - **Linear Search**: Sequential search with `O(n)` complexity.
 
-
 ### Implementation
+
 - Apache Spark
 - Hadoop Cluster
 - MongoDB

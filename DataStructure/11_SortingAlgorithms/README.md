@@ -227,4 +227,5 @@ void radixSort(int arr[], int n) {
   datasets.
 - **Faster sorting algorithms** (merge sort, quick sort, radix sort) offer significantly better performance for large
   datasets but come with additional complexity.
-- Choosing the right sorting algorithm depends on the size of the dataset and specific needs, such as memory usage or whether the dataset is nearly sorted.
+- Choosing the right sorting algorithm depends on the size of the dataset and specific needs, such as memory usage or
+  whether the dataset is nearly sorted.

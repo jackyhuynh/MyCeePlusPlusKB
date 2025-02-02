@@ -1,7 +1,9 @@
 ## **A* Search Algorithm**
 
-
-**A*** (pronounced "A-star") is a graph traversal and pathfinding algorithm. It is an extension of Dijkstra’s algorithm with an additional **heuristic function** that guides the search to explore more promising nodes first, improving efficiency. A* guarantees the shortest path if the heuristic is **admissible** (i.e., it never overestimates the distance to the goal).
+**A*** (pronounced "A-star") is a graph traversal and pathfinding algorithm. It is an extension of Dijkstra’s algorithm
+with an additional **heuristic function** that guides the search to explore more promising nodes first, improving
+efficiency. A* guarantees the shortest path if the heuristic is **admissible** (i.e., it never overestimates the
+distance to the goal).
 
 ---
 
@@ -10,15 +12,16 @@
 - A* uses a **priority queue** (or min-heap) to explore the most promising path first.
 - It evaluates nodes using:
   \[ f(n) = g(n) + h(n) \]
-  - \(f(n)\): Estimated total cost of the path through node \(n\).
-  - \(g(n)\): Actual cost from the start to node \(n\).
-  - \(h(n)\): Heuristic estimate from node \(n\) to the goal.
+    - \(f(n)\): Estimated total cost of the path through node \(n\).
+    - \(g(n)\): Actual cost from the start to node \(n\).
+    - \(h(n)\): Heuristic estimate from node \(n\) to the goal.
 
 The **heuristic function** guides A* to find the shortest path faster than uninformed algorithms like BFS or DFS.
 
 ---
 
 ### **Use Cases**
+
 - **Game Development**: Used for pathfinding (e.g., NPCs navigating a map).
 - **Robotics and Autonomous Vehicles**: Finding the shortest path to a target.
 - **Navigation Systems**: GPS systems use A* to calculate the shortest routes.
@@ -138,20 +141,21 @@ int main() {
 
 ### **Explanation**
 
-1. **Grid Representation**:  
-   - `0` represents walkable space.
-   - `1` represents obstacles.
+1. **Grid Representation**:
+    - `0` represents walkable space.
+    - `1` represents obstacles.
 
 2. **Data Structures Used**:
-   - **Priority Queue**: Keeps nodes with the lowest `f(n)` at the top.
-   - **Hash Maps**: Stores the `gScore` and tracks the parent of each node (for path reconstruction).
+    - **Priority Queue**: Keeps nodes with the lowest `f(n)` at the top.
+    - **Hash Maps**: Stores the `gScore` and tracks the parent of each node (for path reconstruction).
 
-3. **Heuristic Function**:  
-   - We use **Euclidean distance** as the heuristic to estimate the distance to the goal.
+3. **Heuristic Function**:
+    - We use **Euclidean distance** as the heuristic to estimate the distance to the goal.
 
 4. **Directions**: The algorithm allows movement in 4 directions: up, down, left, and right.
 
-5. **Path Reconstruction**: If a path is found, the algorithm backtracks from the goal to the start using the `cameFrom` map.
+5. **Path Reconstruction**: If a path is found, the algorithm backtracks from the goal to the start using the `cameFrom`
+   map.
 
 ---
 
@@ -164,6 +168,7 @@ Path found: (0,0) (1,0) (2,0) (2,1) (2,2) (2,3) (2,4) (3,4) (4,4)
 ---
 
 ### **Key Features of A***:
+
 - **Completeness**: A* guarantees finding a path if one exists.
 - **Optimality**: A* finds the shortest path if the heuristic is **admissible**.
 - **Performance**: A* is more efficient than BFS or DFS, especially in large search spaces.
@@ -171,6 +176,7 @@ Path found: (0,0) (1,0) (2,0) (2,1) (2,2) (2,3) (2,4) (3,4) (4,4)
 ---
 
 ### **Time and Space Complexity**
+
 - **Time Complexity**: \(O(b^d)\) where \(b\) is the branching factor and \(d\) is the depth of the solution.
 - **Space Complexity**: Also \(O(b^d)\), as A* stores all generated nodes in memory.
 

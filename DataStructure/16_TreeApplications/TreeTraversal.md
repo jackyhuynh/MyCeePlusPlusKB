@@ -3,10 +3,13 @@
 ## 1. **Breadth-First Search (BFS)**
 
 ### Concept
-- **BFS** explores nodes level-by-level. It starts at the root node and explores all its neighbors before moving to the next level.
+
+- **BFS** explores nodes level-by-level. It starts at the root node and explores all its neighbors before moving to the
+  next level.
 - Uses a **queue** data structure (FIFO) to keep track of nodes to visit next.
 
 ### Use Case
+
 - **Shortest Path**: BFS finds the shortest path in an unweighted graph or tree.
 - **Web Crawlers**: Visiting websites and collecting data level-by-level.
 - **Social Network Graphs**: Finding the shortest connection between two people.
@@ -71,6 +74,7 @@ int main() {
 ```
 
 ### **Output**
+
 ```
 BFS (Level-Order Traversal): 1 2 3 4 5
 ```
@@ -78,14 +82,18 @@ BFS (Level-Order Traversal): 1 2 3 4 5
 ---
 
 ## 2. **Depth-First Search (DFS)**
+
 ### Concept
-- **DFS** explores as far down one branch as possible before backtracking. It uses recursion or a **stack** (LIFO) data structure.
+
+- **DFS** explores as far down one branch as possible before backtracking. It uses recursion or a **stack** (LIFO) data
+  structure.
 - There are three main DFS traversal types:
-  1. **In-order Traversal** (Left, Root, Right)
-  2. **Pre-order Traversal** (Root, Left, Right)
-  3. **Post-order Traversal** (Left, Right, Root)
+    1. **In-order Traversal** (Left, Root, Right)
+    2. **Pre-order Traversal** (Root, Left, Right)
+    3. **Post-order Traversal** (Left, Right, Root)
 
 ### Use Case
+
 - **Pathfinding**: DFS can explore paths in a maze or graph.
 - **Topological Sorting**: Used in dependency graphs to determine the correct order of tasks.
 - **Detecting Cycles**: Detects cycles in directed graphs.
@@ -162,6 +170,7 @@ int main() {
 ```
 
 ### **Output**
+
 ```
 DFS Pre-Order: 1 2 4 5 3
 DFS In-Order: 4 2 5 1 3
@@ -172,17 +181,18 @@ DFS Post-Order: 4 5 2 3 1
 
 ## Key Differences Between BFS and DFS
 
-| **Aspect**         | **BFS**                                | **DFS**                                |
-|--------------------|-----------------------------------------|----------------------------------------|
-| Data Structure     | Queue (FIFO)                           | Stack (LIFO) or Recursion             |
-| Path Discovery     | Finds the shortest path (unweighted)   | Explores deeper paths first           |
-| Space Complexity   | High (stores all nodes at current level) | Low (only stores path nodes)          |
-| Use Case           | Shortest path problems                 | Pathfinding, topological sort, cycle detection |
-| Traversal          | Level-order                            | Pre-order, In-order, Post-order       |
+| **Aspect**       | **BFS**                                  | **DFS**                                        |
+|------------------|------------------------------------------|------------------------------------------------|
+| Data Structure   | Queue (FIFO)                             | Stack (LIFO) or Recursion                      |
+| Path Discovery   | Finds the shortest path (unweighted)     | Explores deeper paths first                    |
+| Space Complexity | High (stores all nodes at current level) | Low (only stores path nodes)                   |
+| Use Case         | Shortest path problems                   | Pathfinding, topological sort, cycle detection |
+| Traversal        | Level-order                              | Pre-order, In-order, Post-order                |
 
 ---
 
 ### When to Use BFS vs DFS
 
-- **BFS** is better for finding the shortest path in unweighted graphs and trees. 
-- **DFS** is useful for exploring all paths in depth or in applications like **backtracking algorithms** or **topological sorting**.
+- **BFS** is better for finding the shortest path in unweighted graphs and trees.
+- **DFS** is useful for exploring all paths in depth or in applications like **backtracking algorithms** or *
+  *topological sorting**.
