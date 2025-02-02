@@ -1,193 +1,191 @@
-# Chapter 9: List Implementations
+# Abstract Data Type (ADT) List in C++
 
----
+## Table of Contents
 
-## Resources:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Operations](#operations)
+- [Implementation](#implementation)
+- [Example Usage](#example-usage)
+- [Complexity Analysis](#complexity-analysis)
+- [Conclusion](#conclusion)
 
-- [Other Uses Case of List](./Others.md)
+## Introduction
 
-## **1. Array-Based Implementation of the ADT List**
+An **Abstract Data Type (ADT) List** is a collection of ordered elements where duplicates are allowed. This README
+provides an overview of the ADT List, its operations, and how to implement it in C++ using an array-based and a linked
+list-based approach.
 
-### **Concept**
+## Features
 
-An **array-based implementation** is a common choice for the ADT list because both an array and a list identify their
-items by a number. However, an ADT list requires operations like `getLength`, which arrays do not provide. In this
-approach, you must manually keep track of the number of entries.
+- Maintains an ordered collection of elements.
+- Allows duplicate values.
+- Supports dynamic size management (for linked list implementation).
+- Efficient insertions and deletions in linked list implementation.
 
-### **Code Example:**
+## Operations
+
+An ADT List typically supports the following operations:
+
+| Operation                 | Description                                                |
+|---------------------------|------------------------------------------------------------|
+| `insert(position, value)` | Inserts a value at a specific position in the list.        |
+| `remove(position)`        | Removes an element at a specific position.                 |
+| `get(position)`           | Retrieves the value at a given position.                   |
+| `size()`                  | Returns the number of elements in the list.                |
+| `isEmpty()`               | Checks if the list is empty.                               |
+| `clear()`                 | Removes all elements from the list.                        |
+| `find(value)`             | Searches for a value in the list and returns its position. |
+| `print()`                 | Displays all elements in the list.                         |
+
+## Implementation
+
+### Array-Based Implementation
+
+The array-based list is implemented using a dynamically allocated array. It has a fixed capacity, which can be resized
+when needed.
 
 ```cpp
+#include <iostream>
+
 class ArrayList {
 private:
-    int items[MAX_SIZE];
-    int itemCount;
+    int *arr;
+    int capacity;
+    int count;
 
 public:
-    ArrayList() : itemCount(0) {}
-
-    bool isEmpty() const {
-        return itemCount == 0;
+    ArrayList(int size = 10) : capacity(size), count(0) {
+        arr = new int[capacity];
     }
 
-    int getLength() const {
-        return itemCount;
-    }
+    ~ArrayList() { delete[] arr; }
 
-    void insert(int position, int newEntry) {
-        if (position >= 0 && position <= itemCount && itemCount < MAX_SIZE) {
-            for (int i = itemCount; i > position; i--) {
-                items[i] = items[i - 1];
-            }
-            items[position] = newEntry;
-            itemCount++;
+    void insert(int pos, int value) {
+        if (pos < 0 || pos > count || count == capacity) return;
+        for (int i = count; i > pos; --i) {
+            arr[i] = arr[i - 1];
         }
+        arr[pos] = value;
+        count++;
     }
 
-    int getEntry(int position) const {
-        if (position >= 0 && position < itemCount) {
-            return items[position];
+    void remove(int pos) {
+        if (pos < 0 || pos >= count) return;
+        for (int i = pos; i < count - 1; ++i) {
+            arr[i] = arr[i + 1];
         }
-        return -1;  // Error value
+        count--;
+    }
+
+    int get(int pos) {
+        if (pos < 0 || pos >= count) return -1;
+        return arr[pos];
+    }
+
+    int size() { return count; }
+    bool isEmpty() { return count == 0; }
+    void print() {
+        for (int i = 0; i < count; i++) std::cout << arr[i] << " ";
+        std::cout << std::endl;
     }
 };
 ```
 
-### **Use Case:**
+### Linked List Implementation
 
-In applications where the number of elements is known in advance and memory constraints are manageable (e.g., small
-datasets), array-based implementations are efficient and allow quick access by index.
-
----
-
-## **2. Link-Based Implementation of the ADT List**
-
-### **Concept**
-
-A **link-based implementation** uses pointers instead of arrays to manage elements. The main advantage is that insertion
-and removal do not require shifting elements, unlike arrays. However, you must traverse the list to access specific
-elements.
-
-### **Code Example:**
+A **singly linked list** is a more dynamic approach that avoids resizing issues.
 
 ```cpp
-class Node {
-public:
-    int data;
-    Node* next;
-
-    Node(int value) : data(value), next(nullptr) {}
-};
+#include <iostream>
 
 class LinkedList {
 private:
-    Node* head;
-    int length;
+    struct Node {
+        int data;
+        Node *next;
+        Node(int value) : data(value), next(nullptr) {}
+    };
+    Node *head;
+    int count;
 
 public:
-    LinkedList() : head(nullptr), length(0) {}
+    LinkedList() : head(nullptr), count(0) {}
 
-    bool isEmpty() const {
-        return head == nullptr;
-    }
-
-    int getLength() const {
-        return length;
-    }
-
-    void insert(int position, int newEntry) {
-        Node* newNode = new Node(newEntry);
-        if (position == 0) {
+    void insert(int pos, int value) {
+        if (pos < 0 || pos > count) return;
+        Node *newNode = new Node(value);
+        if (pos == 0) {
             newNode->next = head;
             head = newNode;
         } else {
-            Node* prevNode = getNodeAt(position - 1);
-            newNode->next = prevNode->next;
-            prevNode->next = newNode;
+            Node *temp = head;
+            for (int i = 0; i < pos - 1; i++) temp = temp->next;
+            newNode->next = temp->next;
+            temp->next = newNode;
         }
-        length++;
+        count++;
     }
 
-    Node* getNodeAt(int position) const {
-        Node* current = head;
-        for (int i = 0; i < position; i++) {
-            current = current->next;
+    void remove(int pos) {
+        if (pos < 0 || pos >= count || !head) return;
+        Node *temp = head;
+        if (pos == 0) {
+            head = head->next;
+            delete temp;
+        } else {
+            Node *prev = nullptr;
+            for (int i = 0; i < pos; i++) {
+                prev = temp;
+                temp = temp->next;
+            }
+            prev->next = temp->next;
+            delete temp;
         }
-        return current;
+        count--;
+    }
+
+    void print() {
+        Node *temp = head;
+        while (temp) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
     }
 };
 ```
 
-### **Use Case:**
-
-A linked list is ideal for applications where frequent insertions and deletions are required (e.g., implementing undo
-functionality in text editors) and where resizing an array would be inefficient.
-
----
-
-## **3. Recursion in Linked List Operations**
-
-### **Concept**
-
-Recursion can simplify some operations on linked lists. For example, adding a node recursively involves adding it to the
-first node and then continuing down the chain until the appropriate position is found.
-
-### **Code Example (Recursive Insertion):**
+## Example Usage
 
 ```cpp
-void insertRecursively(Node*& node, int newEntry) {
-    if (node == nullptr) {
-        node = new Node(newEntry);
-    } else {
-        insertRecursively(node->next, newEntry);
-    }
+int main() {
+    LinkedList list;
+    list.insert(0, 10);
+    list.insert(1, 20);
+    list.insert(2, 30);
+    list.print(); // Output: 10 20 30
+
+    list.remove(1);
+    list.print(); // Output: 10 30
+    return 0;
 }
 ```
 
-### **Use Case:**
+## Complexity Analysis
 
-Recursion simplifies the logic for tasks like inserting or traversing linked lists, making the code more concise, though
-it may not always be the most efficient approach for larger lists due to stack limitations.
+| Operation                 | Array-Based | Linked List |
+|---------------------------|-------------|-------------|
+| `insert(position, value)` | O(n)        | O(n)        |
+| `remove(position)`        | O(n)        | O(n)        |
+| `get(position)`           | O(1)        | O(n)        |
+| `size()`                  | O(1)        | O(1)        |
+| `isEmpty()`               | O(1)        | O(1)        |
+| `clear()`                 | O(1)        | O(n)        |
 
----
+## Conclusion
 
-## **4. Comparing Array-Based vs. Link-Based Implementations**
+The **ADT List** provides a flexible and useful data structure for maintaining ordered collections. While array-based
+lists offer constant-time access but require resizing, linked lists provide dynamic memory allocation but have slower
+element access. The choice depends on the application requirements.
 
-### **Array-Based Implementation:**
-
-- **Advantages**: Direct access to elements by index, constant time for access.
-- **Disadvantages**: Insertion and removal require shifting elements, which is inefficient for large lists.
-
-### **Link-Based Implementation:**
-
-- **Advantages**: Insertion and removal are efficient as no shifting is required.
-- **Disadvantages**: Accessing elements requires traversal, making it slower than arrays for random access.
-
-### **Time Complexity Comparison:**
-
-| Operation     | Array-Based         | Link-Based     |
-|---------------|---------------------|----------------|
-| **Access**    | O(1)                | O(n)           |
-| **Insertion** | O(n) (due to shift) | O(1) (at head) |
-| **Deletion**  | O(n) (due to shift) | O(1) (at head) |
-
----
-
-## **5. Use Cases for Each Implementation**
-
-### **Array-Based Implementation:**
-
-- **Use Case**: Efficient when the list size is fixed or rarely changes, such as in games that store predefined levels
-  or settings.
-
-### **Link-Based Implementation:**
-
-- **Use Case**: Suitable for cases with dynamic resizing and frequent insertions/removals, like maintaining a playlist
-  in a music player.
-
----
-
-## **Conclusion**
-
-Both array-based and link-based implementations of lists have their advantages and disadvantages. The choice of which
-implementation to use depends on the specific requirements of the application—whether fast random access or frequent
-insertions and deletions are prioritized.
