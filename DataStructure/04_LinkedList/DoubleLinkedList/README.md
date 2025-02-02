@@ -224,7 +224,7 @@ void DoubleLinkedList::displayList() {
 
 ### 1. **`insertAtBeginning(int data)`**
 
-![Doubly Linked List Insertion At Begining](images/insertAtBeginning.png)
+![Doubly Linked List Insertion At Begining](../images/insertAtBeginning.png)
 
 ```cpp
 void DoubleLinkedList::insertAtBeginning(int data) {
@@ -250,7 +250,7 @@ void DoubleLinkedList::insertAtBeginning(int data) {
 
 #### 2. **`insertAtEnd(int data)`**
 
-![insertAtEnd](images/insertAtEnd.png)
+![insertAtEnd](../images/insertAtEnd.png)
 
 ```cpp
 void DoubleLinkedList::insertAtEnd(int data) {
@@ -278,7 +278,7 @@ void DoubleLinkedList::insertAtEnd(int data) {
 
 #### 3. **`insertAtLocation(int data, int position)`**
 
-![inserAtGiven](images/InsertAtGiven.png)
+![inserAtGiven](../images/InsertAtGiven.png)
 
 ```cpp
 void DoubleLinkedList::insertAtLocation(int data, int position) {

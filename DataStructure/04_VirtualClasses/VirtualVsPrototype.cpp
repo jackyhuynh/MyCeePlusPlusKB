@@ -1,7 +1,7 @@
 #include <iostream>
 
 /**
- *Virtual (in the context of C++)
+ * Virtual (in the context of C++)
  * Virtual Functions:
  * In C++, the virtual keyword is used in the declaration of a member function in a base class to 
  * indicate that the function can be overridden by derived classes. This is a key aspect of achieving runtime polymorphism through dynamic dispatch.
