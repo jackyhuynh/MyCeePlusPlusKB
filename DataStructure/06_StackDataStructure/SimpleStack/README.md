@@ -1,7 +1,7 @@
 # Basic Stack Implemention:
 
 This code defines a basic stack data structure using linked lists in C++. Here's a detailed breakdown of
-the [Stack.cpp](./Stack.cpp). We also need the [Stack.h](./Stack.h) so that the app can operate properly.
+the [Stack.cpp](Stack.cpp). We also need the [Stack.h](Stack.h) so that the app can operate properly.
 
 ### 1. `Node::Node(int data)`
 
@@ -130,4 +130,4 @@ This code implements a stack using a singly linked list. It provides basic opera
 
 This is a typical implementation of a stack with dynamic memory allocation in C++.
 
-[Prev](./README.md)
+[Prev](../README.md)

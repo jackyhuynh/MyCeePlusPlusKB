@@ -24,7 +24,7 @@ is placed on top of the others, and to remove a plate, you take the one from the
 ### Resources:
 
 - [Basic Stack Implementation C++](./StackImplementation.md)
-- [Stack Implementation using Vector<T> or Template<T>](./AdtStack.cpp)
+- [Stack Implementation using Vector<T> or Template<T>](ADTStack/AdtStack.cpp)
 
 ### Use Cases of Stack: (NO TEST)
 
