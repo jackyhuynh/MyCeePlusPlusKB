@@ -24,24 +24,9 @@ public:
 };
 
 class FullTimeEmployee : public Employee {
-public:
-    FullTimeEmployee(std::string n, double salary) : Employee(n, salary) {}
-    double calculateSalary() const override {
-        return baseSalary;
-    }
 };
 
-class PartTimeEmployee : public Employee {
-private:
-    double hoursWorked, hourlyRate;
-public:
-    PartTimeEmployee(std::string n, double hours, double rate)
-        : Employee(n, 0), hoursWorked(hours), hourlyRate(rate) {}
-
-    double calculateSalary() const override {
-        return hoursWorked * hourlyRate;
-    }
-};
+// Define class PartTimeEmployee : public FullTimeEmployee {}
 
 int main() {
     Employee* employees[] = {

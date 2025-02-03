@@ -32,31 +32,9 @@ public:
     }
 };
 
-class Rectangle : public Shape {
-private:
-    double width, height;
-public:
-    Rectangle(double w, double h) : width(w), height(h) {}
-    double area() const override {
-        return width * height;
-    }
-    void display() const override {
-        std::cout << "Rectangle with area: " << area() << "\n";
-    }
-};
+// class Rectangle : public Shape {}
 
-class Triangle : public Shape {
-private:
-    double base, height;
-public:
-    Triangle(double b, double h) : base(b), height(h) {}
-    double area() const override {
-        return 0.5 * base * height;
-    }
-    void display() const override {
-        std::cout << "Triangle with area: " << area() << "\n";
-    }
-};
+// class Triangle : public Shape {}
 
 int main() {
     Shape* shapes[] = {
