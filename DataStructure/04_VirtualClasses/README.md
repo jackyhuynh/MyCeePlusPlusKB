@@ -10,61 +10,61 @@ is acting upon.
 There are two main types of polymorphism:
 
 1. **Compile-time polymorphism (Static polymorphism)**:
-    - This is achieved through **method overloading** or **operator overloading**.
-    - In method overloading, multiple methods share the same name but differ in the type or number of parameters.
-    - Example in Java:Polymorphism
-      ```java
-      class MathOperation {
-          public int add(int a, int b) {
-              return a + b;
-          }Polymorphism
-          public double add(double a, double b) {
-              return a + b;
-          }
-      }
-      ```
-      Here, the `add` method is overloaded to handle both integer and double types.
+   - This is achieved through **method overloading** or **operator overloading**.
+   - In method overloading, multiple methods share the same name but differ in the type or number of parameters.
+   - Example in Java:
+     ```java
+     class MathOperation {
+         public int add(int a, int b) {
+             return a + b;
+         }
+         public double add(double a, double b) {
+             return a + b;
+         }
+     }
+     ```
+     Here, the `add` method is overloaded to handle both integer and double types.
 
 2. **Run-time polymorphism (Dynamic polymorphism)**:
-    - This is achieved through **method overriding**, where a subclass provides a specific implementation of a method
-      already defined in its superclass.
-    - Example in Java:
-      ```java
-      class Animal {
-          public void sound() {
-              System.out.println("Animal makes a sound");
-          }
-      }
-      class Dog extends Animal {
-          @Override
-          public void sound() {
-              System.out.println("Dog barks");
-          }
-      }
-      class Cat extends Animal {
-          @Override
-          public void sound() {
-              System.out.println("Cat meows");
-          }
-      }
-      public class Main {
-          public static void main(String[] args) {
-              Animal myDog = new Dog();
-              Animal myCat = new Cat();
-              myDog.sound();  // Outputs: Dog barks
-              myCat.sound();  // Outputs: Cat meows
-          }
-      }
-      ```
-      In this example, both `Dog` and `Cat` override the `sound()` method from the `Animal` class, and the appropriate
-      version is called at runtime based on the actual object.
+   - This is achieved through **method overriding**, where a subclass provides a specific implementation of a method
+     already defined in its superclass.
+   - Example in Java:
+     ```java
+     class Animal {
+         public void sound() {
+             System.out.println("Animal makes a sound");
+         }
+     }
+     class Dog extends Animal {
+         @Override
+         public void sound() {
+             System.out.println("Dog barks");
+         }
+     }
+     class Cat extends Animal {
+         @Override
+         public void sound() {
+             System.out.println("Cat meows");
+         }
+     }
+     public class Main {
+         public static void main(String[] args) {
+             Animal myDog = new Dog();
+             Animal myCat = new Cat();
+             myDog.sound();  // Outputs: Dog barks
+             myCat.sound();  // Outputs: Cat meows
+         }
+     }
+     ```
+     In this example, both `Dog` and `Cat` override the `sound()` method from the `Animal` class, and the appropriate
+     version is called at runtime based on the actual object.
 
 **Polymorphism** allows for flexibility and reusability of code, making it easier to manage and scale.
 
 ## Virtual Class
 
-In C++ and computer science, the concept of a **virtual class** is closely related to **virtual functions** and *
-*inheritance**, specifically focusing on allowing runtime polymorphism and proper handling of object hierarchies.
+In C++ and computer science, the concept of a **virtual class** is closely related to **virtual functions** and
+**inheritance**, specifically focusing on allowing runtime polymorphism and proper handling of object hierarchies.
 
 ### Virtual Functions in C++
 
@@ -121,70 +121,36 @@ int main() {
 }
 ```
 
-In this example:
+## Late Binding in C++
 
-- The function `sound()` is declared as virtual in the base class `Animal`.
-- Both `Dog` and `Cat` override `sound()` to provide their specific implementations.
-- The correct function is called based on the actual object type, even when accessed through a base class pointer.
+**Late Binding**, also known as **Dynamic Binding**, is a mechanism in which function calls are resolved at runtime rather than compile-time. This is typically achieved using virtual functions in C++.
 
-### Virtual Class (Pure Virtual Class or Abstract Class)
-
-In C++, the term **virtual class** often refers to a class that contains one or more **pure virtual functions**, making
-it an **abstract class**. You cannot instantiate an abstract class directly; instead, you must derive from it and
-implement its pure virtual functions in the derived class.
-
-#### Pure Virtual Function:
-
-A pure virtual function is a virtual function that has no implementation in the base class and is defined by assigning
-`= 0` in the base class.
-
-#### Example of Pure Virtual Class (Abstract Class):
-
+### Example of Late Binding
 ```cpp
 #include <iostream>
 using namespace std;
 
-class Shape {
+class Base {
 public:
-    // Pure virtual function
-    virtual void draw() = 0;
-};
-
-class Circle : public Shape {
-public:
-    void draw() override {
-        cout << "Drawing Circle" << endl;
+    virtual void show() {
+        cout << "Base class show() called" << endl;
     }
 };
 
-class Rectangle : public Shape {
+class Derived : public Base {
 public:
-    void draw() override {
-        cout << "Drawing Rectangle" << endl;
+    void show() override {
+        cout << "Derived class show() called" << endl;
     }
 };
 
 int main() {
-    Shape* shapePtr;
-    Circle circle;
-    Rectangle rectangle;
-
-    shapePtr = &circle;
-    shapePtr->draw();  // Output: Drawing Circle
-
-    shapePtr = &rectangle;
-    shapePtr->draw();  // Output: Drawing Rectangle
-
+    Base* obj = new Derived();
+    obj->show(); // Output: Derived class show() called
+    delete obj;
     return 0;
 }
 ```
-
-In this example:
-
-- `Shape` is an abstract class because it contains the pure virtual function `draw()`.
-- `Circle` and `Rectangle` are derived classes that provide implementations for `draw()`.
-- You cannot create an object of `Shape`, but you can create objects of `Circle` and `Rectangle`, which inherit from
-  `Shape`.
 
 ### Virtual Classes in Computer Science
 
@@ -208,3 +174,4 @@ Some important points about virtual classes in computer science:
 - **Abstract classes** (or "virtual classes") in C++ contain pure virtual functions and cannot be instantiated directly.
 - Virtual classes in general allow for abstraction and provide a framework for designing flexible and reusable software
   systems.
+
