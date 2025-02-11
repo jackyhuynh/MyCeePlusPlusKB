@@ -131,11 +131,11 @@ int main() {
 
     std::cout << "Updating value at position 3 to 9" << std::endl;
     sll.update(3, 9);
-    sll.displayList();  // Expected Output: 0 1 9 2 3
+    sll.displayList();  // Expected Output: 0 1 9 3
 
     std::cout << "Deleting node at position 4" << std::endl;
     sll.deleteByPosition(4);
-    sll.displayList();  // Expected Output: 0 1 9 3
+    sll.displayList();  // Expected Output: 0 1 9
 
     std::cout << "Is the list empty? " << (sll.isEmpty() ? "Yes" : "No") << std::endl;
     // Expected Output: No
@@ -145,6 +145,9 @@ int main() {
 
     std::cout << "Searching for value 5 in the list: " << (sll.search(5) ? "Found" : "Not Found") << std::endl;
     // Expected Output: Not Found
+
+    std::cout << "Searching for value 1 in the list: " << (sll.search(1) ? "Found" : "Not Found") << std::endl;
+    // Expected Output: Found
 
     std::cout << "Clearing the list." << std::endl;
     sll.clear();

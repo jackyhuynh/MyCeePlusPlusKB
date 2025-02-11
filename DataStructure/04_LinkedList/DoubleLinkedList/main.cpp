@@ -19,11 +19,11 @@ int main() {
 
     std::cout << "Updating value at position 3 to 9" << std::endl;
     dll.update(3, 9);
-    dll.displayList();  // Expected Output: 0 1 9 2 3
+    dll.displayList();  // Expected Output: 0 1 9 3
 
     std::cout << "Deleting node at position 4" << std::endl;
     dll.deleteByPosition(4);
-    dll.displayList();  // Expected Output: 0 1 9 3
+    dll.displayList();  // Expected Output: 0 1 9
 
     std::cout << "Is the list empty? " << (dll.isEmpty() ? "Yes" : "No") << std::endl;
     // Expected Output: No
