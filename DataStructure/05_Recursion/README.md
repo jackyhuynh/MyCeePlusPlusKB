@@ -13,11 +13,10 @@ problem is divided into smaller, simpler instances of the same problem, and the 
 it reaches a base case, which is a condition that stops the recursion. Recursion is often used to solve problems that
 have a repetitive or nested structure.
 
-For example, consider the factorial of a number \( n \) (denoted \( n! \)):
+For example, consider the factorial of a number (n) (denoted n!):
 
-\[
-n! = n \times (n - 1) \times (n - 2) \times \dots \times 1
-\]
+n! = n*(n - 1)*(n - 2)*...* 1
+
 A recursive function to calculate this would look like:
 
 ```cpp
@@ -44,11 +43,10 @@ int factorial(int n) {
 
 ### 1. **Factorial of a Number**
 
-The `factorial` function computes the factorial of a number \( n \), defined as:
-\[
-n! = n \times (n - 1) \times (n - 2) \times \dots \times 1
-\]
-The function calls itself recursively until it reaches the base case (i.e., \( n \leq 1 \)).
+The `factorial` function computes the factorial of a number (n) (denoted n!):
+
+n! = n*(n - 1)*(n - 2)*...* 1
+The function calls itself recursively until it reaches the base case.
 
 ![factorial](images/factorial.png)
 
