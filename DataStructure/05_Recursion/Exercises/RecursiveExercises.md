@@ -4,6 +4,17 @@ Fill in the ****************
 
 ### **1. Count Digits of a Number**
 Write a recursive function to count the number of digits in a given integer.
+Example Walkthrough: For n = 1234:
+
+countDigits(1234) → 1 + countDigits(123)
+
+countDigits(123) → 1 + countDigits(12)
+
+countDigits(12) → 1 + countDigits(1)
+
+countDigits(1) → 1 + countDigits(0)
+
+countDigits(0) → 0 (Base case)
 
 ```cpp
 int countDigits(int n) {
@@ -18,6 +29,7 @@ int countDigits(int n) {
 
 ### **2. Sum of Digits**
 Write a recursive function that returns the sum of the digits of a given integer.
+https://www.geeksforgeeks.org/sum-digit-number-using-recursion/
 
 ```cpp
 int sumOfDigits(int n) {
@@ -32,6 +44,9 @@ int sumOfDigits(int n) {
 
 ### **3. Decimal to Binary Conversion**
 Write a recursive function that converts a decimal number to binary.
+Decimal to Binary
+Decimal to binary conversion is done through various methods. One of the methods to convert decimal to binary is by dividing the given decimal number recursively by 2. Then, the remainders are noted down till we get 0 as the final quotient. After this step, these remainders are written in reverse order to get the binary value of the given decimal number. A number system is a mathematical way of representing numbers using a set of digits or symbols. There are different number systems like the decimal number system, the binary number system, the octal, and the hexadecimal number system. These are identified with the help of the base that they have. Numbers can be easily converted from one base to another using some defined rules.
+
 
 ```cpp
 void decimalToBinary(int n) {
