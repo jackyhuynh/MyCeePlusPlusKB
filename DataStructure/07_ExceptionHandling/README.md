@@ -10,8 +10,8 @@
 
 ### Resources
 
-- [Exceptions and Use cases](./ExceptionUsecase.md)
-- [Other Languages](./Others.md`)
+- [Exceptions and Use cases](./ExceptionHandling.cpp)
+- [Other Languages](./Others.md)
 
 ---
 

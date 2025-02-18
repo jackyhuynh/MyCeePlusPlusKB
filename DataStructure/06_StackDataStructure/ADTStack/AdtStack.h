@@ -22,7 +22,7 @@ public:
     T pop();
 
     // Get the top element of the stack
-    T top() const;
+    T peek() const;
 };
 
 #endif

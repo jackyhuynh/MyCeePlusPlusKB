@@ -25,7 +25,7 @@ T ADTStack<T>::pop() {
 
 // Get the top element of the stack without removing it
 template <typename T>
-T ADTStack<T>::top() const {
+T ADTStack<T>::peek() const {
     if (isEmpty()) {
         throw std::out_of_range("Stack is empty: cannot get the top element");
     }
