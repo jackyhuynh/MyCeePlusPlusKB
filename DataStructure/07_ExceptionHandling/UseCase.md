@@ -4,13 +4,12 @@
 
 if-else is generally used for predictable conditions, while try-catch is used for unforeseen runtime errors like file handling issues, memory allocation failures, or hardware-level errors. Below are some cases where try-catch is more effective than if-else.
 
-1. Handling Invalid Input Conversion (std::stoi)
+### 1. Handling Invalid Input Conversion (std::stoi)
 
-Problem: Converting a string to an integer might fail if the input is invalid (e.g., a non-numeric string). if-else cannot catch these exceptions.
+- Problem: Converting a string to an integer might fail if the input is invalid (e.g., a non-numeric string). if-else cannot catch these exceptions.
+- Using if-else (Fails to catch exception)
 
-Using if-else (Fails to catch exception)
-
-```cplus
+```cplusplus
 #include <iostream>
 #include <string>
 using namespace std;
@@ -27,11 +26,13 @@ int main() {
     }
 }
 ```
-	•	Problem: isdigit(input[0]) only checks the first character, failing for cases like "12a".
-	•	stoi() throws an exception, which crashes the program if not handled.
 
-Using try-catch (Proper Exception Handling)
+- Problem: isdigit(input[0]) only checks the first character, failing for cases like "12a".
+- stoi() throws an exception, which crashes the program if not handled.
 
+- Using try-catch (Proper Exception Handling)
+
+```
 #include <iostream>
 #include <string>
 using namespace std;
@@ -45,14 +46,14 @@ int main() {
         cout << "Error: Invalid number format. " << e.what() << endl;
     }
 }
+```
 
-✅ Works: Prevents program crash and handles the invalid conversion safely.
+- ✅ Works: Prevents program crash and handles the invalid conversion safely.
 
-2. File Handling Errors
+## 2. File Handling Errors
 
-Problem: Opening a file that doesn’t exist or is inaccessible can fail at runtime. if-else cannot detect these issues properly.
-
-Using if-else (Fails in some cases)
+- Problem: Opening a file that doesn’t exist or is inaccessible can fail at runtime. if-else cannot detect these issues properly.
+- Using if-else (Fails in some cases)
 
 #include <iostream>
 #include <fstream>
