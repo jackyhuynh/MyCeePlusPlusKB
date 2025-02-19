@@ -10,6 +10,7 @@ Problem: Converting a string to an integer might fail if the input is invalid (e
 
 Using if-else (Fails to catch exception)
 
+```cplus
 #include <iostream>
 #include <string>
 using namespace std;
@@ -25,7 +26,7 @@ int main() {
         cout << "Converted number: " << num << endl;
     }
 }
-
+```
 	•	Problem: isdigit(input[0]) only checks the first character, failing for cases like "12a".
 	•	stoi() throws an exception, which crashes the program if not handled.
 
