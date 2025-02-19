@@ -1,15 +1,12 @@
 # Use Case
 
-## When try-catch Solves the Problem but if-else Doesn’t
+## **When `try-catch` Solves the Problem but `if-else` Doesn't**
 
-if-else is generally used for predictable conditions, while try-catch is used for unforeseen runtime errors like file handling issues, memory allocation failures, or hardware-level errors. Below are some cases where try-catch is more effective than if-else.
+### **1. Handling Invalid Input Conversion (`std::stoi`)**
+**Problem:** Converting a string to an integer might fail if the input is invalid (e.g., a non-numeric string). `if-else` cannot catch these exceptions.
 
-### 1. Handling Invalid Input Conversion (std::stoi)
-
-- Problem: Converting a string to an integer might fail if the input is invalid (e.g., a non-numeric string). if-else cannot catch these exceptions.
-- Using if-else (Fails to catch exception)
-
-```cplusplus
+#### **Using `if-else` (Fails to catch exception)**
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -26,13 +23,11 @@ int main() {
     }
 }
 ```
+- **Problem:** `isdigit(input[0])` only checks the first character, failing for cases like `"12a"`.
+- **`stoi()` throws an exception**, which crashes the program if not handled.
 
-- Problem: isdigit(input[0]) only checks the first character, failing for cases like "12a".
-- stoi() throws an exception, which crashes the program if not handled.
-
-- Using try-catch (Proper Exception Handling)
-
-```
+#### **Using `try-catch` (Proper Exception Handling)**
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -47,14 +42,15 @@ int main() {
     }
 }
 ```
+**✅ Works:** Prevents program crash and handles the invalid conversion safely.
 
-- ✅ Works: Prevents program crash and handles the invalid conversion safely.
+---
 
-## 2. File Handling Errors
+### **2. File Handling Errors**
+**Problem:** Opening a file that doesn’t exist or is inaccessible can fail at runtime. `if-else` cannot detect these issues properly.
 
-- Problem: Opening a file that doesn’t exist or is inaccessible can fail at runtime. if-else cannot detect these issues properly.
-- Using if-else (Fails in some cases)
-
+#### **Using `if-else` (Fails in some cases)**
+```cpp
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -70,11 +66,11 @@ int main() {
 
     return 0;
 }
+```
+- **Problem:** It **only checks if the file is open**, but doesn't handle unexpected runtime failures (e.g., permissions, disk errors).
 
-	•	Problem: It only checks if the file is open, but doesn’t handle unexpected runtime failures (e.g., permissions, disk errors).
-
-Using try-catch (Proper Handling)
-
+#### **Using `try-catch` (Proper Handling)**
+```cpp
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -90,15 +86,16 @@ int main() {
         cout << "Exception: " << e.what() << endl;
     }
 }
+```
+**✅ Works:** Catches file-related exceptions properly.
 
-✅ Works: Catches file-related exceptions properly.
+---
 
-3. Memory Allocation Failure (new Operator)
+### **3. Memory Allocation Failure (`new` Operator)**
+**Problem:** Allocating memory dynamically (`new`) may fail if the system runs out of memory.
 
-Problem: Allocating memory dynamically (new) may fail if the system runs out of memory.
-
-Using if-else (Doesn’t Handle Exception)
-
+#### **Using `if-else` (Doesn't Handle Exception)**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -114,11 +111,11 @@ int main() {
     delete[] arr;
     return 0;
 }
+```
+- **Problem:** `new` **does not return `nullptr`** when allocation fails; instead, it throws a `std::bad_alloc` exception.
 
-	•	Problem: new does not return nullptr when allocation fails; instead, it throws a std::bad_alloc exception.
-
-Using try-catch (Proper Exception Handling)
-
+#### **Using `try-catch` (Proper Exception Handling)**
+```cpp
 #include <iostream>
 #include <exception>
 using namespace std;
@@ -134,15 +131,16 @@ int main() {
 
     return 0;
 }
+```
+**✅ Works:** Prevents program crash due to `std::bad_alloc`.
 
-✅ Works: Prevents program crash due to std::bad_alloc.
+---
 
-4. Division by Zero
+### **4. Division by Zero**
+**Problem:** Checking for division by zero using `if-else` works, but if the divisor is a **user input or calculation result**, it may unexpectedly be zero.
 
-Problem: Checking for division by zero using if-else works, but if the divisor is a user input or calculation result, it may unexpectedly be zero.
-
-Using if-else (Prevents issue but lacks robustness)
-
+#### **Using `if-else` (Prevents issue but lacks robustness)**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -158,12 +156,12 @@ int main() {
     cout << divide(10, 0) << endl;
     return 0;
 }
+```
+- **Problem:** Returning `0` is not always the right solution.
+- **May not work if division is deep in a function call stack.**
 
-	•	Problem: Returning 0 is not always the right solution.
-	•	May not work if division is deep in a function call stack.
-
-Using try-catch (Better Error Handling)
-
+#### **Using `try-catch` (Better Error Handling)**
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -180,21 +178,21 @@ int main() {
     }
     return 0;
 }
+```
+**✅ Works:** The program doesn't continue with incorrect values.
 
-✅ Works: The program doesn’t continue with incorrect values.
+---
 
-When to Use try-catch Instead of if-else
+### **When to Use `try-catch` Instead of `if-else`**
+| Situation | Use `if-else` | Use `try-catch` |
+|-----------|--------------|----------------|
+| Simple predictable errors | ✅ | ❌ |
+| Invalid user input handling | ✅ | ❌ (unless an exception is thrown) |
+| File I/O failures | ❌ | ✅ |
+| Memory allocation failures | ❌ | ✅ |
+| Converting strings to numbers | ❌ | ✅ |
+| Division by zero deep in function calls | ❌ | ✅ |
 
-Situation	Use if-else	Use try-catch
-Simple predictable errors	✅	❌
-Invalid user input handling	✅	❌ (unless an exception is thrown)
-File I/O failures	❌	✅
-Memory allocation failures	❌	✅
-Converting strings to numbers	❌	✅
-Division by zero deep in function calls	❌	✅
-
-Conclusion:
-	•	Use if-else for expected conditions where you can check before execution.
-	•	Use try-catch for unexpected runtime errors like memory allocation failures, file handling, and exceptions thrown by library functions.
-
- 
+**Conclusion:**
+- **Use `if-else` for expected conditions** where you can check before execution.
+- **Use `try-catch` for unexpected runtime errors** like memory allocation failures, file handling, and exceptions thrown by library functions.
