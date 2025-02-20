@@ -1,4 +1,4 @@
-## Exception Handling Strategies
+# Exception Handling Strategies
 
 ### Table of Contents:
 
@@ -7,6 +7,7 @@
 3. **Exception Handling Use Cases**
 4. **Common Exception Handling Strategies**
 5. **Best Practices for Exception Handling**
+6. **When `try-catch` Solves the Problem but `if-else` Doesn't**
 
 ### Resources
 
