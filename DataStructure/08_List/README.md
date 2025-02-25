@@ -194,13 +194,13 @@ int main() {
 
 - You need fast random access (`O(1)`) using `[]` or `.at()`.
 - You perform a lot of insertions/removals at the **end**.
-- Memory overhead is a concern (as `std::list` stores extra pointers).
+- Performance degradation due to shifting elements in `std::vector` is a concern.
 
-✅ **Use `std::list` when:**
+  ✅ **Use `std::list` when:**
 
 - You frequently insert or delete elements **in the middle or at the beginning**.
 - You don't need random access.
-- Performance degradation due to shifting elements in `std::vector` is a concern.
+- Memory overhead is a concern (as `std::list` stores extra pointers).
 
 ---
 
