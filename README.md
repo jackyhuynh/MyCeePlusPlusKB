@@ -22,6 +22,9 @@ Here’s a refined version of your outline for clarity and structure:
 + **Part V: Use Case**
   Some popular C++ applications.
 
++ **Part VI: Machine Language**
+  How Operating System Organize and work
+
 ## C++ Development Environment Setup
 
 I use C++ for programming.
