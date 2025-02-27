@@ -1,3 +1,4 @@
+<h1>Compilation Process</h1>
 <details>
   <summary>How High-Level Languages (C, Java) Are Translated into Machine Code</summary>
   <h1>How High-Level Languages (C, Java) Are Translated into Machine Code</h1>
