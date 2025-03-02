@@ -9,6 +9,7 @@
 - [Example Usage](#example-usage)
 - [Complexity Analysis](#complexity-analysis)
 - [Conclusion](#conclusion)
+- [System design Data Structure](https://youtu.be/ouipSd_5ivQ?si=BOweuh0sN0MZZoFV)
 
 ## Introduction
 
