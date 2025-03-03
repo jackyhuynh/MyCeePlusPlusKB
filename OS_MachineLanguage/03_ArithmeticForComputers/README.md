@@ -1,4 +1,4 @@
-### **Detailed Content of Chapter 3: Arithmetic for Computers**  
+### **Chapter 3: Arithmetic for Computers**  
 *(Based on "Computer Organization and Design 5E" by Patterson & Hennessy)*  
 
 #### **3.1 Introduction**  
