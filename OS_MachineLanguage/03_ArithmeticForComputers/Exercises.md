@@ -9,16 +9,13 @@ What is **5ED4 × 07A4** when these values represent **unsigned 16-bit hexadecim
 
 #### **Solution**:  
 1. Convert hexadecimal to decimal:  
-   - \(5ED4_{16} = 24276_{10}\)  
-   - \(07A4_{16} = 1956_{10}\)  
+   - `5ED4` (hex) = `24276` (decimal)  
+   - `07A4` (hex) = `1956` (decimal)  
 2. Multiply the decimal values:  
-   \[
-   24276 \times 1956 = 47496256_{10}
-   \]  
+   - `24276` × `1956` = `47496256` (decimal)
 3. Convert back to hexadecimal:  
-   \[
-   47496256_{10} = 2D45D200_{16}
-   \]  
+   - `47496256` (decimal) = `2D45D200` (hexadecimal)
+
 **Answer**: **2D45D200** (Hexadecimal)  
 
 ---
@@ -56,19 +53,24 @@ Convert **5ED4** into a **binary number**. What makes **base-16 (hexadecimal)** 
 What is **4365 × 3412** when these values represent **unsigned 12-bit octal numbers**? The result should be written in **octal**.  
 
 #### **Solution**:  
+```markdown
+#### **Solution**  
 1. Convert octal numbers to decimal:  
-   - \(4365_8 = 2301_{10}\)  
-   - \(3412_8 = 1802_{10}\)  
-2. Multiply the decimal values:  
-   \[
-   2301 \times 1802 = 4144002_{10}
-   \]  
-3. Convert back to octal:  
-   \[
-   4144002_{10} = 15725002_8
-   \]  
+   - `4365₈` = `2301₁₀`  
+   - `3412₈` = `1802₁₀`  
 
-**Answer**: **15725002 (Octal)**  
+2. Multiply the decimal values:  
+   ```
+   2301 × 1802 = 4144002 (decimal)
+   ```
+
+3. Convert back to octal:  
+   ```
+   4144002 (decimal) = 15725002 (octal)
+   ```
+
+**Answer**: **`15725002` (Octal)**
+```
 
 ---
 
