@@ -158,9 +158,9 @@ Assume **151 and 214** are **unsigned 8-bit integers**. Calculate **151 × 214**
 
 #### **Solution**:  
 - **Unsigned multiplication result:**  
-  \[
-  151 \times 214 = 32314
-  \]  
+
+  `151` * `214` = `32314`
+    
 - **Max 8-bit unsigned integer = 255**  
 - **Clamp to 255**  
 
