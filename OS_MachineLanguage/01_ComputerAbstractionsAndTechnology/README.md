@@ -1,11 +1,11 @@
-### **Summary of Chapter 1: Computer Abstractions and Technology**
+# **Chapter 1: Computer Abstractions and Technology**
 
 Chapter 1 of *Computer Organization and Design* by Patterson and Hennessy introduces fundamental concepts in computer architecture and technology. 
 The chapter lays the groundwork for understanding computer systems by covering key abstractions, the role of hardware and software, performance considerations, and technological trends.
 
 ---
 
-### **1.1 Introduction**
+## **1 Introduction**
 The chapter begins by emphasizing how computer systems have evolved rapidly, revolutionizing industries and society. 
 The book aims to help readers understand how computers work, the factors affecting performance, and how technological advancements like Moore's Law drive innovation.
 
@@ -14,7 +14,7 @@ The authors compare the rapid pace of computing advancements to other industries
 
 ---
 
-### **1.2 Eight Great Ideas in Computer Architecture**
+## **2 Eight Great Ideas in Computer Architecture**
 This section presents key principles that guide computer design:
 1. **Design for Moore’s Law** – Predicts that the number of transistors on a chip doubles roughly every two years, enabling ongoing improvements in speed and efficiency.
 2. **Use Abstraction to Simplify Design** – Helps manage complexity by hiding lower-level details.
@@ -27,7 +27,7 @@ This section presents key principles that guide computer design:
 
 ---
 
-### **1.3 Below Your Program**
+## **3 Below Your Program**
 This section explains the software stack and how programs interact with hardware. It describes how:
 - **High-level languages (C, Java)** are translated into machine code.
 - **Compilers** convert code into assembly language.
@@ -37,7 +37,7 @@ The instruction set architecture (ISA) serves as the interface between software 
 
 ---
 
-### **1.4 Under the Covers**
+## **4 Under the Covers**
 A deeper look into computer components:
 - **Processor (CPU)** – Executes instructions.
 - **Memory (RAM and Cache)** – Stores instructions and data.
@@ -46,7 +46,7 @@ A deeper look into computer components:
 
 ---
 
-### **1.5 Technologies for Building Processors and Memory**
+## **5 Technologies for Building Processors and Memory**
 The chapter covers key hardware technologies:
 - **Integrated Circuits (Chips)** – The foundation of modern processors.
 - **Dynamic Random-Access Memory (DRAM)** – Provides main memory.
@@ -54,7 +54,7 @@ The chapter covers key hardware technologies:
 
 ---
 
-### **1.6 Performance**
+## **6 Performance**
 Performance is a key metric in computing, measured using:
 - **Execution Time** – The total time a program takes to run.
 - **Clock Speed (GHz)** – The number of cycles per second.
@@ -68,24 +68,24 @@ Benchmarking tools like SPEC CPU evaluate real-world performance.
 
 ---
 
-### **1.7 The Power Wall**
+## **7 The Power Wall**
 A major challenge in modern computing is power consumption:
 - Increasing clock speed raises power usage exponentially.
 - **Power-efficient computing** strategies include multicore processors, reducing clock speed, and improving energy efficiency.
 
 ---
 
-### **1.8 The Shift from Uniprocessors to Multiprocessors**
+## **8 The Shift from Uniprocessors to Multiprocessors**
 Due to power and performance limits, the industry moved from single-core CPUs to **multicore processors**, where multiple cores execute tasks in parallel.
 
 ---
 
-### **1.9 Benchmarking the Intel Core i7**
+## **9 Benchmarking the Intel Core i7**
 This section provides real-world benchmarking data for Intel Core i7 processors, demonstrating how modern architectures optimize performance using pipelining, parallelism, and caching.
 
 ---
 
-### **1.10 Fallacies and Pitfalls**
+## **10 Fallacies and Pitfalls**
 Common misconceptions in computing:
 - **Clock Speed ≠ Performance** – Faster clocks don’t always mean better real-world performance.
 - **More Cores ≠ Faster Performance** – Not all tasks benefit equally from multiple cores.
@@ -93,7 +93,7 @@ Common misconceptions in computing:
 
 ---
 
-### **1.11 Concluding Remarks**
+## **11 Concluding Remarks**
 The chapter emphasizes the importance of balancing performance, cost, and energy efficiency. It also introduces the **five classic components of a computer**:
 1. **Datapath** – Executes operations.
 2. **Control** – Directs operations.
