@@ -265,6 +265,3 @@ void matrix_multiply_simd(float *A, float *B, float *C, int N) {
 
 ### **3.12 Exercises**  
 - Practice problems on integer and floating-point arithmetic, including overflow handling and parallel computation strategies.  
-
-
-Sure! Here is the **detailed content of Chapter 3: Arithmetic for Computers**, now **fully integrated with explanations and code sections** for each topic. This includes **MIPS assembly, Python, and C (with SIMD optimizations)** for demonstrating integer and floating-point arithmetic operations.
