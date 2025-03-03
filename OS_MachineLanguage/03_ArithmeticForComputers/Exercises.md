@@ -53,8 +53,6 @@ Convert **5ED4** into a **binary number**. What makes **base-16 (hexadecimal)** 
 What is **4365 × 3412** when these values represent **unsigned 12-bit octal numbers**? The result should be written in **octal**.  
 
 #### **Solution**:  
-```markdown
-#### **Solution**  
 1. Convert octal numbers to decimal:  
    - `4365₈` = `2301₁₀`  
    - `3412₈` = `1802₁₀`  
@@ -70,7 +68,7 @@ What is **4365 × 3412** when these values represent **unsigned 12-bit octal num
    ```
 
 **Answer**: **`15725002` (Octal)**
-```
+
 
 ---
 
@@ -93,9 +91,9 @@ Assume **185 and 122** are **unsigned 8-bit decimal integers**. Calculate **185 
    - 185 → `1011 1001`  
    - 122 → `0111 1010`  
 2. Perform **binary subtraction**:  
-   \[
+   ```
    1011 1001 - 0111 1010 = 0100 1111 (Decimal: 63)
-   \]  
+   ```     
 3. **Overflow/Underflow Check**:  
    - **Unsigned subtraction never results in overflow/underflow** unless **result is negative**, which is not the case.  
 **Answer**: **Neither**  
