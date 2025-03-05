@@ -434,7 +434,3 @@ For the given constraints, **simple DFS + backtracking** is more than sufficient
 - **Mark** cells as visited to avoid reusing the same cell in one path.
 - **Prune** early when you detect that future paths cannot possibly match the remaining letters in `word`.
 - For small boards (\(m, n \leq 6\)), the standard DFS approach is often enough. For bigger boards, apply **frequency checks** and **memoization** if needed.
-
----
-
-That’s the **tuned** solution! If you have any follow-up questions or need more details on pruning techniques, feel free to ask.
