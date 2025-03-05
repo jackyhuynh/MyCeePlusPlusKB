@@ -44,20 +44,6 @@ products = ["havana"], searchWord = "havana"
 
 ---
 
-### Constraints:
-
-- \( 1 \leq \) `products.length` \( \leq 1000 \)
-- \( 1 \leq \) `products[i].length` \( \leq 3000 \)
-- \( 1 \leq \) `\sum(products[i].length)` \( \leq 2 \times 10^4 \)
-- All strings in `products` are unique.
-- `products[i]` consists of lowercase English letters.
-- \( 1 \leq \) `searchWord.length` \( \leq 1000 \)
-- `searchWord` consists of lowercase English letters.
-
-Yes! We can solve this problem efficiently in C++ using **Trie (Prefix Tree)** or **Sorting + Binary Search**. Below are both approaches:
-
----
-
 ## **Approach 1: Using Trie (Prefix Tree)**
 A **Trie** is a tree-like data structure that allows efficient prefix-based searching. Here’s how we can implement it:
 
@@ -263,13 +249,3 @@ The word can be constructed from letters of sequentially adjacent cells, where a
 - Output: false
  
 
-### Constraints:
-
-m == board.length
-n = board[i].length
-1 <= m, n <= 6
-1 <= word.length <= 15
-board and word consists of only lowercase and uppercase English letters.
- 
-
-Follow up: Could you use search pruning to make your solution faster with a larger board?
