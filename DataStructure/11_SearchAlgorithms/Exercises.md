@@ -216,36 +216,225 @@ int main() {
 - **Use Trie** if **prefix searches are frequent** (e.g., autocomplete in search engines).
 - **Use Sorting + Binary Search** if **one-time query suffices** (e.g., static datasets).
 
+Below is a **tuned** solution for the classic **Word Search** problem, along with an explanation on how to incorporate **search pruning** to make it faster when dealing with larger boards.
+
+---
+
 # Word Search
 
-Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+**Problem Statement**  
+Given an \(m \times n\) grid of characters `board` and a string `word`, return `true` if `word` exists in the grid.
 
-The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+The word can be constructed from letters of **sequentially adjacent cells**, where adjacent cells are horizontally or vertically neighboring. The same letter cell **may not be used more than once**.
 
-### Example 1:
-- Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
-- Output: true
+---
 
-```bash
+## Example
 
-["A","B","C","E"]
-["S","F","C","S"]
-["A","D","E","E"]
-
+### Example 1
+**Input:**  
 ```
-### Example 2:
-- Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
-- Output: true
-
-```bash
-
-["A","B","C","E"]
-["S","F","C","S"]
-["A","D","E","E"]
-
+board = [
+    ["A","B","C","E"],
+    ["S","F","C","S"],
+    ["A","D","E","E"]
+]
+word = "ABCCED"
 ```
-### Example 3:
-- Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
-- Output: false
- 
+**Output:**  
+```
+true
+```
 
+### Example 2
+**Input:**  
+```
+board = [
+    ["A","B","C","E"],
+    ["S","F","C","S"],
+    ["A","D","E","E"]
+]
+word = "SEE"
+```
+**Output:**  
+```
+true
+```
+
+### Example 3
+**Input:**  
+```
+board = [
+    ["A","B","C","E"],
+    ["S","F","C","S"],
+    ["A","D","E","E"]
+]
+word = "ABCB"
+```
+**Output:**  
+```
+false
+```
+
+---
+
+## Constraints
+- \( m = \text{board.length} \)
+- \( n = \text{board[i].length} \)
+- \( 1 \leq m, n \leq 6 \)
+- \( 1 \leq \text{word.length} \leq 15 \)
+- `board` and `word` consist of **only lowercase and uppercase English letters**.
+
+---
+
+## Standard DFS (Backtracking) Solution
+
+1. **Iterate** over every cell \((i, j)\) in the grid.
+2. **If** `board[i][j] == word[0]`, start a DFS (depth-first search) from \((i, j)\).
+3. **During DFS**:
+   - Mark the current cell as **visited** (so we don’t reuse the same cell in one path).
+   - Check if the current character matches the corresponding character in `word`.
+   - If we have matched all characters in `word`, return `true`.
+   - **Recursively** explore neighbors (up, down, left, right) to match subsequent characters.
+   - **Unmark** the current cell (backtrack) before returning to explore other paths.
+
+4. If DFS from any cell returns `true`, the word exists; otherwise, it does not.
+
+### C++ Implementation (DFS + Backtracking)
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+class Solution {
+public:
+    bool exist(vector<vector<char>>& board, string word) {
+        int m = board.size();
+        int n = board[0].size();
+
+        // Visited array to keep track of used cells
+        vector<vector<bool>> visited(m, vector<bool>(n, false));
+
+        // Try starting DFS from each cell
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (board[i][j] == word[0]) {
+                    if (dfs(board, word, i, j, 0, visited)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+private:
+    bool dfs(vector<vector<char>>& board, const string& word, 
+             int row, int col, int index, vector<vector<bool>>& visited) {
+        
+        // If we've matched the entire word
+        if (index == (int)word.size()) {
+            return true;
+        }
+
+        // Out of bounds or character mismatch or already visited
+        if (row < 0 || row >= (int)board.size() ||
+            col < 0 || col >= (int)board[0].size() ||
+            board[row][col] != word[index] || visited[row][col]) {
+            return false;
+        }
+
+        // Mark current cell as visited
+        visited[row][col] = true;
+
+        // Directions: Up, Down, Left, Right
+        static int dirs[4][2] = {{-1,0},{1,0},{0,-1},{0,1}};
+        for (auto &dir : dirs) {
+            int newRow = row + dir[0];
+            int newCol = col + dir[1];
+            if (dfs(board, word, newRow, newCol, index + 1, visited)) {
+                return true;
+            }
+        }
+
+        // Backtrack
+        visited[row][col] = false;
+        return false;
+    }
+};
+
+// Example usage
+int main() {
+    vector<vector<char>> board = {
+        {'A','B','C','E'},
+        {'S','F','C','S'},
+        {'A','D','E','E'}
+    };
+    string word = "ABCCED";
+    Solution sol;
+    bool res = sol.exist(board, word);
+    cout << (res ? "true" : "false") << endl; // Expected: true
+    return 0;
+}
+```
+
+---
+
+## Search Pruning for Larger Boards
+
+Although the constraints here are small \((1 \leq m,n \leq 6)\), in a **larger** grid scenario, these optimizations can help:
+
+1. **Letter Frequency Check**  
+   - If `word` has more occurrences of a certain letter than the entire `board` does, return `false` immediately. This simple check prevents wasted DFS calls.  
+   ```cpp
+   // Example in C++:
+   vector<int> freqBoard(128, 0), freqWord(128, 0);
+   for (auto &row : board) {
+       for (auto &ch : row) {
+           freqBoard[ch]++;
+       }
+   }
+   for (auto &ch : word) {
+       freqWord[ch]++;
+   }
+   for (int i = 0; i < 128; ++i) {
+       if (freqWord[i] > freqBoard[i]) {
+           return false; // Not enough letters on the board
+       }
+   }
+   ```
+
+2. **Early Stopping on Impossible Paths**  
+   - During DFS, if the next character is not in any of the neighboring cells, backtrack early.  
+   - For each position, you can keep track of how many of each letter is still reachable. If the required letter for the remaining word can’t be matched, prune.
+
+3. **Memoization (Optional in Some Variants)**  
+   - We can keep a memo of `(row, col, index)` to store whether the path from this state leads to a successful match or not. This prevents recalculating the same paths multiple times.
+
+4. **Directional Pruning**  
+   - Sometimes, if you know that continuing in a certain direction can’t lead to a solution (based on partial frequency checks in that region), you can skip exploring that path.
+
+For the given constraints, **simple DFS + backtracking** is more than sufficient. But if you ever encounter a variant with larger \(m\) or \(n\), incorporating these pruning techniques can significantly reduce runtime.
+
+---
+
+## Complexity
+- **Time Complexity**:  
+  - Worst-case, we explore all possible paths in the grid for each character of `word`. In the worst case, it’s \(O(m \times n \times 4^{L})\), where \(L\) is the length of `word`.  
+  - Pruning can help reduce the effective branching factor.
+- **Space Complexity**:  
+  - \(O(m \times n)\) for the `visited` array in DFS, plus \(O(L)\) for recursion stack space (in the worst case).
+
+---
+
+### Key Takeaways
+- Use **DFS + Backtracking** to explore all possible paths.
+- **Mark** cells as visited to avoid reusing the same cell in one path.
+- **Prune** early when you detect that future paths cannot possibly match the remaining letters in `word`.
+- For small boards (\(m, n \leq 6\)), the standard DFS approach is often enough. For bigger boards, apply **frequency checks** and **memoization** if needed.
+
+---
+
+That’s the **tuned** solution! If you have any follow-up questions or need more details on pruning techniques, feel free to ask.
