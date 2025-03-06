@@ -72,8 +72,8 @@ Understanding this helps you predict performance as the problem size increases.
 ### **Common Growth Rates**:
 
 - **O(1)**: Constant time
-- **O(n)**: Linear time
 - **O(log n)**: Logarithmic time
+- **O(n)**: Linear time
 - **O(n^2)**: Quadratic time
 - **O(2^n)**: Exponential time
 
