@@ -187,5 +187,5 @@ use cases where smart pointers prevent common memory management issues.
 
 ## More Usecase
 
-- [auto, reference, and constant usecase](./ConstAutoReference.md)
-- [auto, and reference usecase](./AutoRefrence.md)
+- [auto, reference, and constant usecase](./UseCase-ConstAutoReference)
+- [auto, and reference usecase](./UseCase-AutoRefrence)
