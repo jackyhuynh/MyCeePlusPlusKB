@@ -1,6 +1,6 @@
 # Exercises
 
-## First Prompt:
+## First Iteration:
 
 ```cpp
 #include <iostream>
@@ -193,7 +193,7 @@ int main() {
 
 This improved version addresses the requirements of maintaining a sorted linked list of students based on their average grades, with the ability to update individual grades and re-sort the list.
 
-## Second Prompt:
+## Second Iteration:
 
 **This is not efficient, why I need to resort if I only update one person, is there any robust way.**
 
@@ -282,7 +282,7 @@ public:
 
 This revised `updateStudentGrade()` function is significantly more efficient and robust, providing a practical solution for maintaining a sorted linked list of students based on their average grades.
 
-## Third prompt:
+## Third Iteration:
 
 **There is 2 task: 1- Can you make the most efficient of this application 2 - Rewrite the students grading system using any C++ std library.**
 
@@ -521,7 +521,7 @@ int main() {
 * **Readability and Maintainability:** The code is more concise and easier to understand.
 * **Flexibility:** Easily add or remove subjects without changing the core data structure.
 
-## Fourth Prompt:
+## Fourth Iteration:
 
 Yes, let's add timing mechanisms to both solutions to compare their performance. We'll use `std::chrono` for accurate timing.
 
