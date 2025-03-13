@@ -25,7 +25,7 @@ Here’s a refined version of your outline for clarity and structure:
 + **Part VI: Machine Language**
   How the Operating System organizes and works
 
-## Modern C++ Framework
+## Modern C++ Resources
 
 + [**“libc++” C++ Standard Library**](https://libcxx.llvm.org/index.html)
 + [**Google Online Security Blog**](https://security.googleblog.com/)
