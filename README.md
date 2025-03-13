@@ -25,6 +25,10 @@ Here’s a refined version of your outline for clarity and structure:
 + **Part VI: Machine Language**
   How Operating System Organize and work
 
+## Modern C++ Framework
+
++ [**“libc++” C++ Standard Library**](https://libcxx.llvm.org/index.html)
+
 ## C++ Development Environment Setup
 
 I use C++ for programming.
