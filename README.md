@@ -28,7 +28,7 @@ Here’s a refined version of your outline for clarity and structure:
 ## Modern C++ Framework
 
 + [**“libc++” C++ Standard Library**](https://libcxx.llvm.org/index.html)
-
++ [**Google Online Security Blog**](https://security.googleblog.com/)
 ## C++ Development Environment Setup
 
 I use C++ for seasonal programming projects.
