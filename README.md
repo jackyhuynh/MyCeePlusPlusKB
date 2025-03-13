@@ -23,7 +23,7 @@ Here’s a refined version of your outline for clarity and structure:
   Some popular C++ applications.
 
 + **Part VI: Machine Language**
-  How Operating System Organize and work
+  How the Operating System organizes and works
 
 ## Modern C++ Framework
 
@@ -31,9 +31,9 @@ Here’s a refined version of your outline for clarity and structure:
 
 ## C++ Development Environment Setup
 
-I use C++ for programming.
+I use C++ for seasonal programming projects.
 
-- C++ IDLE: any IDLE as your convenience, I am using Visual Studio Code but there is many out there.
+- C++ IDLE: any IDLE for your convenience, I am using Visual Studio Code and CLion, but many are out there.
     - My setup is:
         - Hardware: Mac OS X 16 GB, M3 Pro
         - Visual Studio Code
@@ -50,5 +50,5 @@ I use C++ for programming.
         - Unit Test
         - Automation
 - Visual Studio Community Version
-- CLion from JetBrain (first year free)
+- CLion from JetBrains
 - Any C++ IDE
