@@ -633,6 +633,17 @@ int main() {
     * Run both programs and compare the outputted times.
     * The faster time indicates the more efficient solution for the given test scenario.
 
+5. **Output**
+
+```bash
+~/CLionProjects/untitled git:[main]
+./sortedlist4
+Optimized Linked List Update Time: 61 ms
+~/CLionProjects/untitled git:[main]
+./stdlist2
+Standard Library Update and Sort Time: 266 ms
+```
+
 **Important Notes:**
 
 * The results can vary depending on your hardware and compiler.
