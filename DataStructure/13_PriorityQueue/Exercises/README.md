@@ -1,5 +1,39 @@
 # Exercises
 
+## **Exercise 1: Basic Queue Implementation**
+### **Objective:**
+Implement a **queue** to store students waiting for registration.
+
+### **Instructions:**
+1. Create a **`Student`** class with:
+   - `id` (integer)
+   - `name` (string)
+   - `major` (string)
+
+2. Create a **`RegistrationQueue`** class using a **linked list or array** to implement a queue.
+   - **Methods:**
+      - `enqueue(Student student)`: Adds a student to the queue.
+      - `dequeue()`: Removes and returns the first student.
+      - `isEmpty()`: Checks if the queue is empty.
+      - `size()`: Returns the number of students in the queue.
+      - `front()`: Returns the first student without removing it.
+
+3. Write a **main program** to:
+   - Add students to the queue.
+   - Process them in FIFO order.
+   - Display the queue status.
+
+### **Sample Output:**
+```
+Student John (ID: 101) added to the registration queue.
+Student Alice (ID: 102) added to the registration queue.
+Processing registration for John (ID: 101).
+Processing registration for Alice (ID: 102).
+Registration queue is now empty.
+```
+
+---
+
 ## **Exercise 2: Priority Queue for Urgent Registrations**
 ### **Objective:**
 Modify the system to allow **priority registration**.
