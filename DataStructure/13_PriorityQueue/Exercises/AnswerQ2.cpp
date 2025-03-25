@@ -21,18 +21,18 @@ public:
 };
 
 int main() {
-    cout << "Exercise #1:";
+    cout << "Exercise #1:" << endl;
     Queue<Student> regQueue;
 
     // Add students to the queue
     Student john(101, "John", "CS");
     Student alice(102, "Alice", "EE");
 
-    regQueue.enqueue(john);
-    cout << "Student John (ID: 101) added to the registration queue.\n";
-
     regQueue.enqueue(alice);
     cout << "Student Alice (ID: 102) added to the registration queue.\n";
+
+    regQueue.enqueue(john);
+    cout << "Student John (ID: 101) added to the registration queue.\n";
 
     // Process students in FIFO order
     cout << "Processing registration for " << regQueue.peekFront().getName() << " (ID: " << regQueue.peekFront().getId() << ").\n";
@@ -48,8 +48,8 @@ int main() {
 
     PriorityQueue<PriorityStudent> priorityQueue;
 
-    priorityQueue.enqueue(PriorityStudent(201, "Bob", "Math", 2), 2);
     priorityQueue.enqueue(PriorityStudent(202, "Alice", "Physics", 1), 1);
+    priorityQueue.enqueue(PriorityStudent(201, "Bob", "Math", 2), 2);
     priorityQueue.enqueue(PriorityStudent(203, "John", "Chem", 3), 3);
 
     cout << "Processing " << priorityQueue.peekFront() << " first due to high priority.\n";
