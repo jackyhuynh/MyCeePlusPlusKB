@@ -1,6 +1,7 @@
 # Exercises
 
 ## **Exercise 1: Basic Queue Implementation**
+
 ### **Objective:**
 Implement a **queue** to store students waiting for registration.
 
