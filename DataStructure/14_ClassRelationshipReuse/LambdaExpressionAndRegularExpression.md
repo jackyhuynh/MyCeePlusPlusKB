@@ -1,7 +1,4 @@
-
 # Regular Expressions and Lambda Expressions in C++
-
-This document provides a brief overview of regular expressions and lambda expressions in C++, along with code examples.
 
 ## Regular Expressions
 
