@@ -10,10 +10,6 @@
   requiring a `friend` declaration. This is an exception to the usual encapsulation rules, which makes nested classes
   quite powerful.
 
-- In C++, the **outer class** is granted special access to the private and protected members of its **nested class**.
-  The idea is that since the nested class is conceptually part of the outer class, the outer class is allowed to access
-  its internals without breaking encapsulation.
-
 ---
 
 ### **Example: Outer Class Accessing Private Members of Inner Class**

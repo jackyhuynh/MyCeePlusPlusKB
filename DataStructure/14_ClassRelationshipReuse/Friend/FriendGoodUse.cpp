@@ -16,7 +16,7 @@ class SecretData {
     int secretValue;
 
 public:
-    SecretData(int value) : secretValue(value) {}
+    explicit SecretData(int value) : secretValue(value) {}
 
     // Declare a non-member function as a friend so it can access private members.
     friend std::ostream& operator<<(std::ostream& os, const SecretData& obj);
