@@ -21,6 +21,10 @@ public:
         return (index - 1) / 2;
     }
 
+    int parentValue (int index) {
+        return tree[parent(index)];
+    }
+
     // Function to get the index of the left child
     int leftChild(int index) {
         int left = 2 * index + 1;
@@ -28,6 +32,14 @@ public:
             return -1; // No left child
         }
         return left;
+    }
+
+    int leftChildValue (int index) {
+        return tree[leftChild(index)];
+    }
+
+    int rightChildValue (int index) {
+        return tree[rightChild(index)];
     }
 
     // Function to get the index of the right child
@@ -59,13 +71,6 @@ int main() {
     tree.insert(5);
     tree.insert(6);
     tree.insert(7);
-    tree.insert(1);
-    tree.insert(2);
-    tree.insert(3);
-    tree.insert(4);
-    tree.insert(5);
-    tree.insert(6);
-    tree.insert(7);
 
     // Printing the tree
     std::cout << "Binary Tree (Array Representation): ";
@@ -73,8 +78,11 @@ int main() {
 
     int index = 2;
     std::cout << "Parent of index " << index << ": " << tree.parent(index) << std::endl;
+    std::cout << "Value of Parent of index " << index << ": " << tree.parentValue(index) << std::endl;
     std::cout << "Left child of index " << index << ": " << tree.leftChild(index) << std::endl;
-    std::cout << "Right child of index " << index << ": " << tree.rightChild(index) << std::endl;
+    std::cout << "Value Left child of index " << index << ": " << tree.leftChildValue(index) << std::endl;
+    std::cout << "Left child of index " << index << ": " << tree.rightChild(index) << std::endl;
+    std::cout << "Value Right child of index " << index << ": " << tree.rightChildValue(index) << std::endl;
 
     return 0;
 }
