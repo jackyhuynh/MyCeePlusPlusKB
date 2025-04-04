@@ -49,6 +49,7 @@ I use C++ for seasonal programming projects.
         - Agile
         - Unit Test
         - Automation
+        - [The Tidyverse Style Guide by Hadley Wickham](https://style.tidyverse.org/)
 - Visual Studio Community Version
 - CLion from JetBrains
 - Any C++ IDE
