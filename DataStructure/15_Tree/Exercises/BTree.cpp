@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <set>
 #include <limits> // For numeric_limits
 
 /*
@@ -503,178 +504,313 @@ public:
 
 
 // Main function to test the B-tree implementation.
+// int main() {
+//     BTree t(3); // Create a B-tree with minimum degree 3.
+//
+//     // Insert keys into the B-tree.
+//     t.insert(1);
+//     t.insert(3);
+//     t.insert(7);
+//     t.insert(10);
+//     t.insert(11);
+//     t.insert(13);
+//     t.insert(14);
+//     t.insert(15);
+//     t.insert(18);
+//     t.insert(16);
+//     t.insert(19);
+//     t.insert(24);
+//     t.insert(25);
+//     t.insert(26);
+//     t.insert(21);
+//     t.insert(4);
+//     t.insert(5);
+//     t.insert(20);
+//     t.insert(22);
+//     t.insert(2);
+//     t.insert(17);
+//     t.insert(12);
+//     t.insert(6);
+//
+//     std::cout << "B-tree after insertion:\n";
+//     t.print();
+//     std::cout << std::endl;
+//
+//     // Search for some keys.
+//     int keyToSearch = 10;
+//     if (t.search(keyToSearch) != nullptr) {
+//         std::cout << "Found key " << keyToSearch << std::endl;
+//     } else {
+//         std::cout << "Key " << keyToSearch << " not found" << std::endl;
+//     }
+//
+//     keyToSearch = 22;
+//     if (t.search(keyToSearch) != nullptr) {
+//         std::cout << "Found key " << keyToSearch << std::endl;
+//     } else {
+//         std::cout << "Key " << keyToSearch << " not found" << std::endl;
+//     }
+//
+//     keyToSearch = 99;
+//     if (t.search(keyToSearch) != nullptr) {
+//         std::cout << "Found key " << keyToSearch << std::endl;
+//     } else {
+//         std::cout << "Key " << keyToSearch << " not found" << std::endl;
+//     }
+//
+//     // Get min and max
+//     std::cout << "Minimum key: " << t.getMinimum() << std::endl;
+//     std::cout << "Maximum key: " << t.getMaximum() << std::endl;
+//
+//     // Delete some keys
+//     std::cout << "\nDeleting key 20\n";
+//     t.deleteKey(20);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 10\n";
+//     t.deleteKey(10);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 15\n";
+//     t.deleteKey(15);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 1\n";
+//     t.deleteKey(1);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 2\n";
+//     t.deleteKey(2);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 3\n";
+//     t.deleteKey(3);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 4\n";
+//     t.deleteKey(4);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 5\n";
+//     t.deleteKey(5);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 6\n";
+//     t.deleteKey(6);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 7\n";
+//     t.deleteKey(7);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 11\n";
+//     t.deleteKey(11);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 12\n";
+//     t.deleteKey(12);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 13\n";
+//     t.deleteKey(13);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 14\n";
+//     t.deleteKey(14);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 16\n";
+//     t.deleteKey(16);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 17\n";
+//     t.deleteKey(17);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 18\n";
+//     t.deleteKey(18);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 19\n";
+//     t.deleteKey(19);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 21\n";
+//     t.deleteKey(21);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 22\n";
+//     t.deleteKey(22);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 24\n";
+//     t.deleteKey(24);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 25\n";
+//     t.deleteKey(25);
+//     t.print();
+//     std::cout << std::endl;
+//
+//     std::cout << "\nDeleting key 26\n";
+//     t.deleteKey(26);
+//     t.print();
+//     std::cout << std::endl;
+//     return 0;
+// }
+
+
+
+// Function to measure the execution time of a given function
+template <typename Func, typename... Args>
+long long measure_execution_time(Func func, Args... args) {
+    auto start = std::chrono::high_resolution_clock::now();
+    func(args...);
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+    return duration.count();
+}
+
 int main() {
-    BTree t(3); // Create a B-tree with minimum degree 3.
+    std::vector<int> data = {1, 3, 7, 10, 11, 13, 14, 15, 18, 16, 19, 24, 25, 26, 21, 4, 5, 20, 22, 2, 17, 12, 6};
+    std::vector<int> search_keys = {10, 22, 99};
+    std::vector<int> delete_keys = {20, 10, 15, 1, 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 24, 25, 26};
 
-    // Insert keys into the B-tree.
-    t.insert(1);
-    t.insert(3);
-    t.insert(7);
-    t.insert(10);
-    t.insert(11);
-    t.insert(13);
-    t.insert(14);
-    t.insert(15);
-    t.insert(18);
-    t.insert(16);
-    t.insert(19);
-    t.insert(24);
-    t.insert(25);
-    t.insert(26);
-    t.insert(21);
-    t.insert(4);
-    t.insert(5);
-    t.insert(20);
-    t.insert(22);
-    t.insert(2);
-    t.insert(17);
-    t.insert(12);
-    t.insert(6);
+    int btree_degree = 3;
 
-    std::cout << "B-tree after insertion:\n";
-    t.print();
+    // --- Test B-Tree ---
+    BTree btree(btree_degree);
+    long long btree_insert_time = measure_execution_time([&]() {
+        for (int key : data) {
+            btree.insert(key);
+        }
+    });
+
+    long long btree_search_time = measure_execution_time([&]() {
+        for (int key : search_keys) {
+            btree.search(key);
+        }
+    });
+
+    long long btree_delete_time = measure_execution_time([&]() {
+        for (int key : delete_keys) {
+            btree.deleteKey(key);
+        }
+    });
+
+    std::cout << "--- B-Tree (degree " << btree_degree << ") ---" << std::endl;
+    std::cout << "Insertion time: " << btree_insert_time << " microseconds" << std::endl;
+    std::cout << "Search time (" << search_keys.size() << " searches): " << btree_search_time << " microseconds" << std::endl;
+    std::cout << "Deletion time (" << delete_keys.size() << " deletions): " << btree_delete_time << " microseconds" << std::endl;
     std::cout << std::endl;
 
-    // Search for some keys.
-    int keyToSearch = 10;
-    if (t.search(keyToSearch) != nullptr) {
-        std::cout << "Found key " << keyToSearch << std::endl;
-    } else {
-        std::cout << "Key " << keyToSearch << " not found" << std::endl;
-    }
+    // --- Test std::set (Red-Black Tree) ---
+    std::set<int> set_data;
+    long long set_insert_time = measure_execution_time([&]() {
+        for (int key : data) {
+            set_data.insert(key);
+        }
+    });
 
-    keyToSearch = 22;
-    if (t.search(keyToSearch) != nullptr) {
-        std::cout << "Found key " << keyToSearch << std::endl;
-    } else {
-        std::cout << "Key " << keyToSearch << " not found" << std::endl;
-    }
+    long long set_search_time = measure_execution_time([&]() {
+        for (int key : search_keys) {
+            set_data.find(key);
+        }
+    });
 
-    keyToSearch = 99;
-    if (t.search(keyToSearch) != nullptr) {
-        std::cout << "Found key " << keyToSearch << std::endl;
-    } else {
-        std::cout << "Key " << keyToSearch << " not found" << std::endl;
-    }
+    long long set_delete_time = measure_execution_time([&]() {
+        for (int key : delete_keys) {
+            set_data.erase(key);
+        }
+    });
 
-    // Get min and max
-    std::cout << "Minimum key: " << t.getMinimum() << std::endl;
-    std::cout << "Maximum key: " << t.getMaximum() << std::endl;
-
-    // Delete some keys
-    std::cout << "\nDeleting key 20\n";
-    t.deleteKey(20);
-    t.print();
+    std::cout << "--- std::set (Red-Black Tree) ---" << std::endl;
+    std::cout << "Insertion time: " << set_insert_time << " microseconds" << std::endl;
+    std::cout << "Search time (" << search_keys.size() << " searches): " << set_search_time << " microseconds" << std::endl;
+    std::cout << "Deletion time (" << delete_keys.size() << " deletions): " << set_delete_time << " microseconds" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "\nDeleting key 10\n";
-    t.deleteKey(10);
-    t.print();
+    // --- Test std::vector (Unsorted) ---
+    std::vector<int> vector_data;
+    long long vector_insert_time = measure_execution_time([&]() {
+        for (int key : data) {
+            vector_data.push_back(key);
+        }
+    });
+
+    long long vector_search_time = measure_execution_time([&]() {
+        for (int key : search_keys) {
+            std::find(vector_data.begin(), vector_data.end(), key);
+        }
+    });
+
+    long long vector_delete_time = measure_execution_time([&]() {
+        std::vector<int> temp_vector = vector_data;
+        for (int key : delete_keys) {
+            auto it = std::find(temp_vector.begin(), temp_vector.end(), key);
+            if (it != temp_vector.end()) {
+                temp_vector.erase(it);
+            }
+        }
+    });
+
+    std::cout << "--- std::vector (Unsorted) ---" << std::endl;
+    std::cout << "Insertion time: " << vector_insert_time << " microseconds" << std::endl;
+    std::cout << "Search time (" << search_keys.size() << " searches): " << vector_search_time << " microseconds" << std::endl;
+    std::cout << "Deletion time (" << delete_keys.size() << " deletions): " << vector_delete_time << " microseconds" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "\nDeleting key 15\n";
-    t.deleteKey(15);
-    t.print();
+    // --- Test std::vector (Sorted) ---
+    std::vector<int> sorted_vector_data;
+    long long sorted_vector_insert_time = measure_execution_time([&]() {
+        for (int key : data) {
+            sorted_vector_data.push_back(key);
+            std::sort(sorted_vector_data.begin(), sorted_vector_data.end());
+        }
+    });
+
+    long long sorted_vector_search_time = measure_execution_time([&]() {
+        for (int key : search_keys) {
+            std::binary_search(sorted_vector_data.begin(), sorted_vector_data.end(), key);
+        }
+    });
+
+    long long sorted_vector_delete_time = measure_execution_time([&]() {
+        std::vector<int> temp_vector = sorted_vector_data;
+        for (int key : delete_keys) {
+            auto it = std::lower_bound(temp_vector.begin(), temp_vector.end(), key);
+            if (it != temp_vector.end() && *it == key) {
+                temp_vector.erase(it);
+            }
+        }
+    });
+
+    std::cout << "--- std::vector (Sorted) ---" << std::endl;
+    std::cout << "Insertion time: " << sorted_vector_insert_time << " microseconds" << std::endl;
+    std::cout << "Search time (" << search_keys.size() << " searches): " << sorted_vector_search_time << " microseconds" << std::endl;
+    std::cout << "Deletion time (" << delete_keys.size() << " deletions): " << sorted_vector_delete_time << " microseconds" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "\nDeleting key 1\n";
-    t.deleteKey(1);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 2\n";
-    t.deleteKey(2);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 3\n";
-    t.deleteKey(3);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 4\n";
-    t.deleteKey(4);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 5\n";
-    t.deleteKey(5);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 6\n";
-    t.deleteKey(6);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 7\n";
-    t.deleteKey(7);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 11\n";
-    t.deleteKey(11);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 12\n";
-    t.deleteKey(12);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 13\n";
-    t.deleteKey(13);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 14\n";
-    t.deleteKey(14);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 16\n";
-    t.deleteKey(16);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 17\n";
-    t.deleteKey(17);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 18\n";
-    t.deleteKey(18);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 19\n";
-    t.deleteKey(19);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 21\n";
-    t.deleteKey(21);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 22\n";
-    t.deleteKey(22);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 24\n";
-    t.deleteKey(24);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 25\n";
-    t.deleteKey(25);
-    t.print();
-    std::cout << std::endl;
-
-    std::cout << "\nDeleting key 26\n";
-    t.deleteKey(26);
-    t.print();
-    std::cout << std::endl;
     return 0;
 }
