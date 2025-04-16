@@ -1,345 +1,217 @@
 #include <iostream>
-#include <queue>
+#include <algorithm>
 
-using namespace std;
-
-class Node {
-  public:
+// Node structure for the AVL tree
+struct Node {
     int key;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
     int height;
+
+    Node(int k) : key(k), left(nullptr), right(nullptr), height(1) {}
 };
 
-// Calculate height of a node
-int height(Node* N) {
-
-if (N == nullptr)
-
-return 0;
-
-return N->height;
-
+// Function to get the height of a node
+int height(Node *n) {
+    if (n == nullptr)
+        return 0;
+    return n->height;
 }
 
-
-
-// Calculate maximum of two integers
-
-int max(int a, int b) {
-
-return (a > b) ? a : b;
-
+// Function to get the balance factor of a node
+int balanceFactor(Node *n) {
+    if (n == nullptr)
+        return 0;
+    return height(n->left) - height(n->right);
 }
 
-
-
-// Create a new node
-
-Node* newNode(int key) {
-
-Node* node = new Node();
-
-node->key = key;
-
-node->left = nullptr;
-
-node->right = nullptr;
-
-node->height = 1; // New node is initially a leaf
-
-return node;
-
+// Function to update the height of a node
+void updateHeight(Node *n) {
+    if (n != nullptr) {
+        n->height = 1 + std::max(height(n->left), height(n->right));
+    }
 }
 
+// Left rotate subtree rooted with y
+Node* leftRotate(Node* y) {
+    Node* x = y->right;
+    Node* T2 = x->left;
 
+    // Perform rotation
+    x->left = y;
+    y->right = T2;
 
-// Right rotation
+    // Update heights
+    updateHeight(y);
+    updateHeight(x);
 
-Node* rightRotate(Node* y) {
-
-Node* x = y->left;
-
-Node* T2 = x->right;
-
-
-
-// Perform rotation
-
-x->right = y;
-
-y->left = T2;
-
-
-
-// Update heights
-
-y->height = max(height(y->left), height(y->right)) + 1;
-
-x->height = max(height(x->left), height(x->right)) + 1;
-
-
-
-return x;
-
+    // Return new root
+    return x;
 }
 
+// Right rotate subtree rooted with x
+Node* rightRotate(Node* x) {
+    Node* y = x->left;
+    Node* T2 = y->right;
 
+    // Perform rotation
+    y->right = x;
+    x->left = T2;
 
-// Left rotation
+    // Update heights
+    updateHeight(x);
+    updateHeight(y);
 
-Node* leftRotate(Node* x) {
-
-Node* y = x->right;
-
-Node* T2 = y->left;
-
-
-
-// Perform rotation
-
-y->left = x;
-
-x->right = T2;
-
-
-
-// Update heights
-
-x->height = max(height(x->left), height(x->right)) + 1;
-
-
-
-y->height = max(height(y->left), height(y->right)) + 1;
-
-
-
-return y;
-
+    // Return new root
+    return y;
 }
 
-
-
-// Get balance factor of a node
-
-int getBalance(Node* N) {
-
-if (N == nullptr)
-
-return 0;
-
-return height(N->left) - height(N->right);
-
-}
-
-
-
-// Insert a node into the AVL tree
-
+// Function to insert a key into the AVL tree
 Node* insert(Node* root, int key) {
+    // 1. Perform standard BST insert
+    if (root == nullptr)
+        return new Node(key);
 
-if (root == nullptr)
+    if (key < root->key)
+        root->left = insert(root->left, key);
+    else if (key > root->key)
+        root->right = insert(root->right, key);
+    else // Duplicate keys not allowed
+        return root;
 
-return newNode(key);
+    // 2. Update height of the current node
+    updateHeight(root);
 
+    // 3. Get the balance factor to check if this node became unbalanced
+    int balance = balanceFactor(root);
 
+    // Left Left Case
+    if (balance > 1 && key < root->left->key)
+        return rightRotate(root);
 
-if (key < root->key)
+    // Right Right Case
+    if (balance < -1 && key > root->right->key)
+        return leftRotate(root);
 
-root->left = insert(root->left, key);
+    // Left Right Case
+    if (balance > 1 && key > root->left->key) {
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
 
-else if (key > root->key)
+    // Right Left Case
+    if (balance < -1 && key < root->right->key) {
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
 
-root->right = insert(root->right, key);
-
-else
-
-return root; // Duplicate keys are not allowed
-
-
-
-// Update height of current node
-
-root->height = 1 + max(height(root->left), height(root->right));
-
-
-
-// Get balance factor and perform rotations if needed
-
-int balance = getBalance(root);
-
-
-
-// Left-Left Rotation
-
-if (balance > 1 && key < root->left->key)
-
-return rightRotate(root);
-
-
-
-// Right-Right Rotation
-
-if (balance < -1 && key > root->right->key)
-
-return leftRotate(root);
-
-
-
-// Left-Right Rotation
-
-if (balance > 1 && key > root->left->key) {
-
-root->left = leftRotate(root->left);
-
-return rightRotate(root);
-
+    // Return the (unchanged) node pointer
+    return root;
 }
 
-
-
-// Right-Left Rotation
-
-if (balance < -1 && key < root->right->key) {
-
-root->right = rightRotate(root->right);
-
-return leftRotate(root);
-
+// Function to find the node with the minimum key in a subtree
+Node* minValueNode(Node* node) {
+    Node* current = node;
+    while (current->left != nullptr)
+        current = current->left;
+    return current;
 }
 
+// Function to delete a key from the AVL tree
+Node* deleteNode(Node* root, int key) {
+    if (root == nullptr)
+        return root;
 
+    if (key < root->key)
+        root->left = deleteNode(root->left, key);
+    else if (key > root->key)
+        root->right = deleteNode(root->right, key);
+    else {
+        // Node with only one child or no child
+        if ((root->left == nullptr) || (root->right == nullptr)) {
+            Node* temp = root->left ? root->left : root->right;
 
-return root;
+            // No child case
+            if (temp == nullptr) {
+                temp = root;
+                root = nullptr;
+            } else // One child case
+                *root = *temp; // Copy the contents of the non-empty child
+            delete temp;
+        } else {
+            // Node with two children: Get the inorder successor (smallest
+            // in the right subtree)
+            Node* temp = minValueNode(root->right);
 
+            // Copy the inorder successor's data to this node
+            root->key = temp->key;
+
+            // Delete the inorder successor
+            root->right = deleteNode(root->right, temp->key);
+        }
+    }
+
+    // If the tree had only one node then return
+    if (root == nullptr)
+        return root;
+
+    // Update the height of the current node
+    updateHeight(root);
+
+    // Get the balance factor of this node
+    int balance = balanceFactor(root);
+
+    // Left Left Case
+    if (balance > 1 && balanceFactor(root->left) >= 0)
+        return rightRotate(root);
+
+    // Left Right Case
+    if (balance > 1 && balanceFactor(root->left) < 0) {
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+
+    // Right Right Case
+    if (balance < -1 && balanceFactor(root->right) <= 0)
+        return leftRotate(root);
+
+    // Right Left Case
+    if (balance < -1 && balanceFactor(root->right) > 0) {
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+
+    return root;
 }
 
-
-
-// Inorder traversal (for testing)
-
+// Function to perform inorder traversal of the AVL tree
 void inorder(Node* root) {
-
-if (root == nullptr)
-
-return;
-
-inorder(root->left);
-
-cout << root->key << " ";
-
-inorder(root->right);
-
-
-
+    if (root != nullptr) {
+        inorder(root->left);
+        std::cout << root->key << " ";
+        inorder(root->right);
+    }
 }
-
-
-
-// Print stuff in the tree order.
-
-void printLevelOrder(Node* root) {
-
-if (!root) return;
-
-queue<Node*> q;
-
-q.push(root);
-
-while (!q.empty()) {
-
-int levelSize = q.size();
-
-for (int i = 0; i < levelSize; i++) {
-
-Node* node = q.front();
-
-q.pop();
-
-cout << node->key << " ";
-
-if (node->left) q.push(node->left);
-
-if (node->right) q.push(node->right);
-
-}
-
-cout << endl; // New line for each level
-
-}
-
-}
-
-
 
 int main() {
+    Node* root = nullptr;
 
-Node* root = nullptr;
+    root = insert(root, 10);
+    root = insert(root, 20);
+    root = insert(root, 30);
+    root = insert(root, 40);
+    root = insert(root, 50);
+    root = insert(root, 25);
 
-root = insert(root, 10);
+    std::cout << "Inorder traversal of the constructed AVL tree: ";
+    inorder(root);
+    std::cout << std::endl;
 
-root = insert(root, 20);
+    root = deleteNode(root, 30);
 
-root = insert(root, 30);
+    std::cout << "Inorder traversal after deleting 30: ";
+    inorder(root);
+    std::cout << std::endl;
 
-root = insert(root, 40);
-
-root = insert(root, 50);
-
-root = insert(root, 25);
-
-root = insert(root, 101);
-
-root = insert(root, 220);
-
-root = insert(root, 130);
-
-root = insert(root, 140);
-
-root = insert(root, 502);
-
-root = insert(root, 252);
-
-root = insert(root, 10);
-
-root = insert(root, 20);
-
-root = insert(root, 30);
-
-root = insert(root, 40);
-
-root = insert(root, 50);
-
-root = insert(root, 25);
-
-root = insert(root, 101);
-
-root = insert(root, 220);
-
-root = insert(root, 130);
-
-root = insert(root, 140);
-
-root = insert(root, 502);
-
-root = insert(root, 252);
-
-
-
-cout << "Inorder traversal of AVL tree: ";
-
-inorder(root);
-
-cout << endl;
-
-
-
-printLevelOrder(root);
-
-cout << endl;
-
-
-
-return 0;
-
+    return 0;
 }
