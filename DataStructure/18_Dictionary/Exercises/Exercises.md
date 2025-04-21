@@ -1,4 +1,4 @@
-## Hashing Exercises (Basic to Intermediate)
+## Hashing Exercises
 
 **1. Basic Hash Function**
 
