@@ -1,75 +1,87 @@
-# Heap Sort
+## Heap Sort Explained
 
-The `heapify` function is used to maintain the heap property in a binary tree. It plays a crucial role in building
-max-heaps and min-heaps, which are fundamental structures for algorithms like heap sort.
+Heap sort is a comparison-based sorting algorithm that leverages the properties of a binary heap data structure to efficiently sort an array. The core idea is to first transform the array into a heap (either a max-heap or a min-heap) and then repeatedly extract the root element (which is the largest or smallest, respectively) to build a sorted array.
 
-- [Heap Sort Algorithm](https://algostructure.com/sorting/heapsort.php)
+[Heap Sort Algorithm](https://algostructure.com/sorting/heapsort.php)
 
-### `heapify` Function
+### The Role of the `heapify` Function
 
-`heapify` ensures that a subtree with a given node as the root satisfies the heap property. If the subtree violates the
-heap property, the function rearranges the nodes so that the subtree becomes a valid max-heap or min-heap.
+The `heapify` function is instrumental in maintaining the heap property within a binary tree. It ensures that for any given subtree rooted at a particular node, the parent node satisfies the heap condition with respect to its children. This function is crucial for both building the initial heap and for maintaining the heap structure during the sorting process.
 
-#### Step-by-Step Process to Build a Max-Heap
+### Building a Max-Heap Using `heapify`
 
-Given an array, `heapify` can be used to build a max-heap by ensuring that each parent node is greater than or equal to
-its children.
+To sort an array in ascending order using heap sort, we first build a max-heap. In a max-heap, the value of each parent node is greater than or equal to the values of its children.
+
+**Step-by-Step Process:**
+
+Given an array, we can transform it into a max-heap by applying the `heapify` function to each non-leaf node, starting from the last non-leaf node and moving towards the root. The index of the last non-leaf node in an array of size $n$ is $\lfloor n/2 \rfloor - 1$.
 
 **Example Array**: `[3, 5, 1, 10, 2, 7]`
 
 1. **Initial Array**: `[3, 5, 1, 10, 2, 7]`
-2. **Start with the last non-leaf node** (index `n//2 - 1` where `n` is the number of elements).
-3. Apply `heapify` on the subtree rooted at each non-leaf node from right to left.
 
-**Heapify Steps**:
+2. **Start with the last non-leaf node**: For an array of 6 elements, the last non-leaf node is at index $\lfloor 6/2 \rfloor - 1 = 2$ (value `1`).
 
-1. Start from index `2` (value `1`):
-    - Compare with children `7` (at index `5`). `7` is larger.
-    - Swap `1` and `7`. New array: `[3, 5, 7, 10, 2, 1]`
+3. **Apply `heapify` from right to left on non-leaf nodes**:
 
-2. Move to index `1` (value `5`):
-    - Compare with children `10` (at index `3`) and `2` (at index `4`). `10` is the largest.
-    - Swap `5` and `10`. New array: `[3, 10, 7, 5, 2, 1]`
+   a. **Index 2 (value 1)**:
+      - Compare with children at indices $2 \times 2 + 1 = 5$ (value `7`).
+      - Since $7 > 1$, swap them.
+      - **New array**: `[3, 5, 7, 10, 2, 1]`
 
-3. Move to index `0` (value `3`):
-    - Compare with children `10` (at index `1`) and `7` (at index `2`). `10` is the largest.
-    - Swap `3` and `10`. New array: `[10, 3, 7, 5, 2, 1]`
-    - Apply `heapify` at index `1` again:
-        - Compare `3` with children `5`. Swap `3` and `5`. Final max-heap array: `[10, 5, 7, 3, 2, 1]`
+   b. **Index 1 (value 5)**:
+      - Compare with children at indices $2 \times 1 + 1 = 3$ (value `10`) and $2 \times 1 + 2 = 4$ (value `2`).
+      - The largest child is `10`. Since $10 > 5$, swap them.
+      - **New array**: `[3, 10, 7, 5, 2, 1]`
 
-### Building a Min-Heap
+   c. **Index 0 (value 3)**:
+      - Compare with children at indices $2 \times 0 + 1 = 1$ (value `10`) and $2 \times 0 + 2 = 2$ (value `7`).
+      - The largest child is `10`. Since $10 > 3$, swap them.
+      - **New array**: `[10, 3, 7, 5, 2, 1]`
+      - Now, the subtree rooted at index 1 might violate the heap property. Apply `heapify` at index 1:
+        - Compare `3` with its child at index $2 \times 1 + 1 = 3$ (value `5`).
+        - Since $5 > 3$, swap them.
+        - **Final max-heap array**: `[10, 5, 7, 3, 2, 1]`
 
-For a min-heap, `heapify` ensures that each node is less than or equal to its children.
+### Building a Min-Heap Using `heapify`
+
+To sort an array in descending order, we would build a min-heap. In a min-heap, the value of each parent node is less than or equal to the values of its children.
 
 **Example Array**: `[3, 5, 1, 10, 2, 7]`
 
 **Heapify Steps**:
 
-1. Start from index `2` (value `1`):
-    - Compare with children `7`. No changes needed as `1 < 7`.
+1. **Start from index 2 (value 1)**:
+   - Compare with child at index 5 (value `7`). Since $1 < 7$, no swap needed.
 
-2. Move to index `1` (value `5`):
-    - Compare with children `10` and `2`. `2` is the smallest.
-    - Swap `5` and `2`. New array: `[3, 2, 1, 10, 5, 7]`
+2. **Move to index 1 (value 5)**:
+   - Compare with children at indices 3 (value `10`) and 4 (value `2`).
+   - The smallest child is `2`. Since $2 < 5$, swap them.
+   - **New array**: `[3, 2, 1, 10, 5, 7]`
 
-3. Move to index `0` (value `3`):
-    - Compare with children `2` and `1`. `1` is the smallest.
-    - Swap `3` and `1`. New array: `[1, 2, 3, 10, 5, 7]`
-    - Apply `heapify` at index `2` again. No changes needed as `3 < 7`.
+3. **Move to index 0 (value 3)**:
+   - Compare with children at indices 1 (value `2`) and 2 (value `1`).
+   - The smallest child is `1`. Since $1 < 3$, swap them.
+   - **New array**: `[1, 2, 3, 10, 5, 7]`
+   - Now, the subtree rooted at index 2 might violate the heap property. Apply `heapify` at index 2:
+     - Compare `3` with its child at index $2 \times 2 + 1 = 5$ (value `7`). Since $3 < 7$, no swap needed.
 
 **Final min-heap array**: `[1, 2, 3, 10, 5, 7]`
 
-### Summary of `heapify` Steps:
-
-1. Start at the last non-leaf node and apply `heapify` up to the root.
-    - The parent node of child 'i' is equal to the lower bound of (i-1)/2
-2. For each node, compare its value with its children.
-3. If the heap property is violated, swap the node with the largest (max-heap) or smallest (min-heap) of its children.
-4. Recursively apply `heapify` to the affected subtree.
-
 ![heapify](./images/heapify.png)
 
-### Visualizing the Max-Heap
+### Summary of `heapify` Steps:
+
+1. Begin at the last non-leaf node of the array and iterate towards the root. The parent of a node at index $i$ is given by $\lfloor (i-1)/2 \rfloor$.
+2. For each node, compare its value with its children.
+3. In a max-heap, if the parent is smaller than either child, swap it with the larger child. In a min-heap, if the parent is larger than either child, swap it with the smaller child.
+4. After a swap, recursively apply `heapify` to the affected subtree to ensure the heap property is maintained.
+
+### Visualizing the Heap Structure
+
+The array can be visualized as a binary tree where the element at index $i$ has children at indices $2i + 1$ and $2i + 2$.
+
+**Visualizing the Max-Heap**
 
 Initial tree before heapifying:
 
@@ -84,14 +96,14 @@ Initial tree before heapifying:
 After building the max-heap:
 
 ```
-     10
-     / \
-    5   7
-   / \   \
-  3   2   1
+      10
+     /  \
+    5    7
+   / \   /
+  3   2 1
 ```
 
-### Visualizing the Min-Heap
+**Visualizing the Min-Heap**
 
 Initial tree before heapifying:
 
@@ -113,133 +125,80 @@ After building the min-heap:
   10  5   7
 ```
 
-x**Heap sort** is a comparison-based sorting algorithm that uses a binary heap data structure to sort an array. It sorts
-an array by leveraging the properties of a max-heap or min-heap. Here's a breakdown of what heap sort is and how it
-works:
+### Heap Sort Algorithm in Detail
 
-### What is a Heap?
+Heap sort utilizes a max-heap for ascending order sorting. The algorithm proceeds as follows:
 
-A **heap** is a specialized tree-based data structure that satisfies the heap property:
+1. **Build a Max-Heap**: Convert the input array into a max-heap using the `heapify` process described earlier.
 
-- **Max-Heap**: The value of each parent node is greater than or equal to the values of its children, meaning the
-  largest value is at the root.
-- **Min-Heap**: The value of each parent node is less than or equal to the values of its children, meaning the smallest
-  value is at the root.
+2. **Extract and Sort**:
+   - While the size of the heap is greater than 1:
+     - Swap the root of the heap (the largest element) with the last element of the heap.
+     - Decrease the heap size by 1. The largest element is now in its correct sorted position at the end of the array.
+     - Call `heapify` on the root of the reduced heap to restore the max-heap property.
 
-### How Does Heap Sort Work?
-
-Heap sort uses a max-heap to sort an array in ascending order or a min-heap for descending order. It involves the
-following main steps:
-
-1. **Build a Max-Heap** (for ascending order):
-    - Transform the given array into a max-heap, where the largest element is at the root of the heap.
-
-2. **Extract Elements**:
-    - Swap the root (the largest element) with the last element in the array.
-    - Reduce the size of the heap by one, effectively placing the largest element at the end of the array in its final
-      sorted position.
-    - Call the `heapify` function on the root to restore the max-heap property.
-    - Repeat this process until the heap size is reduced to 1.
-
-### Time and Space Complexity
+### Time and Space Complexity of Heap Sort
 
 - **Time Complexity**:
-    - **Best Case**: \( O(n \log n) \)
-    - **Average Case**: \( O(n \log n) \)
-    - **Worst Case**: \( O(n \log n) \)
+  - **Best Case**: \( O(n \log n) \)
+  - **Average Case**: \( O(n \log n) \)
+  - **Worst Case**: \( O(n \log n) \)
 - **Space Complexity**: \( O(1) \) (in-place sorting)
 
-### Properties of Heap Sort
+### Key Properties of Heap Sort
 
-- **In-Place**: Heap sort does not require additional storage; it sorts the array in-place.
-- **Not Stable**: Heap sort is not a stable sort, meaning it does not preserve the relative order of equal elements.
-- **Consistent Performance**: Unlike quicksort, which can degrade to \( O(n^2) \) in its worst case, heap sort has a
-  guaranteed \( O(n \log n) \) time complexity regardless of input.
+- **In-Place**: Heap sort sorts the array directly within the original array, requiring minimal additional memory.
+- **Not Stable**: The relative order of elements with equal values is not guaranteed to be preserved.
+- **Consistent Performance**: Heap sort provides a guaranteed \( O(n \log n) \) time complexity, making it a reliable choice when consistent performance is crucial.
 
-### When to Use Heap Sort
+### When to Choose Heap Sort
 
-- **Memory-Constrained Environments**: Because of its \( O(1) \) space complexity, heap sort is suitable for situations
-  where memory usage is a concern.
-- **Guaranteed Performance**: Use heap sort when you need a sorting algorithm with consistent \( O(n \log n) \) time
-  complexity for all inputs.
+- **Memory Constraints**: Its \( O(1) \) space complexity makes it suitable for environments with limited memory.
+- **Guaranteed Time Complexity**: When a guaranteed \( O(n \log n) \) sorting time is required, regardless of the input data.
 
-### How `heapify` is Used in Heap Sort
+### How `heapify` Underpins Heap Sort
 
-- **`heapify`** is a function that ensures the max-heap or min-heap property is maintained for a subtree. It is used
-  during the initial heap building phase and after each swap during the extraction phase to keep the heap valid.
+The `heapify` function is called during the initial step of building the max-heap and subsequently after each extraction of the maximum element. This ensures that the remaining elements always satisfy the max-heap property, allowing the next largest element to be readily available at the root.
 
-### Summary
+### Summary of Heap Sort
 
-**Heap sort** is an efficient sorting algorithm that organizes data into a heap and repeatedly extracts the maximum (or
-minimum) element to sort the data. It is in-place, has consistent performance, and works well for large datasets where
-space is limited.
+Heap sort is an efficient and in-place sorting algorithm that leverages the heap data structure. By building a max-heap and repeatedly extracting the largest element, it sorts the array with a consistent \( O(n \log n) \) time complexity. The `heapify` function is the cornerstone of this process, ensuring the integrity of the heap property throughout the algorithm.
 
-The `heapify` function is crucial in several scenarios where maintaining the heap property of a binary tree structure is
-essential. Below are some key use cases for `heapify` and the reasons for its importance:
+### Use Cases and Importance of `heapify` Beyond Heap Sort
 
-### 1. **Building a Heap from an Unsorted Array**
+The `heapify` function is not limited to heap sort; it plays a vital role in various other applications where maintaining the heap property is essential.
 
-- **Use Case**: When you have an unsorted array that you need to convert into a max-heap or min-heap, `heapify` is used
-  to ensure that the heap property is established for each subtree.
-- **Why**: Building a heap from an unsorted array is done by calling `heapify` starting from the last non-leaf node to
-  the root. This ensures that the array can be used as a heap in algorithms such as heap sort or priority queues.
-- **Benefit**: Establishing a heap from an array using `heapify` is efficient with a time complexity of \( O(n) \),
-  which is much better than repeatedly inserting elements into an empty heap, which would take \( O(n \log n) \).
+1.  **Building a Heap from an Unsorted Array**:
+    - **Use Case**: Converting an arbitrary array into a heap structure.
+    - **Why**: This is the foundational step for using heaps in priority queues and other heap-based algorithms. The efficient \( O(n) \) time complexity of building a heap using `heapify` (compared to \( O(n \log n) \) by repeated insertion) is a significant advantage.
 
-### 2. **Heap Sort Algorithm**
+2.  **Priority Queue Implementation**:
+    - **Use Case**: Managing a collection of elements with associated priorities, where the element with the highest (or lowest) priority needs to be accessed quickly.
+    - **Why**: Priority queues often use heaps as their underlying data structure. `heapify` is crucial for maintaining the heap property after insertion or deletion of elements, ensuring that the element with the highest priority is always at the root. Operations like `push` (insertion) and `pop` (extraction) rely on `heapify` to restore the heap order.
 
-- **Use Case**: `heapify` is an essential part of the heap sort algorithm. After extracting the root element (the
-  maximum or minimum, depending on the type of heap), `heapify` is called on the reduced heap to restore the heap
-  property.
-- **Why**: Each extraction of the root requires `heapify` to maintain the structure so that the next maximum or minimum
-  element can be found at the root.
-- **Benefit**: By using `heapify`, heap sort efficiently sorts an array in \( O(n \log n) \) time. It ensures that after
-  each swap during sorting, the remaining portion of the array still respects the heap property.
+3.  **Dynamic Data Structure for Real-Time Applications**:
+    - **Use Case**: Systems where data priorities can change dynamically, and the structure needs to be reordered efficiently.
+    - **Why**: In applications like task scheduling or event handling, the priority of tasks or events might be updated. `heapify` allows for efficient readjustment of the heap to reflect these changes in \( O(\log n) \) time.
 
-### 3. **Priority Queue Implementation**
+4.  **Graph Algorithms**:
+    - **Use Case**: Algorithms like Dijkstra's for finding the shortest paths and Prim's for finding the minimum spanning tree often use priority queues to select the next vertex to explore.
+    - **Why**: When the distance to a vertex is updated in Dijkstra's or the cost to add a vertex to the MST changes in Prim's, the priority queue (often implemented as a heap) needs to be reordered. `heapify` ensures that the vertex with the smallest current distance or cost is always at the top of the priority queue.
 
-- **Use Case**: Priority queues, such as those used in scheduling and event management, require efficient insertion,
-  extraction, and updating of priority elements. `heapify` helps maintain the heap property when the priority of an
-  element changes or when an element is inserted or removed.
-- **Why**: When a new element is added or an existing element is removed, the heap property can be violated. `heapify`
-  reorders the elements to restore the property.
-- **Benefit**: Using `heapify` ensures that the priority queue can efficiently support operations such as inserting an
-  element or extracting the highest (or lowest) priority element in \( O(\log n) \) time.
+5.  **K-th Largest/Smallest Element**:
+    - **Use Case**: Finding the $k$-th largest or smallest element in an array.
+    - **Why**: By building a min-heap of size $k$ from the first $k$ elements and then iterating through the rest of the array, comparing elements with the root and using `heapify` to maintain the min-heap property, we can efficiently find the $k$-th smallest element. A similar approach with a max-heap can find the $k$-th largest.
 
-### 4. **Dynamic Data Structure for Real-Time Applications**
+### Why is `heapify` Important?
 
-- **Use Case**: In real-time systems where data changes dynamically (e.g., job scheduling, event-driven simulations),
-  `heapify` is used to maintain the order property of heaps as elements change priority or as new elements are added.
-- **Why**: Without `heapify`, maintaining the heap property would require more complex and less efficient algorithms.
-- **Benefit**: `heapify` allows for adjustments to the data structure in \( O(\log n) \) time, making it suitable for
-  applications that need to handle dynamic datasets and maintain quick access to the highest or lowest priority element.
+1.  **Efficiency**: `heapify` ensures that the heap property can be restored in \( O(\log n) \) time, which is critical for maintaining the efficiency of heap-based data structures and algorithms.
+2.  **Simplicity**: It provides a straightforward method for ensuring that a binary tree satisfies the heap property without the need for more complex restructuring.
+3.  **Versatility**: `heapify` is applicable to both max-heaps and min-heaps, making it a fundamental operation for a wide range of applications involving ordered data.
 
-### 5. **Graph Algorithms (e.g., Dijkstra’s Algorithm, Prim’s Algorithm)**
+### How `heapify` Works Internally
 
-- **Use Case**: Algorithms like Dijkstra’s for shortest paths and Prim’s for minimum spanning trees use a priority queue
-  to choose the next vertex to process. When implemented using heaps, `heapify` is used to adjust the heap when the
-  shortest distance or minimum cost changes.
-- **Why**: The priority of nodes changes as distances are updated, which can violate the heap property.
-- **Benefit**: `heapify` allows these algorithms to maintain the correct order in the priority queue, ensuring optimal
-  time complexity for updating and extracting nodes.
+The `heapify` process typically involves:
 
-### **Why Use `heapify`?**
-
-1. **Efficiency**: `heapify` can maintain the heap property in \( O(\log n) \) time, which is essential for efficiently
-   handling operations in heaps.
-2. **Simplicity**: The function simplifies maintaining heap order without having to rebuild the heap from scratch or use
-   more complicated reordering algorithms.
-3. **Versatility**: `heapify` is versatile and can be used in both min-heaps and max-heaps for a variety of applications
-   where priority or ordered data management is needed.
-
-### **How Does `heapify` Work?**
-
-- `heapify` starts at a given node and compares it with its children. If the heap property is violated (e.g., the parent
-  is smaller than the child in a max-heap), the parent and the larger child are swapped.
-- This process is repeated recursively for the affected subtree until the heap property is restored.
-
-### **Summary**
-
-`heapify` is a foundational function for maintaining the heap structure efficiently, whether for building a heap,
-sorting data, or managing priority queues. Its efficient time complexity and simplicity make it invaluable for
-applications that require dynamic data handling with ordered access.
+1.  Starting at a given node index in the array representation of the binary tree.
+2.  Comparing the node with its left and right children.
+3.  For a max-heap, if a child is larger than the current node, the node is swapped with the larger child. For a min-heap, the swap occurs with the smaller child.
+4.  After the swap, `heapify` is recursively called on the affected child's subtree to ensure that the heap property is maintained down the tree.
