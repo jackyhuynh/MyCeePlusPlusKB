@@ -15,8 +15,16 @@ void swap(int &first, int &second) {
     second = temp;
 }
 
+// Function to print an array
+void printArray(int heapArray[], int arraySize) {
+    for (int i = 0; i < arraySize; ++i)
+        cout << heapArray[i] << " ";
+    cout << "\n";
+}
+
 // Function to maintain max heap property for a subtree rooted at index
 void heapify(int heapArray[], int heapSize, int index) {
+    printArray(heapArray, heapSize);
     int largestIndex = index; // Assume root of the subtree is the largest
     int leftChildIndex = 2 * index + 1; // Index of left child
     int rightChildIndex = 2 * index + 2; // Index of right child
@@ -55,22 +63,18 @@ int extractMax(int heapArray[], int &heapSize) {
 
 // Main function to perform heap sort
 void heapSort(int heapArray[], int heapSize) {
+
+    cout << "build max heap:"<<endl;
     // Build max heap from unordered array
     for (int i = heapSize / 2 - 1; i >= 0; i--)
         heapify(heapArray, heapSize, i);
 
+    cout << "heap sorted:"<<endl;
     // Extract elements one by one from the heap
     while (heapSize > 0) {
         int maxElement = extractMax(heapArray, heapSize);
         heapArray[heapSize] = maxElement;  // Place max element at the end of the array
     }
-}
-
-// Function to print an array
-void printArray(int heapArray[], int arraySize) {
-    for (int i = 0; i < arraySize; ++i)
-        cout << heapArray[i] << " ";
-    cout << "\n";
 }
 
 // Driver program to test above functions
