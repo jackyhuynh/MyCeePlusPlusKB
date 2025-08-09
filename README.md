@@ -4,6 +4,9 @@ Welcome to our knowledge base! My goal is to spend less time and accomplish more
 information needed to understand data structure utilization.
 Here’s a refined version of your outline for clarity and structure:
 
++ **Part 0: Fundamentals**  
+  Introduction to the C++ programming language and its subset, the C programming language.  Program structure, block, storage types, console and file I/O, functions, arrays,  strings, pointers, call-by-reference, call-by-value, and dynamic memory allocation.
+  
 + **Part I: Data Structures**  
   Focus on the most commonly used data structures and their applications, explore the Standard Template Library (STL),
   and reinforce foundational C++ syntax and best practices.
