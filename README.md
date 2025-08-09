@@ -36,7 +36,11 @@ Here’s a refined version of your outline for clarity and structure:
 
 I use C++ for seasonal programming projects.
 
-- C++ IDLE: any IDLE for your convenience, I am using Visual Studio Code and CLion, but many are out there.
+- C++ IDLE:
+  - CLion
+  - VSCode
+  - Vim Editor
+- Any IDLE for your convenience, I am using Visual Studio Code and CLion, but many are out there.
     - My setup is:
         - Hardware: Mac OS X 16 GB, M3 Pro
         - Visual Studio Code
