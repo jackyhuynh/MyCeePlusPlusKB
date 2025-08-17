@@ -59,3 +59,7 @@ I use C++ for seasonal programming projects.
         - Style Guide: The Tidyverse Style Guide by Hadley Wickham
 - CLion from JetBrains
 - Any C++ IDE
+
+## Practices:
+- Single Source of Trust
+- DevOPs

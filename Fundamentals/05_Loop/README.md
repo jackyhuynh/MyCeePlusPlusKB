@@ -1,4 +1,3 @@
-
 # Chapter 5: Looping
 
 This chapter introduces loops, a control structure that allows a program to repeat a section of code.

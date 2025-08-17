@@ -1,4 +1,3 @@
-
 # Chapter 4: Making Decisions
 
 This chapter covers how to write programs that can make decisions using conditional statements and relational operators.

@@ -1,4 +1,3 @@
-
 # Chapter 1: Introduction to Computers and Programming
 
 This chapter provides a foundational understanding of computer systems, programming, and the process of creating a

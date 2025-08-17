@@ -1,4 +1,3 @@
-
 # Chapter 2: Introduction to C++
 
 This chapter dives into the fundamental components of a C++ program, including data types, operators, and comments.
