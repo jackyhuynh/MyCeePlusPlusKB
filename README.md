@@ -63,3 +63,18 @@ I use C++ for seasonal programming projects.
 ## Practices:
 - Single Source of Trust
 - DevOPs
+
+## Code Review Automation
+
+### Manual Code Review with Claude (Free)
+
+Use the provided script to generate formatted PR reviews for manual analysis:
+
+#### Option 1: Use the Script + Claude Code (This Tool)
+
+1. **Generate review file**: `bash scripts/review_pr.sh`
+2. **Open the generated file**: `reviews/pr_review_[timestamp].txt`
+3. **Copy the content** and paste it into Claude Code
+4. **Ask**: *"Please review this PR diff for C++ code quality, security, and best practices"*
+
+This approach provides comprehensive code reviews using Claude's expertise without requiring API keys or paid subscriptions.
