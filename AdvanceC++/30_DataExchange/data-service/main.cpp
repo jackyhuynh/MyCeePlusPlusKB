@@ -43,14 +43,25 @@ int main() {
         std::cerr << "Accepting connection failed!" << std::endl;
         return -1;
     }
+    
+    std::cout << "Client connected!" << std::endl;
 
-    // Read message from client
-    read(new_socket, buffer, 1024);
-    std::cout << "Server received: " << buffer << std::endl;
+    // Handle multiple requests from the same client
+    while (true) {
+        memset(buffer, 0, sizeof(buffer));
+        int bytes_read = read(new_socket, buffer, 1024);
+        
+        if (bytes_read <= 0) {
+            std::cout << "Client disconnected or read error" << std::endl;
+            break;
+        }
+        
+        std::cout << "Server received: " << buffer << std::endl;
 
-    // Send response to the client
-    send(new_socket, hello, strlen(hello), 0);
-    std::cout << "Hello message sent from data-service" << std::endl;
+        // Send response to the client
+        send(new_socket, hello, strlen(hello), 0);
+        std::cout << "Hello message sent from data-service" << std::endl;
+    }
 
     close(new_socket);
     close(server_fd);
