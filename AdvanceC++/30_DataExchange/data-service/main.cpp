@@ -3,6 +3,8 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <cstring>
+#include <sstream>
+#include <vector>
 
 #define PORT 8080
 
@@ -11,7 +13,6 @@ int main() {
     struct sockaddr_in address;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
-    const char* hello = "Hello from Server";
 
     // Creating socket file descriptor
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
@@ -56,11 +57,21 @@ int main() {
             break;
         }
         
-        std::cout << "Server received: " << buffer << std::endl;
-
-        // Send response to the client
-        send(new_socket, hello, strlen(hello), 0);
-        std::cout << "Hello message sent from data-service" << std::endl;
+        std::cout << "Server received numbers: " << buffer << std::endl;
+        
+        // Parse numbers and calculate sum
+        std::stringstream ss(buffer);
+        std::string number;
+        int sum = 0;
+        
+        while (std::getline(ss, number, ',')) {
+            sum += std::stoi(number);
+        }
+        
+        // Send sum back to client
+        std::string response = std::to_string(sum);
+        send(new_socket, response.c_str(), response.length(), 0);
+        std::cout << "Sum sent to client: " << sum << std::endl;
     }
 
     close(new_socket);

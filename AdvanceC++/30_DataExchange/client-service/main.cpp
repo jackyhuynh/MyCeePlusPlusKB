@@ -4,6 +4,8 @@
 #include <netdb.h> // For gethostbyname
 #include <unistd.h>
 #include <cstring>
+#include <vector>
+#include <sstream>
 
 #define PORT 8080
 
@@ -11,7 +13,6 @@ int main() {
     int sock = 0;
     struct sockaddr_in serv_addr;
     struct hostent* server;
-    const char* hello = "Hello from Client, Truck";
     char buffer[1024] = {0};
 
     // Creating socket file descriptor
@@ -38,21 +39,35 @@ int main() {
         return -1;
     }
 
-    // Send message to server
-    send(sock, hello, strlen(hello), 0);
-    std::cout << "Hello message sent from client-service" << std::endl;
-
-    // Receive response from server
-    read(sock, buffer, 1024);
-    std::cout << "Client received: " << buffer << std::endl;
-
-    for (int i = 0; i < 5; i++) {
-        std::cout << "Client working..." << std::endl;
-        send(sock, hello, strlen(hello), 0);
-        std::cout << "Hello message sent from client-service" << std::endl;
+    // Send sets of numbers to server
+    std::vector<std::vector<int>> numberSets = {
+        {1, 2, 3, 4, 5},
+        {10, 20, 30},
+        {100, 200, 300, 400},
+        {7, 14, 21},
+        {99, 1}
+    };
+    
+    for (const auto& numbers : numberSets) {
+        // Create message with numbers
+        std::stringstream ss;
+        for (size_t i = 0; i < numbers.size(); i++) {
+            ss << numbers[i];
+            if (i < numbers.size() - 1) ss << ",";
+        }
+        std::string message = ss.str();
+        
+        std::cout << "Sending numbers: " << message << std::endl;
+        send(sock, message.c_str(), message.length(), 0);
+        
+        // Receive sum from server
+        memset(buffer, 0, sizeof(buffer));
+        read(sock, buffer, 1024);
+        std::cout << "Server calculated sum: " << buffer << std::endl;
+        std::cout << "---" << std::endl;
+        
         sleep(1);
     }
-
 
     close(sock);
     return 0;
