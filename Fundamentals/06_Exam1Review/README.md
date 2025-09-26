@@ -1,7 +1,3 @@
-Got it ✅ I’ll build you a **test review** based on the exam questions and answers from your uploaded file. Here’s a structured study guide you can use:
-
----
-
 # 📘 Programming Fundamentals II – Exam 1 Review
 
 This review covers **common C++ topics** that appear on the exam, with practice questions and example answers. Use it to prepare by writing code snippets and checking against the examples.
@@ -220,5 +216,3 @@ switch (number) {
     * Write out each solution without looking, then compare.
 
 ---
-
-Do you want me to turn this review into a **practice test (with blank spaces)** so you can quiz yourself first, then check against the answers?
