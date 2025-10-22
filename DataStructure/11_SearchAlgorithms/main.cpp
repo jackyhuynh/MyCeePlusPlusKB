@@ -4,7 +4,6 @@
 #include <chrono>    // For std::chrono
 
 // Find the value
-
 int linearSearch(const std::vector<int>& arr, int x) {
     for (int i = 0; i < arr.size(); i++) {
         if (arr[i] == x)
@@ -30,7 +29,7 @@ int binarySearch(const std::vector<int>& arr, int x) {
 }
 
 int main() {
-    // Creating an array of 200 elements
+    // Creating an array of 20000 elements
     std::vector<int> data(20000);
     for (int i = 0; i < 20000; ++i) {
         data[i] = i;
@@ -44,19 +43,21 @@ int main() {
     int linearResult = linearSearch(data, 199); // Assuming we are searching for the last element
     auto end = std::chrono::high_resolution_clock::now();
     auto linearDuration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-
     std::cout << "Linear Search Result: " << linearResult << "\n";
     std::cout << "Linear Search took " << linearDuration.count() << " nanoseconds.\n";
 
     // Sort the array for binary search
+    start = std::chrono::high_resolution_clock::now();
     std::sort(data.begin(), data.end());
+    end = std::chrono::high_resolution_clock::now();
+    auto sortDuration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    std::cout << "C++ STD Sort took " << sortDuration.count() << " nanoseconds.\n";
 
     // Testing binary search
     start = std::chrono::high_resolution_clock::now();
     int binaryResult = binarySearch(data, 199); // Searching for the same element
     end = std::chrono::high_resolution_clock::now();
     auto binaryDuration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-
     std::cout << "Binary Search Result: " << binaryResult << "\n";
     std::cout << "Binary Search took " << binaryDuration.count() << " nanoseconds.\n";
 
